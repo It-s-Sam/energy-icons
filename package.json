@@ -1,0 +1,42 @@
+{
+  "name": "wild-icons",
+  "version": "0.1.0",
+  "description": "Open-source icon library for the renewable energy and energy-transition sector.",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "icons": "tsx scripts/generate-icons.ts",
+    "postinstall": "npm run icons",
+    "predev": "npm run icons",
+    "dev": "next dev",
+    "prebuild": "npm run icons",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "pretypecheck": "npm run icons && next typegen",
+    "typecheck": "tsc --noEmit",
+    "pretest": "npm run icons",
+    "test": "tsx --test tests/icon-system.test.ts tests/icon-component.test.tsx",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "geist": "^1.7.2",
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "fflate": "^0.8.3",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}
