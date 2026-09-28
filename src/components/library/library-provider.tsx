@@ -2,15 +2,16 @@
 
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 
-import { DEFAULT_ICON_SIZE, type IconSize } from "@/config/icons";
+import { DEFAULT_ICON_SIZE, DEFAULT_ICON_WEIGHT, type IconSize, type IconWeight } from "@/config/icons";
 
 interface LibraryState {
   query: string;
   setQuery: (query: string) => void;
   size: IconSize;
   setSize: (size: IconSize) => void;
-  showNames: boolean;
-  setShowNames: (show: boolean) => void;
+  /** Regular or Bold, applied to every icon in the grid and the detail dialog */
+  weight: IconWeight;
+  setWeight: (weight: IconWeight) => void;
   /** Sidebar hidden on desktop (toggled from the toolbar menu button) */
   sidebarCollapsed: boolean;
   setSidebarCollapsed: (collapsed: boolean) => void;
@@ -28,7 +29,7 @@ const LibraryContext = createContext<LibraryState | null>(null);
 export function LibraryProvider({ children }: { children: ReactNode }) {
   const [query, setQuery] = useState("");
   const [size, setSize] = useState<IconSize>(DEFAULT_ICON_SIZE);
-  const [showNames, setShowNames] = useState(true);
+  const [weight, setWeight] = useState<IconWeight>(DEFAULT_ICON_WEIGHT);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -38,14 +39,14 @@ export function LibraryProvider({ children }: { children: ReactNode }) {
       setQuery,
       size,
       setSize,
-      showNames,
-      setShowNames,
+      weight,
+      setWeight,
       sidebarCollapsed,
       setSidebarCollapsed,
       drawerOpen,
       setDrawerOpen,
     }),
-    [query, size, showNames, sidebarCollapsed, drawerOpen],
+    [query, size, weight, sidebarCollapsed, drawerOpen],
   );
 
   return <LibraryContext.Provider value={value}>{children}</LibraryContext.Provider>;

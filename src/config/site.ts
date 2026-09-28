@@ -8,15 +8,18 @@ export interface SiteLink {
 }
 
 export const siteConfig = {
-  name: "Wild Icons",
-  version: "0.1",
+  name: "Energy Icons",
+  version: "1.0",
   description:
     "Open-source icon library for the renewable energy and energy-transition sector. Two optical masters, scaled — never redrawn.",
   /** Static download produced at build time by scripts/generate-icons.ts */
-  downloadAllHref: "/downloads/wild-icons.zip",
+  downloadAllHref: "/downloads/energy-icons.zip",
   links: {
-    github: undefined as SiteLink | undefined,
+    github: { label: "GitHub", href: "https://github.com/It-s-Sam/energy-icons" } as SiteLink | undefined,
+    /** Recurring support. Icons stay free. */
+    sponsor: { label: "Sponsor", href: "https://github.com/sponsors/It-s-Sam" } as SiteLink | undefined,
+    /** One-off support. Set this when a Buy Me a Coffee page exists. */
+    coffee: undefined as SiteLink | undefined,
     figma: undefined as SiteLink | undefined,
-    sponsor: undefined as SiteLink | undefined,
   },
 };

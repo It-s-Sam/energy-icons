@@ -4,15 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
-import { Icon } from "@/components/icon";
+import { Logo } from "@/components/layout/logo";
 import { useLibrary } from "@/components/library/library-provider";
 import { siteConfig } from "@/config/site";
 import { getNonEmptyCategories, TOTAL_ICONS } from "@/lib/icons/filter";
 import { categoryHref } from "@/lib/routes";
 
 const DOCS = [
-  { href: "/docs/adding-an-icon", label: "Adding an icon" },
+  { href: "/docs/installation", label: "Installation" },
+  { href: "/docs/usage", label: "Usage" },
   { href: "/docs/design-principles", label: "Design principles" },
+  { href: "/docs/adding-an-icon", label: "Adding an icon" },
 ];
 
 function NavLink({ href, active, children, count }: { href: string; active: boolean; children: ReactNode; count?: number }) {
@@ -23,7 +25,7 @@ function NavLink({ href, active, children, count }: { href: string; active: bool
       onClick={() => setDrawerOpen(false)}
       aria-current={active ? "page" : undefined}
       className={`group flex h-7 items-center justify-between rounded-md px-2 text-[13px] transition-colors ${
-        active ? "bg-accent-softer font-medium text-accent" : "text-fg-muted hover:bg-hover hover:text-fg"
+        active ? "font-medium text-accent" : "text-fg-muted hover:bg-sidebar-hover hover:text-fg"
       }`}
     >
       <span className="truncate">{children}</span>
@@ -42,7 +44,9 @@ export function Sidebar() {
   const pathname = usePathname();
   const { sidebarCollapsed, drawerOpen, setDrawerOpen } = useLibrary();
   const categories = getNonEmptyCategories();
-  const resources = Object.values(siteConfig.links).filter((link) => link !== undefined);
+  const resources = [siteConfig.links.sponsor, siteConfig.links.coffee, siteConfig.links.figma].filter(
+    (link) => link !== undefined,
+  );
 
   return (
     <>
@@ -51,15 +55,14 @@ export function Sidebar() {
         <div className="fixed inset-0 z-30 bg-[var(--backdrop)] md:hidden" onClick={() => setDrawerOpen(false)} aria-hidden="true" />
       )}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-[208px] shrink-0 flex-col border-r border-line bg-bg transition-transform md:static md:z-auto md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 flex w-[208px] shrink-0 flex-col border-r border-sidebar-line bg-sidebar transition-transform md:static md:z-auto md:translate-x-0 ${
           drawerOpen ? "translate-x-0 shadow-xl" : "-translate-x-full"
         } ${sidebarCollapsed ? "md:hidden" : ""}`}
         aria-label="Sidebar"
       >
         <div className="flex h-[52px] shrink-0 items-center gap-2 px-4">
-          <Link href="/" className="flex items-center gap-2 rounded-md text-fg" onClick={() => setDrawerOpen(false)}>
-            <Icon name="wind-turbine" size={20} />
-            <span className="text-[14px] font-semibold tracking-[-0.01em]">{siteConfig.name}</span>
+          <Link href="/" aria-label="Energy Icons" className="flex items-center text-fg" onClick={() => setDrawerOpen(false)}>
+            <Logo />
           </Link>
         </div>
 
@@ -102,7 +105,9 @@ export function Sidebar() {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="flex h-7 items-center rounded-md px-2 text-[13px] text-fg-muted hover:bg-hover hover:text-fg"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-7 items-center rounded-md px-2 text-[13px] text-fg-muted hover:bg-sidebar-hover hover:text-fg"
                   >
                     {link.label}
                   </a>

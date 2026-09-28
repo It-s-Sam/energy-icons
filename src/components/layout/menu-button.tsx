@@ -1,7 +1,7 @@
 "use client";
 
 import { useLibrary } from "@/components/library/library-provider";
-import { MenuGlyph } from "@/components/ui/ui-icons";
+import { SidebarGlyph } from "@/components/ui/ui-icons";
 
 /** Toggles the sidebar: collapses it on desktop, opens the drawer on small screens. */
 export function MenuButton() {
@@ -19,7 +19,7 @@ export function MenuButton() {
       aria-label="Toggle sidebar"
       className="grid size-8 shrink-0 place-items-center rounded-md text-fg-muted transition-colors hover:bg-hover hover:text-fg"
     >
-      <MenuGlyph />
+      <SidebarGlyph />
     </button>
   );
 }

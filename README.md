@@ -1,8 +1,26 @@
-# Wild Icons
+# Energy Icons
 
-Wild Icons is an open-source icon library for the renewable energy and energy-transition sector: solar, wind, hydro, grid, storage, EV charging, heat pumps and industry. Every icon is drawn by hand in Figma at two optical sizes and published as outlined SVGs.
+Open-source icons for the energy transition: solar, wind, hydro, grid, storage, EV charging, heat pumps, and industry. Every icon is drawn by hand at two optical sizes and published as outlined SVGs. MIT licensed.
 
-This repo holds the icon source files and the library website: a local Next.js app with search, category filters, a size slider and a detail view where you can copy or download an SVG at any supported size.
+```bash
+npm install energy-icons
+```
+
+```tsx
+import { Icon } from "energy-icons/icon";
+
+<Icon name="pylon" size={32} weight="bold" />
+```
+
+Import one icon when the bundle should stay small: `import { Pylon } from "energy-icons/icons/pylon"`. Sizes below 32 use the 20px master. Sizes from 32 up use the 48px master. See [Installation](src/app/docs/installation/page.tsx) and [Usage](src/app/docs/usage/page.tsx) in the site, and `packages/energy-icons/README.md`.
+
+The icons are free. [Sponsor the library](https://github.com/sponsors/It-s-Sam) if you want to support the drawing. A Buy Me a Coffee link can be added in `src/config/site.ts` (`links.coffee`) when that page exists.
+
+## Contributing
+
+Icon requests, drawing rules, and how to run the checks are in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+This repo also holds the library website: a Next.js app with search, category filters, a size slider, and a detail view where you can copy or download an SVG.
 
 ## Run it
 
@@ -31,6 +49,10 @@ Every icon has two optical masters:
 | --- | --- | --- | --- |
 | `20.svg` | 20×20 | 1px stroke | 12, 14, 16, 18, 20, 24, 28 |
 | `48.svg` | 48×48 | 2px stroke | 32, 40, 48, 64 |
+| `20-bold.svg` | 20×20 | 1.25px stroke (Bold) | 12, 14, 16, 18, 20, 24, 28 |
+| `48-bold.svg` | 48×48 | 2.5px stroke (Bold) | 32, 40, 48, 64 |
+
+Every icon comes in two weights, **Regular** and **Bold**. Bold is its own pair of hand-built masters (same construction rules, heavier stroke), never a re-weighted Regular, and the same breakpoint picks its 20 or 48 master. Bold is optional per icon: an icon without both Bold files is shown Regular-only and the Bold switch falls back to Regular for it (`npm run icons` lists any such icons).
 
 **Sizes below 32px use the 20 master. Sizes from 32px up use the 48 master.** The chosen master is scaled proportionally with `width` and `height`. The viewBox stays at the master's own grid.
 
@@ -48,22 +70,25 @@ This one constant controls the `<Icon>` component, the toolbar's master indicato
 
 ## Using the component
 
+The website uses an in-repo `<Icon>`. Published apps use the `energy-icons` package described above.
+
 ```tsx
 import { Icon } from "@/components/icon";
 
 <Icon name="wind-turbine" size={24} />                // decorative (aria-hidden)
 <Icon name="pylon" size={40} title="Transmission" />  // labelled (role="img")
 <Icon name="solar-panel" className="text-sky-600" />  // inherits currentColor
+<Icon name="wind-turbine" size={24} weight="bold" />  // Bold weight (default "regular")
 ```
 
 - `name` is typed as a union of every known slug, so a typo is a type error.
 - The icon renders as inline SVG with `fill="currentColor"`, so it takes on the surrounding text colour.
-- The master is picked automatically from `size`. The default size is 24.
+- The master is picked automatically from `size`. The default size is 32.
 
 ## Adding a new icon
 
 1. **Draw both masters in Figma.** Use a 20×20 frame with a 1px stroke and a 48×48 frame with a 2px stroke. Outline the strokes, flatten, and use a single fill. Export each frame as SVG with the full frame as the viewBox.
-2. **Add the files** as `icons/<slug>/20.svg` and `icons/<slug>/48.svg`. The slug is kebab-case, for example `heat-network`. The viewBox must be `0 0 20 20` / `0 0 48 48` and fills should be `currentColor`. Don't hand-edit the paths.
+2. **Add the files** as `icons/<slug>/20.svg` and `icons/<slug>/48.svg`, plus the Bold masters `20-bold.svg` and `48-bold.svg`. The slug is kebab-case, for example `heat-network`. The viewBox must be `0 0 20 20` / `0 0 48 48` and fills should be `currentColor`. Don't hand-edit the paths.
 3. **Add one metadata entry** to `src/data/icons.ts`. Its position in the list sets its position in the grid:
    ```ts
    {
@@ -83,23 +108,26 @@ Categories with no icons are hidden. **Fuels** is defined but empty for now, and
 
 ```
 icons/<slug>/20.svg, 48.svg      Source masters, exactly as exported from Figma
+icons/<slug>/20-bold.svg, 48-bold.svg   Bold masters (optional per icon)
 scripts/generate-icons.ts        Validation, registry generation and zip (npm run icons)
 src/
   config/icons.ts                Breakpoint, supported sizes, master selection
   config/site.ts                 Site name and GitHub / Figma / sponsor link slots
   data/categories.ts             Site categories and the Figma category mapping
   data/icons.ts                  Typed metadata (slug, name, category, keywords) and the IconName union
-  generated/icon-registry.ts     GENERATED: SVG markup keyed by slug and master (gitignored)
+  generated/icon-registry.ts     GENERATED: Regular SVG markup keyed by slug and master (gitignored)
+  generated/icon-registry-bold.ts  GENERATED: Bold SVG markup, same shape (gitignored)
+  generated/icon-registry-*.ts    GENERATED: one browser chunk per weight and master (gitignored)
   lib/icons/                     SVG helpers (withSize), getIconSvg, search and filter
   components/icon.tsx            <Icon> (and <IconMasterSvg> to render a specific master)
-  components/library/            Toolbar, grid, detail dialog, size selector, state provider
+  components/library/            Toolbar, grid, detail dialog, state provider
   components/layout/             Sidebar, theme toggle, menu button
   components/docs/               Docs page primitives
   app/                           Routes: /, /category/[category], /docs/*
-public/downloads/wild-icons.zip  GENERATED at build time for Download all (gitignored)
+public/downloads/energy-icons.zip  GENERATED at build time for Download all (gitignored)
 tests/                           node:test suites run with tsx
 ```
 
-- **Registry.** The generator reads each SVG and stores its viewBox, its inner markup and the full source file as strings, keyed by slug and master. `<Icon>` renders the inner markup inside an `<svg>` with the right viewBox and width/height, so rendering never parses or rewrites paths. Copy and download take the full source string and change only the root `width` and `height`.
-- **Routes.** `/` shows all icons. `/category/<id>` is statically generated for each non-empty category. `/docs/adding-an-icon` and `/docs/design-principles` are plain pages. Search text, grid size and the Names toggle live in a client context in the root layout, so they persist as you move between categories.
+- **Registry.** The generator reads each SVG and stores the source file once, keyed by slug and master. viewBox and inner markup are derived from that string. `<Icon>` renders the inner markup inside an `<svg>` with the right viewBox and width/height, so rendering never rewrites paths. Copy and download take the full source string and change only the root `width` and `height`. The browser ships the Regular 48 chunk with the page (the default size). The other master of the current weight loads after paint, and Bold loads when that weight is used.
+- **Routes.** `/` shows all icons. `/category/<id>` is statically generated for each non-empty category. `/docs/adding-an-icon` and `/docs/design-principles` are plain pages. Search text and grid size live in a client context in the root layout, so they persist as you move between categories.
 - **Later.** Adding docs pages means adding routes under `src/app/docs` and a link in `src/components/layout/sidebar.tsx`. GitHub, Figma and sponsor links go in `siteConfig.links` (`src/config/site.ts`), and the sidebar shows a Resources group once any of them are set.

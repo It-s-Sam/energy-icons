@@ -16,6 +16,7 @@ export default function AddingAnIconPage() {
             <P>
               Design the icon on a 20×20 frame with a 1px stroke and on a 48×48 frame with a 2px stroke. Outline
               strokes, flatten, and use a single fill. Export each frame as SVG with the full frame as the viewBox.
+              Draw the Bold weight the same way with a 1.25px stroke at 20 and a 2.5px stroke at 48.
             </P>
           </Step>
           <Step title="Drop the files into /icons/<slug>/">
@@ -27,14 +28,18 @@ export default function AddingAnIconPage() {
             <CodeBlock>{`icons/
   heat-network/
     20.svg
-    48.svg`}</CodeBlock>
+    48.svg
+    20-bold.svg
+    48-bold.svg`}</CodeBlock>
           </Step>
           <Step title="Add one metadata entry">
             <P>
               Add an entry to <Code>src/data/icons.ts</Code>. Its position in the list sets its position in the
               grid. <Code>category</Code> is one of <Code>generation</Code>, <Code>grid-storage</Code>,{" "}
-              <Code>heat-buildings</Code>, <Code>fuels</Code> or <Code>climate</Code>. A category with no icons is
-              hidden until its first icon arrives.
+              <Code>heat-buildings</Code>, <Code>fuels</Code>, <Code>climate</Code>, <Code>transport</Code>,{" "}
+              <Code>industry</Code>, <Code>data</Code>, <Code>business</Code>, <Code>tools</Code> or{" "}
+              <Code>interface</Code> (see <Code>src/data/categories.ts</Code>). A category with no icons is hidden
+              until its first icon arrives.
             </P>
             <CodeBlock>{`{
   slug: "heat-network",

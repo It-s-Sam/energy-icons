@@ -7,6 +7,8 @@
  * rules) is passed through byte-for-byte.
  */
 
+import type { IconMasterSource } from "./types";
+
 const ROOT_TAG = /<svg\b[^>]*>/;
 
 export interface ParsedSvg {
@@ -56,4 +58,14 @@ export function withSize(source: string, size: number): string {
 /** Extract every `d="…"` attribute value, in document order. */
 export function extractPathData(svg: string): string[] {
   return [...svg.matchAll(/\sd="([^"]*)"/g)].map((m) => m[1]);
+}
+
+/**
+ * Registry entry for one master. The generated files store the source SVG
+ * once; viewBox and inner markup are sliced from it here so path data is not
+ * duplicated in the bundle.
+ */
+export function toMasterSource(svg: string): IconMasterSource {
+  const { attributes, body } = parseSvg(svg);
+  return { viewBox: attributes.viewBox ?? "", body, svg };
 }

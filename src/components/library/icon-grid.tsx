@@ -1,23 +1,41 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 
-import { Icon } from "@/components/icon";
-import type { IconSize } from "@/config/icons";
+import { BrowserIcon } from "@/components/library/browser-icon";
+import { getMasterForSize, type IconSize, type IconWeight } from "@/config/icons";
 import type { IconName } from "@/data/icons";
+import { loadMaster, peekMaster } from "@/lib/icons/browser-masters";
 import type { IconEntry } from "@/lib/icons/filter";
 
 interface IconGridProps {
   icons: IconEntry[];
   size: IconSize;
-  showNames: boolean;
+  weight: IconWeight;
   selected: IconName | null;
   onSelect: (name: IconName) => void;
 }
 
-export function IconGrid({ icons, size, showNames, selected, onSelect }: IconGridProps) {
-  // Cells grow with the icon so spacing stays even at every size.
-  const cell = showNames ? Math.max(104, size + 64) : Math.max(64, size + 36);
+export function IconGrid({ icons, size, weight, selected, onSelect }: IconGridProps) {
+  const master = getMasterForSize(size);
+  const [held, setHeld] = useState({ size, weight });
+
+  useEffect(() => {
+    if (peekMaster(weight, master)) return;
+    let live = true;
+    loadMaster(weight, master).then(() => {
+      if (live) setHeld({ size, weight });
+    });
+    return () => {
+      live = false;
+    };
+  }, [size, weight, master]);
+
+  // Keep the previous drawing on screen until the chunk for this size arrives.
+  const display = peekMaster(weight, master) ? { size, weight } : held;
+  const displayMaster = getMasterForSize(display.size);
+  const canDraw = peekMaster(display.weight, displayMaster) !== undefined;
+  const cell = Math.max(64, display.size + 36);
 
   return (
     <ul
@@ -33,29 +51,16 @@ export function IconGrid({ icons, size, showNames, selected, onSelect }: IconGri
               type="button"
               onClick={() => onSelect(icon.slug)}
               data-slug={icon.slug}
-              aria-label={showNames ? undefined : icon.name}
+              aria-label={icon.name}
               aria-haspopup="dialog"
-              className={`group flex w-full flex-col items-center rounded-lg px-2 transition-colors ${
-                showNames ? "gap-2.5 pt-5 pb-3" : "py-4"
-              } ${
-                isSelected
-                  ? "bg-accent-soft text-accent shadow-[inset_0_0_0_1px_var(--accent-ring)]"
-                  : "text-fg hover:bg-accent-softer hover:text-accent"
+              className={`flex w-full flex-col items-center rounded-lg px-2 py-4 text-fg transition-colors ${
+                isSelected ? "bg-hover shadow-[inset_0_0_0_1px_var(--line-strong)]" : "hover:bg-hover"
               }`}
-              title={showNames ? undefined : icon.name}
+              title={icon.name}
             >
-              <span className="grid place-items-center" style={{ height: Math.max(size, 20) }}>
-                <Icon name={icon.slug} size={size} />
+              <span className="grid place-items-center" style={{ height: Math.max(display.size, 20) }}>
+                {canDraw && <BrowserIcon name={icon.slug} size={display.size} weight={display.weight} />}
               </span>
-              {showNames && (
-                <span
-                  className={`line-clamp-2 min-h-[2lh] text-center text-[11px] leading-[1.35] ${
-                    isSelected ? "text-accent" : "text-fg-muted group-hover:text-fg"
-                  }`}
-                >
-                  {icon.name}
-                </span>
-              )}
             </button>
           </li>
         );

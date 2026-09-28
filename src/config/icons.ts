@@ -25,12 +25,37 @@ export type IconMaster = (typeof ICON_MASTERS)[number];
 /** Stroke weight each master was originally drawn with (documentation only). */
 export const MASTER_STROKE_PX: Record<IconMaster, number> = { 20: 1, 48: 2 };
 
+/**
+ * Weights. Every icon ships Regular masters (`20.svg`, `48.svg`) and, when
+ * drawn, Bold masters (`20-bold.svg`, `48-bold.svg`). Bold is a separate,
+ * hand-built drawing, never a re-weighted Regular. The optical master rule
+ * (OPTICAL_MASTER_BREAKPOINT) applies to each weight in the same way.
+ */
+export const ICON_WEIGHTS = ["regular", "bold"] as const;
+export type IconWeight = (typeof ICON_WEIGHTS)[number];
+
+/** Weight used by <Icon> when none is given, and the weight the site opens at. */
+export const DEFAULT_ICON_WEIGHT: IconWeight = "regular";
+
+export const WEIGHT_LABELS: Record<IconWeight, string> = { regular: "Regular", bold: "Bold" };
+
+/** Stroke weight each master was drawn with, per weight (documentation only). */
+export const WEIGHT_STROKE_PX: Record<IconWeight, Record<IconMaster, number>> = {
+  regular: MASTER_STROKE_PX,
+  bold: { 20: 1.25, 48: 2.5 },
+};
+
+/** Master file name inside `/icons/<slug>/`, e.g. `20.svg` or `48-bold.svg`. */
+export function getMasterFileName(master: IconMaster, weight: IconWeight = DEFAULT_ICON_WEIGHT): string {
+  return weight === "regular" ? `${master}.svg` : `${master}-${weight}.svg`;
+}
+
 /** Display / export sizes offered in the UI. */
 export const SUPPORTED_SIZES = [12, 14, 16, 18, 20, 24, 28, 32, 40, 48, 64] as const;
 export type IconSize = (typeof SUPPORTED_SIZES)[number];
 
-/** Size used by <Icon> when none is given, and the grid's initial size. */
-export const DEFAULT_ICON_SIZE: IconSize = 24;
+/** Size used by <Icon> when none is given, and the size the site opens at. */
+export const DEFAULT_ICON_SIZE: IconSize = 32;
 
 /** Pick the optical master for a rendered size. */
 export function getMasterForSize(size: number): IconMaster {

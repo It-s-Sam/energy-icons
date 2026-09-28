@@ -1,0 +1,25 @@
+name: Icon request
+description: Ask for an icon that the library does not have yet.
+title: "Icon request: "
+labels: ["icon request"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: What should the icon be called?
+      placeholder: District heat substation
+    validations:
+      required: true
+  - type: textarea
+    id: use
+    attributes:
+      label: Where it shows up
+      description: The object, system, or idea it needs to depict.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Photos, diagrams, or existing symbols that should inform the drawing. Do not attach copyrighted artwork to copy.

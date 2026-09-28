@@ -1,14 +1,21 @@
 /**
  * Site categories, in sidebar order.
  *
- * Seeded from the Figma categories in export/icons.json:
- *   solar, wind, hydro       → generation
- *   grid, storage, charging  → grid-storage
- *   heating                  → heat-buildings
- *   industry                 → climate
+ * Mapped from the Figma categories (README → Categories, "site filter"):
+ *   solar, wind, offshore, hydro, geothermal, nuclear → generation
+ *   storage, charging, grid, electrical               → grid-storage
+ *   heating, buildings                                → heat-buildings
+ *   fuels                                             → fuels
+ *   industry, climate, weather                        → climate
+ *   transport                                         → transport
+ *   minerals                                          → industry
+ *   data                                              → data
+ *   business                                          → business
+ *   tools                                             → tools
+ *   shapes, ui                                        → interface
  *
  * Categories with zero icons are hidden from the UI automatically, and appear
- * as soon as one icon uses them (e.g. "fuels").
+ * as soon as one icon uses them.
  */
 export const CATEGORIES = [
   { id: "generation", label: "Generation" },
@@ -16,6 +23,12 @@ export const CATEGORIES = [
   { id: "heat-buildings", label: "Heat & Buildings" },
   { id: "fuels", label: "Fuels" },
   { id: "climate", label: "Climate" },
+  { id: "transport", label: "Transport" },
+  { id: "industry", label: "Industry" },
+  { id: "data", label: "Data" },
+  { id: "business", label: "Business" },
+  { id: "tools", label: "Tools" },
+  { id: "interface", label: "Interface" },
 ] as const;
 
 export type CategoryId = (typeof CATEGORIES)[number]["id"];

@@ -9,6 +9,8 @@ import {
   MASTER_STROKE_PX,
   OPTICAL_MASTER_BREAKPOINT,
   SUPPORTED_SIZES,
+  WEIGHT_LABELS,
+  WEIGHT_STROKE_PX,
 } from "@/config/icons";
 
 export const metadata: Metadata = { title: "Design principles" };
@@ -46,6 +48,25 @@ export default function DesignPrinciplesPage() {
           One drawing can’t do both, so each icon ships as a 20 master drawn with a 1px stroke and a 48 master
           drawn with a 2px stroke. Both are outlined to fills before export.
         </P>
+      </DocSection>
+
+      <DocSection title="Two weights">
+        <P>
+          Every master also comes in Bold, drawn with a {WEIGHT_STROKE_PX.bold[20]}px stroke at 20 and a{" "}
+          {WEIGHT_STROKE_PX.bold[48]}px stroke at 48 using the same construction rules. Bold is a separate drawing, not
+          a thicker stroke applied in code, and the scaling rule below picks its master in exactly the same way. Use{" "}
+          <Code>{`<Icon weight="bold" />`}</Code> or the Regular / Bold switch in the toolbar.
+        </P>
+        <div className="flex items-center gap-6 rounded-xl border border-line bg-surface p-4 text-fg">
+          {(["regular", "bold"] as const).map((weight) => (
+            <div key={weight} className="flex items-center gap-3">
+              <Icon name="wind-turbine" size={32} weight={weight} />
+              <Icon name="heat-pump-air" size={24} weight={weight} />
+              <Icon name="solar-panel-sun" size={16} weight={weight} />
+              <span className="text-[12px] text-fg-muted">{WEIGHT_LABELS[weight]}</span>
+            </div>
+          ))}
+        </div>
       </DocSection>
 
       <DocSection title="The scaling rule">

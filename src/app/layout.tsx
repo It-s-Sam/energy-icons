@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f6f3" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#141413" },
   ],
 };
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <LibraryProvider>
           <div className="flex h-dvh">
             <Sidebar />
-            <div className="flex min-w-0 flex-1 flex-col bg-bg">{children}</div>
+            <div className="flex min-w-0 flex-1 flex-col bg-main">{children}</div>
           </div>
         </LibraryProvider>
       </body>

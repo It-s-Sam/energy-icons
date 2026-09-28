@@ -1,4 +1,5 @@
 import type { IconMaster } from "@/config/icons";
+import type { IconName } from "@/data/icons";
 
 /** One master of one icon, as stored in the generated registry. */
 export interface IconMasterSource {
@@ -11,3 +12,6 @@ export interface IconMasterSource {
 }
 
 export type IconSources = Record<IconMaster, IconMasterSource>;
+
+/** Bold masters, when an icon has them (missing weights fall back to Regular). */
+export type IconBoldSources = Partial<Record<IconName, IconSources>>;

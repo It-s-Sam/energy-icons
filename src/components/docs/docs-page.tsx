@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { GithubButton } from "@/components/layout/github-button";
 import { MenuButton } from "@/components/layout/menu-button";
 import { ThemeToggle } from "@/components/layout/theme";
 
@@ -13,7 +14,10 @@ export function DocsPage({ title, lead, children }: { title: string; lead: strin
           <span className="text-fg-subtle">/</span>
           <span className="text-fg">{title}</span>
         </div>
-        <ThemeToggle />
+        <div className="flex items-center">
+          <GithubButton />
+          <ThemeToggle />
+        </div>
       </header>
       <main className="min-h-0 flex-1 overflow-y-auto">
         <article className="mx-auto max-w-[680px] px-6 pt-12 pb-24">

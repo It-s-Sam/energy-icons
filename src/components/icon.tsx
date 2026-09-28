@@ -1,13 +1,17 @@
-import type { SVGProps } from "react";
-
-import { DEFAULT_ICON_SIZE, getMasterForSize, type IconMaster, type IconSize } from "@/config/icons";
+import {
+  DEFAULT_ICON_SIZE,
+  DEFAULT_ICON_WEIGHT,
+  getMasterForSize,
+  type IconMaster,
+  type IconSize,
+  type IconWeight,
+} from "@/config/icons";
 import type { IconName } from "@/data/icons";
-import { iconRegistry } from "@/generated/icon-registry";
+import { getIconSource } from "@/lib/icons";
+import { resolveWeight } from "@/lib/icons/weight";
+import { IconSvg, type IconSvgProps } from "@/components/icon-svg";
 
-type SvgAttributes = Omit<
-  SVGProps<SVGSVGElement>,
-  "name" | "width" | "height" | "viewBox" | "children" | "dangerouslySetInnerHTML"
->;
+type SvgAttributes = Omit<IconSvgProps, "name" | "master" | "size" | "weight" | "viewBox" | "body">;
 
 export interface IconProps extends SvgAttributes {
   /** Icon slug, e.g. "wind-turbine" */
@@ -17,6 +21,11 @@ export interface IconProps extends SvgAttributes {
    * 48, 64. The 20 or 48 master is chosen via OPTICAL_MASTER_BREAKPOINT.
    */
   size?: IconSize | (number & {});
+  /**
+   * "regular" (default) or "bold". Bold uses its own 20/48 masters, picked by
+   * the same breakpoint. Icons without Bold masters render Regular.
+   */
+  weight?: IconWeight;
   /** Accessible label. Without it (or aria-label) the icon is decorative. */
   title?: string;
 }
@@ -27,39 +36,25 @@ export interface IconMasterSvgProps extends Omit<IconProps, "size"> {
   size: number;
 }
 
-const escapeText = (text: string) =>
-  text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
 /** Render one specific master at `size`. Prefer <Icon> in app code. */
-export function IconMasterSvg({ name, master, size, title, ...props }: IconMasterSvgProps) {
-  const source = iconRegistry[name][master];
-  const labelled = Boolean(title || props["aria-label"] || props["aria-labelledby"]);
-  const body = title ? `<title>${escapeText(title)}</title>${source.body}` : source.body;
-
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox={source.viewBox}
-      fill="currentColor"
-      data-icon={name}
-      data-master={master}
-      {...(labelled ? { role: "img", "aria-label": title } : { "aria-hidden": true, focusable: "false" })}
-      {...props}
-      width={size}
-      height={size}
-      dangerouslySetInnerHTML={{ __html: body }}
-    />
-  );
+export function IconMasterSvg({ name, master, size, weight = DEFAULT_ICON_WEIGHT, title, ...props }: IconMasterSvgProps) {
+  const rendered = resolveWeight(name, weight);
+  const source = getIconSource(name, master, rendered);
+  return <IconSvg name={name} master={master} size={size} weight={rendered} title={title} viewBox={source.viewBox} body={source.body} {...props} />;
 }
 
 /**
  * Inline SVG icon that inherits `currentColor`.
  *
  *   <Icon name="wind-turbine" size={24} />
+ *   <Icon name="wind-turbine" size={24} weight="bold" />
  *
  * Picks the 20 master below OPTICAL_MASTER_BREAKPOINT (32px) and the 48 master
- * from it upwards, then scales via width/height only. Path data and strokes
+ * from it upwards (for either weight), then scales via width/height only. Path data and strokes
  * are never modified.
+ *
+ * This loads every master. The icon browser uses BrowserIcon instead, which
+ * fetches one weight and master at a time.
  */
 export function Icon({ size = DEFAULT_ICON_SIZE, ...props }: IconProps) {
   return <IconMasterSvg {...props} master={getMasterForSize(size)} size={size} />;

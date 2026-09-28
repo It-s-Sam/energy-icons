@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { IconDetailDialog } from "@/components/library/icon-detail-dialog";
 import { IconGrid } from "@/components/library/icon-grid";
@@ -9,11 +9,20 @@ import { Toolbar } from "@/components/library/toolbar";
 import { SearchGlyph } from "@/components/ui/ui-icons";
 import { CATEGORY_LABELS } from "@/data/categories";
 import type { IconName } from "@/data/icons";
+import { loadMaster } from "@/lib/icons/browser-masters";
 import { filterIcons, TOTAL_ICONS, type CategoryFilter } from "@/lib/icons/filter";
 import Link from "next/link";
 
 export function IconBrowser({ category }: { category: CategoryFilter }) {
-  const { query, setQuery, size, showNames, setShowNames } = useLibrary();
+  const { query, setQuery, size, weight } = useLibrary();
+
+  // The default view already includes Regular 48. Pull in the other master of
+  // the current weight after paint so the size slider can cross 32px smoothly.
+  // Bold stays unloaded until that weight is chosen.
+  useEffect(() => {
+    loadMaster(weight, 20);
+    loadMaster(weight, 48);
+  }, [weight]);
   const [selected, setSelected] = useState<IconName | null>(null);
   const lastTrigger = useRef<HTMLElement | null>(null);
   const results = filterIcons(query, category);
@@ -39,7 +48,7 @@ export function IconBrowser({ category }: { category: CategoryFilter }) {
         <h1 className="sr-only">{heading}</h1>
         <div className="px-4 py-4 lg:px-6">
           {results.length > 0 ? (
-            <IconGrid icons={results} size={size} showNames={showNames} selected={selected} onSelect={open} />
+            <IconGrid icons={results} size={size} weight={weight} selected={selected} onSelect={open} />
           ) : (
             <div className="flex min-h-[50vh] flex-col items-center justify-center gap-3 text-center" data-testid="empty-state">
               <div className="grid size-10 place-items-center rounded-full border border-line text-fg-subtle">
@@ -70,19 +79,7 @@ export function IconBrowser({ category }: { category: CategoryFilter }) {
         </div>
       </main>
 
-      <footer className="flex h-11 shrink-0 items-center justify-center gap-6 border-t border-line px-4">
-        <label className="flex cursor-pointer items-center gap-2 text-[12px] text-fg-muted select-none hover:text-fg">
-          <input
-            type="checkbox"
-            checked={showNames}
-            onChange={(event) => setShowNames(event.target.checked)}
-            className="size-3.5 cursor-pointer rounded-[3px] accent-[#006FFF]"
-          />
-          Names
-        </label>
-      </footer>
-
-      {selected && <IconDetailDialog key={selected} name={selected} initialSize={size} onClose={close} />}
+      {selected && <IconDetailDialog key={selected} name={selected} initialSize={size} initialWeight={weight} onClose={close} />}
     </>
   );
 }

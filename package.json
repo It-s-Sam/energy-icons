@@ -1,6 +1,6 @@
 {
-  "name": "wild-icons",
-  "version": "0.1.0",
+  "name": "energy-icons-website",
+  "version": "1.0.0",
   "description": "Open-source icon library for the renewable energy and energy-transition sector.",
   "private": true,
   "engines": {
@@ -18,8 +18,9 @@
     "pretypecheck": "npm run icons && next typegen",
     "typecheck": "tsc --noEmit",
     "pretest": "npm run icons",
-    "test": "tsx --test tests/icon-system.test.ts tests/icon-component.test.tsx",
-    "check": "npm run lint && npm run typecheck && npm test && npm run build"
+    "test": "tsx --test tests/icon-system.test.ts tests/icon-component.test.tsx tests/package-icon.test.tsx",
+    "package": "tsx scripts/build-package.ts && tsc -p packages/energy-icons",
+    "check": "npm run lint && npm run typecheck && npm test && npm run package && npm run build"
   },
   "dependencies": {
     "geist": "^1.7.2",

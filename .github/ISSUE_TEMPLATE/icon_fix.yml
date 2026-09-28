@@ -1,0 +1,25 @@
+name: Icon fix
+description: Report an icon that looks wrong, is misnamed, or breaks at a size.
+title: "Fix: "
+labels: ["icon fix"]
+body:
+  - type: input
+    id: slug
+    attributes:
+      label: Icon slug
+      placeholder: wind-turbine
+    validations:
+      required: true
+  - type: dropdown
+    id: weight
+    attributes:
+      label: Weight
+      options: ["Regular", "Bold", "Both"]
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+    validations:
+      required: true

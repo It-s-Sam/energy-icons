@@ -2,7 +2,7 @@ import type { SVGProps } from "react";
 
 /**
  * Small stroke glyphs for app chrome (search, theme, close…).
- * These are UI affordances, not part of the Wild Icons library.
+ * These are UI affordances, not part of the Energy Icons library.
  */
 type GlyphProps = SVGProps<SVGSVGElement> & { size?: number };
 
@@ -33,10 +33,24 @@ export const SearchGlyph = (p: GlyphProps) => (
   </Glyph>
 );
 
-export const MenuGlyph = (p: GlyphProps) => (
-  <Glyph {...p}>
-    <path d="M2.75 4.5h10.5M2.75 8h10.5M2.75 11.5h10.5" />
-  </Glyph>
+/** Sidebar panel toggle — rounded frame with a left rail. */
+export const SidebarGlyph = ({ size = 20, className }: { size?: number; className?: string }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+    focusable="false"
+    className={className}
+  >
+    <path d="M11 3H13C16.771 3 18.657 3 19.828 4.172C21 5.343 21 7.229 21 11V13C21 16.771 21 18.657 19.828 19.828C18.657 21 16.771 21 13 21H11C7.229 21 5.343 21 4.172 19.828C3 18.657 3 16.771 3 13V11C3 7.229 3 5.343 4.172 4.172C5.343 3 7.229 3 11 3Z" />
+    <path d="M8.005 16.005L8.005 8.005" />
+  </svg>
 );
 
 export const MoonGlyph = (p: GlyphProps) => (
@@ -75,4 +89,23 @@ export const CloseGlyph = (p: GlyphProps) => (
   <Glyph {...p}>
     <path d="m4 4 8 8M12 4l-8 8" />
   </Glyph>
+);
+
+export const GithubGlyph = ({ size = 16, className }: { size?: number; className?: string }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.75}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+    focusable="false"
+    className={className}
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
 );
