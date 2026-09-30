@@ -55,12 +55,13 @@ export function Toolbar({ resultCount, totalCount }: { resultCount: number; tota
         </label>
       </div>
 
-      <div className="order-3 flex w-full items-center gap-4 pl-10 xl:order-2 xl:w-auto xl:pl-0">
+      {/* On phones the slider stretches and the controls wrap, so nothing runs off the edge. */}
+      <div className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-2 sm:pl-10 xl:order-2 xl:w-auto xl:flex-nowrap xl:pl-0">
         <div className="h-4 w-px bg-line max-xl:hidden" aria-hidden="true" />
-        <div className="flex items-center gap-3">
+        <div className="flex min-w-0 flex-1 items-center gap-3 sm:flex-none">
           <input
             type="range"
-            className="size-slider w-[165px]"
+            className="size-slider w-full min-w-[72px] sm:w-[165px]"
             min={0}
             max={SUPPORTED_SIZES.length - 1}
             step={1}
@@ -84,7 +85,7 @@ export function Toolbar({ resultCount, totalCount }: { resultCount: number; tota
           </div>
         </div>
         <span
-          className="inline-flex h-6 items-center gap-1.5 rounded-full border border-line px-2 text-[11px] font-medium whitespace-nowrap text-fg-muted"
+          className="inline-flex h-6 items-center gap-1.5 rounded-full border border-line px-2 text-[11px] font-medium whitespace-nowrap text-fg-muted max-sm:order-last"
           title={`Sizes ${master === 20 ? "below" : "from"} 32px use the ${master}×${master} master`}
           data-testid="master-indicator"
         >
@@ -98,7 +99,7 @@ export function Toolbar({ resultCount, totalCount }: { resultCount: number; tota
         />
       </div>
 
-      <div className="order-2 ml-auto flex items-center gap-2 xl:order-3">
+      <div className="order-2 ml-auto flex flex-wrap items-center justify-end gap-2 xl:order-3">
         <span className="px-1 text-[12px] whitespace-nowrap text-fg-subtle tabular-nums" aria-live="polite" data-testid="result-count">
           {resultCount} / {totalCount}
         </span>
@@ -110,7 +111,7 @@ export function Toolbar({ resultCount, totalCount }: { resultCount: number; tota
           className="inline-flex h-8 items-center gap-1.5 rounded-full bg-primary px-3 text-[12px] font-medium whitespace-nowrap text-primary-fg transition-colors hover:bg-primary-hover"
         >
           <DownloadGlyph size={14} />
-          Download all
+          Download<span className="max-[380px]:hidden"> all</span>
         </a>
       </div>
     </header>
