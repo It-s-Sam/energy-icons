@@ -59,7 +59,7 @@ const LAYOUT_DIALS = {
     buttonGap: range(19, 0, 60, 1),
     paddingY: range(66, 0, 200, 1),
     /** How much of the library window shows below the hero in the first view. */
-    peek: range(64, 0, 200, 1),
+    peek: range(72, 0, 200, 1),
   },
   nav: {
     size: range(16, 12, 20, 1),

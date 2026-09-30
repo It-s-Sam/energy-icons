@@ -202,13 +202,13 @@ dialog.icon-dialog[open] > div {
  * window shows in the first view, hinting there's more below.
  */
 .hero {
-  min-height: max(560px, calc(100svh - var(--stage-peek, 64px)));
-  --u: max(0.2px, min(100vw / 1954, (100svh - var(--stage-peek, 64px) - 340px) / 560));
+  min-height: max(560px, calc(100svh - var(--stage-peek, 72px)));
+  --u: max(0.2px, min(100vw / 1954, (100svh - var(--stage-peek, 72px) - 340px) / 560));
   --hu: calc(var(--u) * var(--headline-scale, 0.82));
 }
 @media (max-width: 767px) {
   .hero {
-    --u: max(0.2px, min((100vw - 32px) / 1202, (100svh - var(--stage-peek, 64px) - 300px) / 560));
+    --u: max(0.2px, min((100vw - 32px) / 1202, (100svh - var(--stage-peek, 72px) - 300px) / 560));
     --hu: var(--u);
   }
 }
@@ -335,11 +335,11 @@ dialog.icon-dialog[open] > div {
 /* ---------- Library stage (home) ---------- */
 /* The app window floats over a subtle hero field; values come from the "Library stage" dials. */
 .library-stage {
-  padding: var(--stage-pad, 16px);
+  padding: var(--stage-pad, 24px);
 }
 @media (max-width: 767px) {
   .library-stage {
-    padding: var(--stage-pad-mobile, 8px);
+    padding: var(--stage-pad-mobile, 12px);
   }
 }
 /* A frosted glass bezel with a light-catching stroke around the window. */

@@ -19,8 +19,8 @@ const range = (value: number, min: number, max: number, step: number): [number, 
 ];
 
 const STAGE_DIALS = {
-  padding: range(16, 0, 64, 1),
-  mobilePadding: range(8, 0, 32, 1),
+  padding: range(24, 0, 64, 1),
+  mobilePadding: range(12, 0, 32, 1),
   radius: range(20, 0, 48, 1),
   glass: {
     width: range(6, 0, 20, 0.5),
