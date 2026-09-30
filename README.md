@@ -154,7 +154,7 @@ The site lives at [energyicons.com](https://energyicons.com), set in `src/config
 
 ## License
 
-MIT, see [LICENSE](LICENSE). Free for personal and commercial use, and no attribution is required. Keep the `LICENSE` file when you redistribute the icon files. The npm package and the Download all zip include it.
+MIT, copyright Sam Passmore (ItsSam); see [LICENSE](LICENSE). Free for personal and commercial use, and no attribution is required. Keep the `LICENSE` file when you redistribute the icon files. The npm package and the Download all zip include it.
 
 Icons are drawn in Figma by Sam, and extended with Claude working from the same construction rules and grid. Every icon is reviewed and finalised by hand.
 
