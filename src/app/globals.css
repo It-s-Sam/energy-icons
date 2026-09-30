@@ -432,6 +432,7 @@ dialog.icon-dialog[open]::backdrop {
 .hero-button {
   padding: var(--button-py, 8px) var(--button-px, 16px);
   font-size: clamp(15px, 0.9vw + 6px, var(--button-size, 15px));
+  font-weight: var(--button-weight, 600);
   line-height: 1.25;
   letter-spacing: -0.05em;
   box-shadow: 0 0 0 rgb(0 40 120 / 0);
