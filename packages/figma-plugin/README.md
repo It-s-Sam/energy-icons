@@ -25,12 +25,12 @@ Both write `dist/code.js` and `dist/ui.html`, which `manifest.json` points at.
 2. Run it from **Plugins → Development → Energy Icons**.
 3. After a rebuild, close and reopen the plugin to load the new `dist/`.
 
-If Figma rejects the manifest's `id`, create a plugin with **Plugins → Development → New plugin…**, copy the ID it generates into `manifest.json`, and import again.
+`manifest.json` carries the published plugin ID (`1687188347733136771`), so local builds and published updates are the same plugin. Keep it unchanged.
 
 ## Publish
 
 1. `npm run figma` (the production build: check the log says `energyicons.com`).
-2. In Figma: **Plugins → Development → Manage plugins in development → Energy Icons → Publish**. Figma assigns the published ID; commit it to `manifest.json`.
+2. In Figma: **Plugins → Development → Manage plugins in development → Energy Icons → Publish**. Updates publish to the same listing because the ID in `manifest.json` matches.
 3. Listing assets are in `assets/`: `icon-128.png` (plugin icon) and `cover-1920x960.png` (cover art).
 4. Suggested listing:
    - **Tagline:** 1,000 open-source icons for energy, climate and infrastructure.
