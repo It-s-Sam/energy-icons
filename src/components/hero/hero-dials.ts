@@ -32,8 +32,8 @@ const LAYOUT_DIALS = {
     energyTop: range(-70, -160, 40, 1),
     iconsTop: range(97, 0, 220, 1),
     /** "Icons" fades from iconsOpacity at the top of the letters to iconsFade at the baseline. */
-    iconsOpacity: range(0.75, 0, 1, 0.01),
-    iconsFade: range(0.1, 0, 1, 0.01),
+    iconsOpacity: range(0.55, 0, 1, 0.01),
+    iconsFade: range(0.14, 0, 1, 0.01),
     /** Blur in design units, so the softness scales with the headline. */
     iconsSoften: range(1.5, 0, 8, 0.1),
   },
