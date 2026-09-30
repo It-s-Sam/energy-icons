@@ -58,6 +58,8 @@ const LAYOUT_DIALS = {
     headlineGap: range(14, 0, 120, 1),
     buttonGap: range(19, 0, 60, 1),
     paddingY: range(66, 0, 200, 1),
+    /** How much of the library window shows below the hero in the first view. */
+    peek: range(64, 0, 200, 1),
   },
   nav: {
     size: range(16, 12, 20, 1),
@@ -99,6 +101,7 @@ export function useHeroLayoutDials(): HeroLayout {
     "--headline-gap": d.spacing.headlineGap,
     "--button-gap": `${d.spacing.buttonGap}px`,
     "--content-py": d.spacing.paddingY,
+    "--stage-peek": `${d.spacing.peek}px`,
     "--nav-size": `${d.nav.size}px`,
     "--nav-gap": `${d.nav.gap}px`,
     "--nav-inset": `${d.nav.inset}px`,

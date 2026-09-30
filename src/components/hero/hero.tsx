@@ -65,7 +65,7 @@ export function Hero() {
 
   return (
     <section
-      className="hero relative isolate flex min-h-[max(560px,100svh)] flex-col items-center overflow-hidden text-white"
+      className="hero relative isolate flex flex-col items-center overflow-hidden text-white"
       style={layout.style}
     >
       <HeroBackground settings={field} />

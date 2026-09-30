@@ -197,13 +197,18 @@ dialog.icon-dialog[open] > div {
  * the headline scale dial. Unitless custom properties come from the DialKit
  * panel (src/components/hero/hero-dials.ts), whose defaults are the design.
  */
+/*
+ * The hero stops --stage-peek short of the viewport so the top of the library
+ * window shows in the first view, hinting there's more below.
+ */
 .hero {
-  --u: max(0.2px, min(100vw / 1954, (100svh - 340px) / 560));
+  min-height: max(560px, calc(100svh - var(--stage-peek, 64px)));
+  --u: max(0.2px, min(100vw / 1954, (100svh - var(--stage-peek, 64px) - 340px) / 560));
   --hu: calc(var(--u) * var(--headline-scale, 0.82));
 }
 @media (max-width: 767px) {
   .hero {
-    --u: max(0.2px, min((100vw - 32px) / 1202, (100svh - 300px) / 560));
+    --u: max(0.2px, min((100vw - 32px) / 1202, (100svh - var(--stage-peek, 64px) - 300px) / 560));
     --hu: var(--u);
   }
 }
