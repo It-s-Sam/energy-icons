@@ -52,7 +52,7 @@ const LAYOUT_DIALS = {
   },
   button: {
     size: range(15, 12, 28, 1),
-    weight: range(600, 300, 800, 100),
+    weight: range(500, 300, 800, 100),
     paddingX: range(16, 8, 40, 1),
     paddingY: range(8, 4, 24, 1),
     hoverLift: range(0, 0, 6, 0.5),
