@@ -8,7 +8,7 @@ import { Logo } from "@/components/layout/logo";
 import { useLibrary } from "@/components/library/library-provider";
 import { siteConfig } from "@/config/site";
 import { getNonEmptyCategories, TOTAL_ICONS } from "@/lib/icons/filter";
-import { categoryHref } from "@/lib/routes";
+import { categoryHref, inLibrary } from "@/lib/routes";
 
 const DOCS = [
   { href: "/docs/installation", label: "Installation" },
@@ -21,7 +21,7 @@ function NavLink({ href, active, children, count }: { href: string; active: bool
   const { setDrawerOpen } = useLibrary();
   return (
     <Link
-      href={href}
+      href={inLibrary(href)}
       onClick={() => setDrawerOpen(false)}
       aria-current={active ? "page" : undefined}
       className={`group flex h-7 items-center justify-between rounded-md px-2 text-[13px] transition-colors ${

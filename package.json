@@ -23,7 +23,9 @@
     "check": "npm run lint && npm run typecheck && npm test && npm run package && npm run build"
   },
   "dependencies": {
+    "dialkit": "^2.0.2",
     "geist": "^1.7.2",
+    "motion": "^13.4.6",
     "next": "16.3.6",
     "react": "19.2.8",
     "react-dom": "19.2.8"

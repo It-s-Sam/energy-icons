@@ -1,7 +1,15 @@
 import type { Metadata, Viewport } from "next";
+import { Montserrat } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+import { Hero } from "@/components/hero/hero";
+import { AppFrame } from "@/components/layout/app-frame";
 import { Sidebar } from "@/components/layout/sidebar";
 import { themeInitScript } from "@/components/layout/theme";
 import { LibraryProvider } from "@/components/library/library-provider";
@@ -11,6 +19,17 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: { default: `${siteConfig.name} — energy transition icons`, template: `%s · ${siteConfig.name}` },
   description: siteConfig.description,
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
 };
 
 export const viewport: Viewport = {
@@ -22,16 +41,16 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${montserrat.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="h-dvh overflow-hidden text-[13px]">
+      <body className="text-[13px]">
         <LibraryProvider>
-          <div className="flex h-dvh">
+          <AppFrame hero={<Hero />}>
             <Sidebar />
             <div className="flex min-w-0 flex-1 flex-col bg-main">{children}</div>
-          </div>
+          </AppFrame>
         </LibraryProvider>
       </body>
     </html>

@@ -130,7 +130,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
         if (event.target === event.currentTarget) event.currentTarget.close();
       }}
     >
-      <div className="flex w-[520px] max-w-full flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_24px_80px_-24px_rgb(0_0_0/0.28)]">
+      <div className="flex w-[520px] max-w-full flex-col overflow-hidden rounded-3xl border border-line bg-surface shadow-[0_24px_80px_-24px_rgb(0_0_0/0.28)]">
         <div className="flex items-start justify-between gap-4 px-5 pt-4 pb-3">
           <div className="min-w-0">
             <h2 id="icon-dialog-title" className="text-[15px] font-semibold tracking-[-0.01em] text-fg">
@@ -161,7 +161,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
                   loadMaster(weight, 20);
                   loadMaster(weight, 48);
                 }}
-                className="h-8 appearance-none rounded-lg border border-line bg-bg pr-7 pl-2.5 text-[12px] font-medium text-fg tabular-nums outline-none hover:bg-hover"
+                className="h-8 appearance-none rounded-xl border border-line bg-bg pr-7 pl-2.5 text-[12px] font-medium text-fg tabular-nums outline-none hover:bg-hover"
               >
                 {SUPPORTED_SIZES.map((option) => (
                   <option key={option} value={option}>
@@ -183,7 +183,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
               type="button"
               onClick={() => dialogRef.current?.close()}
               aria-label="Close"
-              className="grid size-8 place-items-center rounded-lg border border-transparent text-fg-muted hover:border-line hover:bg-hover hover:text-fg"
+              className="grid size-8 place-items-center rounded-xl border border-transparent text-fg-muted hover:border-line hover:bg-hover hover:text-fg"
             >
               <CloseGlyph />
             </button>
@@ -191,7 +191,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
         </div>
 
         <div className="flex flex-col gap-4 px-5 pb-5">
-          <figure className="overflow-hidden rounded-xl border border-line bg-bg">
+          <figure className="overflow-hidden rounded-2xl border border-line bg-bg">
             <div className="grid h-[220px] place-items-center text-fg" data-testid="detail-preview">
               <div
                 className="master-grid relative"
@@ -238,7 +238,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
                     aria-controls="framework-snippet"
                     tabIndex={selected ? 0 : -1}
                     onClick={() => setFramework(item.id)}
-                    className={`h-7 rounded-md px-2 text-[12px] whitespace-nowrap transition-colors ${
+                    className={`h-7 rounded-lg px-2 text-[12px] whitespace-nowrap transition-colors ${
                       selected ? "bg-hover font-medium text-fg" : "text-fg-muted hover:bg-hover hover:text-fg"
                     }`}
                   >
@@ -247,7 +247,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
                 );
               })}
             </div>
-            <div className="flex items-start justify-between gap-2 rounded-lg border border-line bg-bg py-2 pr-1 pl-3">
+            <div className="flex items-start justify-between gap-2 rounded-2xl border border-line bg-bg py-2 pr-1 pl-3">
               <pre
                 id="framework-snippet"
                 role="tabpanel"
@@ -259,7 +259,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
               <button
                 type="button"
                 onClick={handleSnippet}
-                className="inline-flex h-7 shrink-0 items-center gap-1 rounded-md px-2 text-[11.5px] text-fg-muted hover:bg-hover hover:text-fg"
+                className="inline-flex h-7 shrink-0 items-center gap-1 rounded-lg px-2 text-[11.5px] text-fg-muted hover:bg-hover hover:text-fg"
               >
                 {snippetCopied && copiedSnippet === snippet ? <CheckGlyph size={14} /> : <CopyGlyph size={14} />}
                 {snippetCopied && copiedSnippet === snippet ? "Copied" : "Copy"}
@@ -276,7 +276,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
             <button
               type="button"
               onClick={handleDownload}
-              className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-line-strong px-3 text-[12px] font-medium text-fg hover:bg-hover"
+              className="inline-flex h-8 items-center gap-1.5 rounded-xl border border-line-strong px-3 text-[12px] font-medium text-fg hover:bg-hover"
             >
               <DownloadGlyph size={14} />
               Download SVG
@@ -285,7 +285,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
               type="button"
               onClick={handleCopy}
               data-testid="copy-svg"
-              className="inline-flex h-8 min-w-[108px] items-center justify-center gap-1.5 rounded-lg bg-primary px-3 text-[12px] font-medium text-primary-fg hover:bg-primary-hover"
+              className="inline-flex h-8 min-w-[108px] items-center justify-center gap-1.5 rounded-xl bg-primary px-3 text-[12px] font-medium text-primary-fg hover:bg-primary-hover"
             >
               {copied ? <CheckGlyph size={14} /> : <CopyGlyph size={14} />}
               {copied ? "Copied" : "Copy SVG"}

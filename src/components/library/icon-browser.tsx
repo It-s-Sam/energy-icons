@@ -11,6 +11,7 @@ import { CATEGORY_LABELS } from "@/data/categories";
 import type { IconName } from "@/data/icons";
 import { loadMaster } from "@/lib/icons/browser-masters";
 import { filterIcons, TOTAL_ICONS, type CategoryFilter } from "@/lib/icons/filter";
+import { inLibrary } from "@/lib/routes";
 import Link from "next/link";
 
 export function IconBrowser({ category }: { category: CategoryFilter }) {
@@ -69,7 +70,7 @@ export function IconBrowser({ category }: { category: CategoryFilter }) {
                   Clear search
                 </button>
                 {category !== "all" && (
-                  <Link href="/" className="h-7 rounded-md px-2.5 text-[12px] leading-7 text-accent hover:bg-accent-softer">
+                  <Link href={inLibrary("/")} className="h-7 rounded-md px-2.5 text-[12px] leading-7 text-accent hover:bg-accent-softer">
                     Search all icons
                   </Link>
                 )}

@@ -26,7 +26,7 @@ export default function DesignPrinciplesPage() {
           {ICON_MASTERS.map((master) => {
             const sizes = getSizesForMaster(master);
             return (
-              <div key={master} className="rounded-xl border border-line bg-surface p-4">
+              <div key={master} className="rounded-2xl border border-line bg-surface p-4">
                 <div className="flex items-center justify-between">
                   <span className="text-[13px] font-medium text-fg">{master} master</span>
                   <span className="text-[11px] text-fg-subtle">
@@ -57,7 +57,7 @@ export default function DesignPrinciplesPage() {
           a thicker stroke applied in code, and the scaling rule below picks its master in exactly the same way. Use{" "}
           <Code>{`<Icon weight="bold" />`}</Code> or the Regular / Bold switch in the toolbar.
         </P>
-        <div className="flex items-center gap-6 rounded-xl border border-line bg-surface p-4 text-fg">
+        <div className="flex items-center gap-6 rounded-2xl border border-line bg-surface p-4 text-fg">
           {(["regular", "bold"] as const).map((weight) => (
             <div key={weight} className="flex items-center gap-3">
               <Icon name="wind-turbine" size={32} weight={weight} />
@@ -77,7 +77,7 @@ export default function DesignPrinciplesPage() {
           re-weighted, and <Code>non-scaling-stroke</Code> is never used. The breakpoint is{" "}
           <Code>OPTICAL_MASTER_BREAKPOINT</Code> in <Code>src/config/icons.ts</Code>.
         </P>
-        <div className="overflow-x-auto rounded-xl border border-line bg-surface">
+        <div className="overflow-x-auto rounded-2xl border border-line bg-surface">
           <div className="flex min-w-max items-end">
             {SUPPORTED_SIZES.map((size, i) => {
               const master = getMasterForSize(size);

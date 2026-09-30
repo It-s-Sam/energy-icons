@@ -1,0 +1,255 @@
+{
+  "appId": "energy-toolcraft",
+  "attachments": [
+    {
+      "paths": [
+        "bolt.svg"
+      ],
+      "asset": {
+        "lifecycle": "ready",
+        "resourceRef": "media:file:sha256:2cf294c51268f22f7eb5c45781da480901cb90a14ab5dc78f337b0d7208757de",
+        "assetKind": "file",
+        "fileName": "bolt.svg",
+        "id": "hero-icon-bolt",
+        "layerId": "default-media-layer-1",
+        "mimeType": "image/svg+xml",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "sourceTarget": "frames.icons"
+      }
+    },
+    {
+      "paths": [
+        "sun.svg"
+      ],
+      "asset": {
+        "lifecycle": "ready",
+        "resourceRef": "media:file:sha256:e8d2a8012849e3e7ed7fc4938aa0c9e397208ce4360aae665ba1e1eea2e77267",
+        "assetKind": "file",
+        "fileName": "sun.svg",
+        "id": "hero-icon-sun",
+        "layerId": "default-media-layer-2",
+        "mimeType": "image/svg+xml",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "sourceTarget": "frames.icons"
+      }
+    },
+    {
+      "paths": [
+        "wind-turbine.svg"
+      ],
+      "asset": {
+        "lifecycle": "ready",
+        "resourceRef": "media:file:sha256:94831cd633d6368a8218ad396ab319c7332b0d3a890c113f6f6d6f2081591c29",
+        "assetKind": "file",
+        "fileName": "wind-turbine.svg",
+        "id": "hero-icon-turbine",
+        "layerId": "default-media-layer-3",
+        "mimeType": "image/svg+xml",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "sourceTarget": "frames.icons"
+      }
+    },
+    {
+      "paths": [
+        "battery.svg"
+      ],
+      "asset": {
+        "lifecycle": "ready",
+        "resourceRef": "media:file:sha256:97c558b2d14c9001068546334c624048af56adee59cf296b83d071f5ff005b14",
+        "assetKind": "file",
+        "fileName": "battery.svg",
+        "id": "hero-icon-battery",
+        "layerId": "default-media-layer-4",
+        "mimeType": "image/svg+xml",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "sourceTarget": "frames.icons"
+      }
+    },
+    {
+      "paths": [
+        "plug.svg"
+      ],
+      "asset": {
+        "lifecycle": "ready",
+        "resourceRef": "media:file:sha256:0344283f1c56223615f90a091e7a7bea45c479011f380b9261f3fa752410543f",
+        "assetKind": "file",
+        "fileName": "plug.svg",
+        "id": "hero-icon-plug",
+        "layerId": "default-media-layer-5",
+        "mimeType": "image/svg+xml",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "sourceTarget": "frames.icons"
+      }
+    },
+    {
+      "paths": [
+        "leaf.svg"
+      ],
+      "asset": {
+        "lifecycle": "ready",
+        "resourceRef": "media:file:sha256:2c73ba4985d9da98921a0bf2332a6d0401d24ed874fc1ec871d1c808780a7da9",
+        "assetKind": "file",
+        "fileName": "leaf.svg",
+        "id": "hero-icon-leaf",
+        "layerId": "default-media-layer-6",
+        "mimeType": "image/svg+xml",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "sourceTarget": "frames.icons"
+      }
+    }
+  ],
+  "canvas": {
+    "aspectRatio": {
+      "height": 550,
+      "mode": "custom",
+      "value": "977:550",
+      "width": 977
+    },
+    "mode": "finite",
+    "size": {
+      "height": 1100,
+      "unit": "px",
+      "width": 1954
+    }
+  },
+  "exportedAt": "2026-09-30T10:28:04.380Z",
+  "source": "toolcraft-settings",
+  "timeline": {
+    "currentTimeSeconds": 7.905239999999943,
+    "durationSeconds": 10,
+    "expanded": false,
+    "isLooping": true,
+    "isPlaying": false
+  },
+  "values": {
+    "export.includeBackground": true,
+    "appearance.background": "#006FFF",
+    "canvas.workspaceBackground": "dots",
+    "canvas.renderScale": 1.75,
+    "grid.shape": "square",
+    "grid.color": "#FFFFFF",
+    "grid.spacing": 14,
+    "grid.dotSize": 3,
+    "grid.opacity": 18,
+    "energy.color": "#CFEBFF",
+    "energy.direction": 91,
+    "energy.wavelength": 440,
+    "energy.intensity": 41,
+    "energy.bandWidth": 30,
+    "energy.turbulence": 34,
+    "energy.shimmer": 16,
+    "energy.cycles": 2,
+    "mask.items": [
+      {
+        "feather": 67,
+        "position": {
+          "x": 0,
+          "y": -0.01
+        },
+        "radius": 47,
+        "rotation": -86,
+        "strength": 90,
+        "stretch": 1.05
+      }
+    ],
+    "mask.outside": 37,
+    "frames.icons": [
+      {
+        "mediaId": "hero-icon-bolt",
+        "position": {
+          "x": -0.73,
+          "y": -0.56
+        },
+        "size": 96,
+        "rotation": -8
+      },
+      {
+        "mediaId": "hero-icon-sun",
+        "position": {
+          "x": -0.86,
+          "y": -0.15
+        },
+        "size": 92,
+        "rotation": 6
+      },
+      {
+        "mediaId": "hero-icon-turbine",
+        "position": {
+          "x": -0.65,
+          "y": -0.02
+        },
+        "size": 96,
+        "rotation": -12
+      },
+      {
+        "mediaId": "hero-icon-battery",
+        "position": {
+          "x": 0.73,
+          "y": -0.43
+        },
+        "size": 104,
+        "rotation": 28
+      },
+      {
+        "mediaId": "hero-icon-plug",
+        "position": {
+          "x": 0.6,
+          "y": -0.03
+        },
+        "size": 92,
+        "rotation": 4
+      },
+      {
+        "mediaId": "hero-icon-leaf",
+        "position": {
+          "x": 0.81,
+          "y": 0.23
+        },
+        "size": 100,
+        "rotation": 38
+      }
+    ],
+    "frames.borderStyle": "dotted",
+    "frames.fill": {
+      "hex": "#FFFFFF",
+      "opacity": 14
+    },
+    "frames.border": {
+      "hex": "#FFFFFF",
+      "opacity": 45
+    },
+    "frames.iconColor": "#FFFFFF",
+    "frames.radius": 16,
+    "frames.iconScale": 44,
+    "frames.float": 8,
+    "glow.color": "#8FD0FF",
+    "glow.width": 48,
+    "glow.height": 23,
+    "glow.intensity": 63,
+    "glow.core": 45,
+    "glow.dotLift": 60,
+    "glow.pulse": 30,
+    "glow.pulseCount": 2,
+    "export.image.format": "png",
+    "export.image.resolution": "4k"
+  },
+  "version": 3
+}

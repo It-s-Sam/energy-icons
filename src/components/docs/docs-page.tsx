@@ -49,7 +49,7 @@ export function Code({ children }: { children: ReactNode }) {
 
 export function CodeBlock({ children }: { children: string }) {
   return (
-    <pre className="overflow-x-auto rounded-lg border border-line bg-surface px-4 py-3 font-mono text-[12px] leading-[1.6] text-fg">
+    <pre className="overflow-x-auto rounded-2xl border border-line bg-surface px-4 py-3 font-mono text-[12px] leading-[1.6] text-fg">
       <code>{children}</code>
     </pre>
   );

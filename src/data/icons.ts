@@ -26,6 +26,18 @@ export const icons = [
     keywords: ["agri-PV", "farming", "crops", "solar"],
   },
   {
+    slug: "balcony-solar",
+    name: "Balcony solar",
+    category: "generation",
+    keywords: ["balcony PV", "plug-in solar", "apartment"],
+  },
+  {
+    slug: "bifacial-panel",
+    name: "Bifacial panel",
+    category: "generation",
+    keywords: ["bifacial", "PV", "module"],
+  },
+  {
     slug: "concentrated-solar",
     name: "Concentrated solar",
     category: "generation",
@@ -44,6 +56,12 @@ export const icons = [
     keywords: ["rooftop solar", "home", "house", "solar panels", "residential", "PV"],
   },
   {
+    slug: "portable-solar",
+    name: "Portable solar",
+    category: "generation",
+    keywords: ["portable PV", "suitcase solar", "off-grid"],
+  },
+  {
     slug: "solar-array-sun",
     name: "Solar array sun",
     category: "generation",
@@ -54,6 +72,12 @@ export const icons = [
     name: "Solar battery",
     category: "generation",
     keywords: ["PV storage", "solar", "battery"],
+  },
+  {
+    slug: "solar-canopy",
+    name: "Solar canopy",
+    category: "generation",
+    keywords: ["canopy", "carport", "PV shade"],
   },
   {
     slug: "solar-carport",
@@ -80,6 +104,24 @@ export const icons = [
     keywords: ["inverter", "DC to AC", "solar", "PV"],
   },
   {
+    slug: "solar-irradiance",
+    name: "Solar irradiance",
+    category: "generation",
+    keywords: ["irradiance", "insolation", "sun"],
+  },
+  {
+    slug: "solar-kit",
+    name: "Solar kit",
+    category: "generation",
+    keywords: ["solar kit", "off-grid", "PV"],
+  },
+  {
+    slug: "solar-meter",
+    name: "Solar meter",
+    category: "generation",
+    keywords: ["generation meter", "PV", "kWh"],
+  },
+  {
     slug: "solar-panel",
     name: "Solar panel",
     category: "generation",
@@ -90,6 +132,12 @@ export const icons = [
     name: "Solar panel alert",
     category: "generation",
     keywords: ["solar panel", "PV", "photovoltaic", "warning", "alert", "error"],
+  },
+  {
+    slug: "solar-panel-bolt",
+    name: "Solar panel bolt",
+    category: "generation",
+    keywords: ["solar panel", "electricity", "PV"],
   },
   {
     slug: "solar-panel-check",
@@ -114,6 +162,18 @@ export const icons = [
     name: "Solar panel x",
     category: "generation",
     keywords: ["solar panel", "PV", "photovoltaic", "remove", "fault", "offline"],
+  },
+  {
+    slug: "solar-pump",
+    name: "Solar pump",
+    category: "generation",
+    keywords: ["solar pump", "water", "PV"],
+  },
+  {
+    slug: "solar-street-light",
+    name: "Solar street light",
+    category: "generation",
+    keywords: ["street light", "solar", "lighting"],
   },
   {
     slug: "solar-thermal",
@@ -170,10 +230,40 @@ export const icons = [
     keywords: ["wind speed", "measurement", "met mast"],
   },
   {
+    slug: "blade-transport",
+    name: "Blade transport",
+    category: "generation",
+    keywords: ["blade", "logistics", "wind"],
+  },
+  {
     slug: "floating-wind",
     name: "Floating wind",
     category: "generation",
     keywords: ["offshore wind", "deep water", "wind turbine"],
+  },
+  {
+    slug: "nacelle",
+    name: "Nacelle",
+    category: "generation",
+    keywords: ["nacelle", "wind turbine", "housing"],
+  },
+  {
+    slug: "rotor",
+    name: "Rotor",
+    category: "generation",
+    keywords: ["rotor", "blades", "wind"],
+  },
+  {
+    slug: "small-wind-turbine",
+    name: "Small wind turbine",
+    category: "generation",
+    keywords: ["small wind", "micro wind", "turbine"],
+  },
+  {
+    slug: "turbine-maintenance",
+    name: "Turbine maintenance",
+    category: "generation",
+    keywords: ["maintenance", "service", "wind turbine"],
   },
   {
     slug: "vertical-axis-turbine",
@@ -194,6 +284,12 @@ export const icons = [
     keywords: ["turbine blade", "rotor blade", "wind", "manufacturing"],
   },
   {
+    slug: "wind-direction",
+    name: "Wind direction",
+    category: "generation",
+    keywords: ["wind vane", "direction", "meteorology"],
+  },
+  {
     slug: "wind-farm",
     name: "Wind farm",
     category: "generation",
@@ -212,6 +308,12 @@ export const icons = [
     keywords: ["windsock", "wind direction", "airfield", "weather"],
   },
   {
+    slug: "wind-speed",
+    name: "Wind speed",
+    category: "generation",
+    keywords: ["wind speed", "anemometer", "meteorology"],
+  },
+  {
     slug: "wind-turbine",
     name: "Wind turbine",
     category: "generation",
@@ -222,6 +324,12 @@ export const icons = [
     name: "Wind turbine alert",
     category: "generation",
     keywords: ["wind turbine", "wind power", "renewable", "warning", "alert", "error"],
+  },
+  {
+    slug: "wind-turbine-bolt",
+    name: "Wind turbine bolt",
+    category: "generation",
+    keywords: ["wind turbine", "electricity", "power"],
   },
   {
     slug: "wind-turbine-check",
@@ -260,10 +368,52 @@ export const icons = [
     keywords: ["marker", "navigation", "offshore", "sea"],
   },
   {
+    slug: "cable-lay-vessel",
+    name: "Cable lay vessel",
+    category: "generation",
+    keywords: ["cable layer", "subsea", "vessel"],
+  },
+  {
+    slug: "crew-transfer-vessel",
+    name: "Crew transfer vessel",
+    category: "generation",
+    keywords: ["CTV", "crew transfer", "offshore"],
+  },
+  {
+    slug: "helideck",
+    name: "Helideck",
+    category: "generation",
+    keywords: ["helideck", "helicopter", "offshore"],
+  },
+  {
     slug: "jack-up-vessel",
     name: "Jack up vessel",
     category: "generation",
     keywords: ["jack-up vessel", "installation vessel", "offshore construction", "crane ship"],
+  },
+  {
+    slug: "jacket-foundation",
+    name: "Jacket foundation",
+    category: "generation",
+    keywords: ["jacket", "foundation", "offshore"],
+  },
+  {
+    slug: "lighthouse",
+    name: "Lighthouse",
+    category: "generation",
+    keywords: ["lighthouse", "navigation", "coast"],
+  },
+  {
+    slug: "monopile",
+    name: "Monopile",
+    category: "generation",
+    keywords: ["monopile", "foundation", "offshore wind"],
+  },
+  {
+    slug: "mooring",
+    name: "Mooring",
+    category: "generation",
+    keywords: ["mooring", "anchor", "offshore"],
   },
   {
     slug: "offshore-platform",
@@ -284,16 +434,46 @@ export const icons = [
     keywords: ["wind turbines", "sea", "offshore wind"],
   },
   {
+    slug: "port",
+    name: "Port",
+    category: "generation",
+    keywords: ["port", "harbour", "shipping"],
+  },
+  {
+    slug: "rov",
+    name: "ROV",
+    category: "generation",
+    keywords: ["ROV", "underwater robot", "subsea"],
+  },
+  {
+    slug: "service-vessel",
+    name: "Service vessel",
+    category: "generation",
+    keywords: ["SOV", "service vessel", "offshore"],
+  },
+  {
     slug: "subsea-cable",
     name: "Subsea cable",
     category: "generation",
     keywords: ["export cable", "interconnector", "seabed"],
   },
   {
+    slug: "canal-lock",
+    name: "Canal lock",
+    category: "generation",
+    keywords: ["lock", "canal", "waterway"],
+  },
+  {
     slug: "dam",
     name: "Dam",
     category: "generation",
     keywords: ["hydropower", "reservoir", "hydroelectric"],
+  },
+  {
+    slug: "fish-ladder",
+    name: "Fish ladder",
+    category: "generation",
+    keywords: ["fish pass", "ecology", "hydro"],
   },
   {
     slug: "hydro-plant",
@@ -308,10 +488,28 @@ export const icons = [
     keywords: ["hydropower", "hydroelectric", "water turbine", "dam", "run-of-river", "generation"],
   },
   {
+    slug: "penstock",
+    name: "Penstock",
+    category: "generation",
+    keywords: ["penstock", "hydro", "pipe"],
+  },
+  {
     slug: "pumped-hydro",
     name: "Pumped hydro",
     category: "generation",
     keywords: ["pumped storage", "reservoir", "long-duration storage"],
+  },
+  {
+    slug: "reservoir",
+    name: "Reservoir",
+    category: "generation",
+    keywords: ["reservoir", "water", "storage"],
+  },
+  {
+    slug: "run-of-river",
+    name: "Run of river",
+    category: "generation",
+    keywords: ["run of river", "hydro", "RoR"],
   },
   {
     slug: "tidal-barrage",
@@ -344,6 +542,18 @@ export const icons = [
     keywords: ["wave energy", "marine energy", "ocean"],
   },
   {
+    slug: "weir",
+    name: "Weir",
+    category: "generation",
+    keywords: ["weir", "river", "hydro"],
+  },
+  {
+    slug: "borehole",
+    name: "Borehole",
+    category: "generation",
+    keywords: ["borehole", "well", "geothermal"],
+  },
+  {
     slug: "geothermal-plant",
     name: "Geothermal plant",
     category: "generation",
@@ -354,6 +564,30 @@ export const icons = [
     name: "Geothermal well",
     category: "generation",
     keywords: ["borehole", "drilling", "ground heat"],
+  },
+  {
+    slug: "geyser",
+    name: "Geyser",
+    category: "generation",
+    keywords: ["geyser", "steam", "geothermal"],
+  },
+  {
+    slug: "ground-loop",
+    name: "Ground loop",
+    category: "generation",
+    keywords: ["ground loop", "ground source", "geothermal"],
+  },
+  {
+    slug: "heat-flow",
+    name: "Heat flow",
+    category: "generation",
+    keywords: ["heat flow", "geothermal", "flux"],
+  },
+  {
+    slug: "hot-spring",
+    name: "Hot spring",
+    category: "generation",
+    keywords: ["hot spring", "geothermal", "spa"],
   },
   {
     slug: "volcano",
@@ -368,6 +602,24 @@ export const icons = [
     keywords: ["nuclear", "science", "physics"],
   },
   {
+    slug: "cooling-tower",
+    name: "Cooling tower",
+    category: "generation",
+    keywords: ["cooling tower", "nuclear", "steam"],
+  },
+  {
+    slug: "fuel-rod",
+    name: "Fuel rod",
+    category: "generation",
+    keywords: ["fuel rod", "nuclear", "uranium"],
+  },
+  {
+    slug: "fusion",
+    name: "Fusion",
+    category: "generation",
+    keywords: ["fusion", "plasma", "reactor"],
+  },
+  {
     slug: "nuclear-plant",
     name: "Nuclear plant",
     category: "generation",
@@ -380,10 +632,34 @@ export const icons = [
     keywords: ["radioactive", "nuclear", "hazard", "trefoil"],
   },
   {
+    slug: "radiation-shield",
+    name: "Radiation shield",
+    category: "generation",
+    keywords: ["radiation", "shield", "nuclear"],
+  },
+  {
+    slug: "smr",
+    name: "SMR",
+    category: "generation",
+    keywords: ["SMR", "small modular reactor", "nuclear"],
+  },
+  {
+    slug: "uranium",
+    name: "Uranium",
+    category: "generation",
+    keywords: ["uranium", "nuclear fuel", "atom"],
+  },
+  {
     slug: "battery-alert",
     name: "Battery alert",
     category: "grid-storage",
     keywords: ["battery", "storage", "charge", "warning", "alert", "error"],
+  },
+  {
+    slug: "battery-bolt",
+    name: "Battery bolt",
+    category: "grid-storage",
+    keywords: ["battery", "power", "electricity"],
   },
   {
     slug: "battery-cell",
@@ -422,6 +698,12 @@ export const icons = [
     keywords: ["charged", "100%", "power"],
   },
   {
+    slug: "battery-half",
+    name: "Battery half",
+    category: "grid-storage",
+    keywords: ["battery", "charge level", "half"],
+  },
+  {
     slug: "battery-low",
     name: "Battery low",
     category: "grid-storage",
@@ -440,10 +722,28 @@ export const icons = [
     keywords: ["battery", "storage", "charge", "add", "new", "plus"],
   },
   {
+    slug: "battery-rack",
+    name: "Battery rack",
+    category: "grid-storage",
+    keywords: ["battery rack", "modules", "storage"],
+  },
+  {
+    slug: "battery-recycle",
+    name: "Battery recycle",
+    category: "grid-storage",
+    keywords: ["battery recycling", "circular", "reuse"],
+  },
+  {
     slug: "battery-storage",
     name: "Battery storage",
     category: "grid-storage",
     keywords: ["battery storage", "BESS", "grid storage", "energy storage", "home battery"],
+  },
+  {
+    slug: "battery-swap",
+    name: "Battery swap",
+    category: "grid-storage",
+    keywords: ["battery swap", "exchange", "EV"],
   },
   {
     slug: "battery-warning",
@@ -488,10 +788,46 @@ export const icons = [
     keywords: ["domestic storage", "powerwall", "residential"],
   },
   {
+    slug: "hydrogen-tank",
+    name: "Hydrogen tank",
+    category: "grid-storage",
+    keywords: ["hydrogen", "H2", "tank"],
+  },
+  {
+    slug: "liquid-air",
+    name: "Liquid air",
+    category: "grid-storage",
+    keywords: ["liquid air", "LAES", "cryogenic"],
+  },
+  {
+    slug: "sand-battery",
+    name: "Sand battery",
+    category: "grid-storage",
+    keywords: ["sand battery", "thermal storage", "heat"],
+  },
+  {
+    slug: "second-life-battery",
+    name: "Second life battery",
+    category: "grid-storage",
+    keywords: ["second life", "reuse", "battery"],
+  },
+  {
+    slug: "supercapacitor",
+    name: "Supercapacitor",
+    category: "grid-storage",
+    keywords: ["supercapacitor", "ultracapacitor", "storage"],
+  },
+  {
     slug: "thermal-storage",
     name: "Thermal storage",
     category: "grid-storage",
     keywords: ["heat battery", "hot water tank", "heat store"],
+  },
+  {
+    slug: "charge-card",
+    name: "Charge card",
+    category: "grid-storage",
+    keywords: ["RFID", "charge card", "EV"],
   },
   {
     slug: "charge-point-sign",
@@ -512,10 +848,28 @@ export const icons = [
     keywords: ["out of order", "EV charger", "error"],
   },
   {
+    slug: "charger-location",
+    name: "Charger location",
+    category: "grid-storage",
+    keywords: ["charger map", "location", "EV"],
+  },
+  {
+    slug: "charger-slow",
+    name: "Charger slow",
+    category: "grid-storage",
+    keywords: ["slow charger", "AC charging", "EV"],
+  },
+  {
     slug: "charging-cable",
     name: "Charging cable",
     category: "grid-storage",
     keywords: ["EV cable", "lead", "connector"],
+  },
+  {
+    slug: "charging-schedule",
+    name: "Charging schedule",
+    category: "grid-storage",
+    keywords: ["schedule", "smart charging", "EV"],
   },
   {
     slug: "connector-ccs",
@@ -524,10 +878,40 @@ export const icons = [
     keywords: ["CCS", "combo connector", "DC charging", "EV plug"],
   },
   {
+    slug: "connector-chademo",
+    name: "Connector CHAdeMO",
+    category: "grid-storage",
+    keywords: ["CHAdeMO", "DC plug", "EV"],
+  },
+  {
+    slug: "connector-nacs",
+    name: "Connector NACS",
+    category: "grid-storage",
+    keywords: ["NACS", "Tesla plug", "EV"],
+  },
+  {
+    slug: "connector-type1",
+    name: "Connector type1",
+    category: "grid-storage",
+    keywords: ["Type 1", "J1772", "EV plug"],
+  },
+  {
     slug: "connector-type2",
     name: "Connector Type 2",
     category: "grid-storage",
     keywords: ["Type 2", "Mennekes", "AC charging", "EV plug"],
+  },
+  {
+    slug: "depot-charging",
+    name: "Depot charging",
+    category: "grid-storage",
+    keywords: ["depot", "fleet charging", "EV"],
+  },
+  {
+    slug: "e-bike-charging",
+    name: "E-bike charging",
+    category: "grid-storage",
+    keywords: ["e-bike", "charging", "micromobility"],
   },
   {
     slug: "electric-car",
@@ -608,6 +992,12 @@ export const icons = [
     keywords: ["EV plugged in", "charging", "electric car", "connected"],
   },
   {
+    slug: "pantograph-charger",
+    name: "Pantograph charger",
+    category: "grid-storage",
+    keywords: ["pantograph", "opportunity charging", "bus"],
+  },
+  {
     slug: "plug",
     name: "Plug",
     category: "grid-storage",
@@ -656,6 +1046,12 @@ export const icons = [
     keywords: ["inductive charging", "EV", "contactless"],
   },
   {
+    slug: "blackout",
+    name: "Blackout",
+    category: "grid-storage",
+    keywords: ["blackout", "outage", "power cut"],
+  },
+  {
     slug: "bolt",
     name: "Bolt",
     category: "grid-storage",
@@ -692,6 +1088,12 @@ export const icons = [
     keywords: ["reel", "cable", "installation"],
   },
   {
+    slug: "capacity",
+    name: "Capacity",
+    category: "grid-storage",
+    keywords: ["capacity", "grid", "power"],
+  },
+  {
     slug: "circuit-breaker",
     name: "Circuit breaker",
     category: "grid-storage",
@@ -708,6 +1110,30 @@ export const icons = [
     name: "Demand response",
     category: "grid-storage",
     keywords: ["DSR", "flexibility", "load shifting"],
+  },
+  {
+    slug: "dispatch",
+    name: "Dispatch",
+    category: "grid-storage",
+    keywords: ["dispatch", "control room", "generation"],
+  },
+  {
+    slug: "energy-flow",
+    name: "Energy flow",
+    category: "grid-storage",
+    keywords: ["energy flow", "sankey", "power"],
+  },
+  {
+    slug: "energy-trading",
+    name: "Energy trading",
+    category: "grid-storage",
+    keywords: ["energy trading", "market", "wholesale"],
+  },
+  {
+    slug: "feed-in",
+    name: "Feed in",
+    category: "grid-storage",
+    keywords: ["feed-in", "FiT", "export"],
   },
   {
     slug: "frequency",
@@ -728,10 +1154,28 @@ export const icons = [
     keywords: ["backup power", "diesel generator", "genset"],
   },
   {
+    slug: "grid-connection",
+    name: "Grid connection",
+    category: "grid-storage",
+    keywords: ["grid connection", "interconnection", "export"],
+  },
+  {
+    slug: "grid-flexibility",
+    name: "Grid flexibility",
+    category: "grid-storage",
+    keywords: ["flexibility", "demand response", "grid"],
+  },
+  {
     slug: "grid-network",
     name: "Grid network",
     category: "grid-storage",
     keywords: ["grid", "network", "nodes", "transmission", "distribution"],
+  },
+  {
+    slug: "import-export",
+    name: "Import export",
+    category: "grid-storage",
+    keywords: ["import", "export", "interconnector"],
   },
   {
     slug: "interconnector",
@@ -740,10 +1184,22 @@ export const icons = [
     keywords: ["cross-border", "HVDC", "transmission"],
   },
   {
+    slug: "load-shifting",
+    name: "Load shifting",
+    category: "grid-storage",
+    keywords: ["load shifting", "demand", "flexibility"],
+  },
+  {
     slug: "microgrid",
     name: "Microgrid",
     category: "grid-storage",
     keywords: ["local energy", "islanded", "community energy"],
+  },
+  {
+    slug: "peak-demand",
+    name: "Peak demand",
+    category: "grid-storage",
+    keywords: ["peak demand", "peak load", "grid"],
   },
   {
     slug: "power-line",
@@ -830,10 +1286,28 @@ export const icons = [
     keywords: ["buried cable", "distribution", "trench"],
   },
   {
+    slug: "virtual-power-plant",
+    name: "Virtual power plant",
+    category: "grid-storage",
+    keywords: ["virtual power plant", "VPP", "aggregation"],
+  },
+  {
     slug: "alternating-current",
     name: "Alternating current",
     category: "grid-storage",
     keywords: ["AC", "sine wave", "electricity"],
+  },
+  {
+    slug: "ammeter",
+    name: "Ammeter",
+    category: "grid-storage",
+    keywords: ["ammeter", "current", "meter"],
+  },
+  {
+    slug: "battery-symbol",
+    name: "Battery symbol",
+    category: "grid-storage",
+    keywords: ["battery", "cell symbol", "electrical"],
   },
   {
     slug: "capacitor",
@@ -866,10 +1340,40 @@ export const icons = [
     keywords: ["earth", "electrical symbol", "earthing"],
   },
   {
+    slug: "inductor",
+    name: "Inductor",
+    category: "grid-storage",
+    keywords: ["inductor", "coil", "electrical"],
+  },
+  {
+    slug: "lamp",
+    name: "Lamp",
+    category: "grid-storage",
+    keywords: ["lamp", "light", "bulb"],
+  },
+  {
     slug: "led",
     name: "LED",
     category: "grid-storage",
     keywords: ["light-emitting diode", "lighting", "efficient"],
+  },
+  {
+    slug: "oscilloscope",
+    name: "Oscilloscope",
+    category: "grid-storage",
+    keywords: ["oscilloscope", "waveform", "signal"],
+  },
+  {
+    slug: "rcd",
+    name: "RCD",
+    category: "grid-storage",
+    keywords: ["RCD", "residual current", "safety switch"],
+  },
+  {
+    slug: "relay",
+    name: "Relay",
+    category: "grid-storage",
+    keywords: ["relay", "switch", "electrical"],
   },
   {
     slug: "resistor",
@@ -878,10 +1382,52 @@ export const icons = [
     keywords: ["resistance", "ohm", "circuit"],
   },
   {
+    slug: "switch-closed",
+    name: "Switch closed",
+    category: "grid-storage",
+    keywords: ["switch", "closed", "circuit"],
+  },
+  {
     slug: "switch-open",
     name: "Switch open",
     category: "grid-storage",
     keywords: ["switch", "open circuit", "isolator", "electrical symbol"],
+  },
+  {
+    slug: "voltmeter",
+    name: "Voltmeter",
+    category: "grid-storage",
+    keywords: ["voltmeter", "voltage", "meter"],
+  },
+  {
+    slug: "wattmeter",
+    name: "Wattmeter",
+    category: "grid-storage",
+    keywords: ["wattmeter", "power", "meter"],
+  },
+  {
+    slug: "chiller",
+    name: "Chiller",
+    category: "heat-buildings",
+    keywords: ["cooling", "HVAC", "refrigeration"],
+  },
+  {
+    slug: "cold-storage",
+    name: "Cold storage",
+    category: "heat-buildings",
+    keywords: ["refrigeration", "cold room", "warehouse"],
+  },
+  {
+    slug: "district-heating",
+    name: "District heating",
+    category: "heat-buildings",
+    keywords: ["heat network", "DHN", "pipes"],
+  },
+  {
+    slug: "fireplace",
+    name: "Fireplace",
+    category: "heat-buildings",
+    keywords: ["hearth", "wood", "heating"],
   },
   {
     slug: "flame",
@@ -890,10 +1436,22 @@ export const icons = [
     keywords: ["fire", "gas", "heat", "burn", "combustion"],
   },
   {
+    slug: "heat-battery",
+    name: "Heat battery",
+    category: "heat-buildings",
+    keywords: ["thermal storage", "heat", "battery"],
+  },
+  {
     slug: "heat-exchanger",
     name: "Heat exchanger",
     category: "heat-buildings",
     keywords: ["heat transfer", "HVAC", "plate exchanger"],
+  },
+  {
+    slug: "heat-meter",
+    name: "Heat meter",
+    category: "heat-buildings",
+    keywords: ["heat", "metering", "kWh"],
   },
   {
     slug: "heat-network",
@@ -926,10 +1484,22 @@ export const icons = [
     keywords: ["water source heat pump", "WSHP", "heat pump", "lake", "river"],
   },
   {
+    slug: "heat-recovery",
+    name: "Heat recovery",
+    category: "heat-buildings",
+    keywords: ["waste heat", "HRV", "ventilation"],
+  },
+  {
     slug: "hot-water",
     name: "Hot water",
     category: "heat-buildings",
     keywords: ["tap", "shower", "boiler", "DHW"],
+  },
+  {
+    slug: "pellet-boiler",
+    name: "Pellet boiler",
+    category: "heat-buildings",
+    keywords: ["biomass", "pellets", "boiler"],
   },
   {
     slug: "radiator",
@@ -944,6 +1514,12 @@ export const icons = [
     keywords: ["TRV", "thermostatic valve", "radiator", "heating control"],
   },
   {
+    slug: "smart-thermostat",
+    name: "Smart thermostat",
+    category: "heat-buildings",
+    keywords: ["thermostat", "connected", "heating control"],
+  },
+  {
     slug: "snowflake",
     name: "Snowflake",
     category: "heat-buildings",
@@ -956,6 +1532,18 @@ export const icons = [
     keywords: ["temperature", "heat", "degrees"],
   },
   {
+    slug: "thermometer-down",
+    name: "Thermometer down",
+    category: "heat-buildings",
+    keywords: ["temperature", "falling", "cooling"],
+  },
+  {
+    slug: "thermometer-up",
+    name: "Thermometer up",
+    category: "heat-buildings",
+    keywords: ["temperature", "rising", "heating"],
+  },
+  {
     slug: "thermostat",
     name: "Thermostat",
     category: "heat-buildings",
@@ -966,6 +1554,12 @@ export const icons = [
     name: "Underfloor heating",
     category: "heat-buildings",
     keywords: ["UFH", "floor heating", "radiant"],
+  },
+  {
+    slug: "wood-stove",
+    name: "Wood stove",
+    category: "heat-buildings",
+    keywords: ["stove", "biomass", "heating"],
   },
   {
     slug: "air-conditioner",
@@ -984,6 +1578,12 @@ export const icons = [
     name: "Barn",
     category: "heat-buildings",
     keywords: ["farm", "agriculture", "rural", "shed"],
+  },
+  {
+    slug: "blueprint",
+    name: "Blueprint",
+    category: "heat-buildings",
+    keywords: ["blueprint", "plan", "drawing"],
   },
   {
     slug: "boiler",
@@ -1022,6 +1622,18 @@ export const icons = [
     keywords: ["building", "office", "commercial", "remove", "fault", "offline"],
   },
   {
+    slug: "construction-crane",
+    name: "Construction crane",
+    category: "heat-buildings",
+    keywords: ["crane", "construction", "building"],
+  },
+  {
+    slug: "data-centre",
+    name: "Data centre",
+    category: "heat-buildings",
+    keywords: ["data centre", "server", "computing"],
+  },
+  {
     slug: "double-glazing",
     name: "Double glazing",
     category: "heat-buildings",
@@ -1058,6 +1670,12 @@ export const icons = [
     keywords: ["healthcare", "medical", "clinic", "public building"],
   },
   {
+    slug: "hotel",
+    name: "Hotel",
+    category: "heat-buildings",
+    keywords: ["hotel", "lodging", "building"],
+  },
+  {
     slug: "house",
     name: "House",
     category: "heat-buildings",
@@ -1080,6 +1698,12 @@ export const icons = [
     name: "House bolt",
     category: "heat-buildings",
     keywords: ["electric home", "house", "electricity", "power", "all-electric"],
+  },
+  {
+    slug: "house-chart",
+    name: "House chart",
+    category: "heat-buildings",
+    keywords: ["home energy", "usage", "chart"],
   },
   {
     slug: "house-check",
@@ -1112,10 +1736,22 @@ export const icons = [
     keywords: ["house", "heat pump", "low-carbon heating", "retrofit"],
   },
   {
+    slug: "house-key",
+    name: "House key",
+    category: "heat-buildings",
+    keywords: ["house key", "access", "home"],
+  },
+  {
     slug: "house-leaf",
     name: "House leaf",
     category: "heat-buildings",
     keywords: ["eco home", "green home", "house", "sustainable", "efficient"],
+  },
+  {
+    slug: "house-meter",
+    name: "House meter",
+    category: "heat-buildings",
+    keywords: ["home meter", "smart meter", "energy"],
   },
   {
     slug: "house-plug",
@@ -1128,6 +1764,12 @@ export const icons = [
     name: "House plus",
     category: "heat-buildings",
     keywords: ["house", "home", "residential", "add", "new", "plus"],
+  },
+  {
+    slug: "house-search",
+    name: "House search",
+    category: "heat-buildings",
+    keywords: ["house search", "property", "find"],
   },
   {
     slug: "house-snowflake",
@@ -1184,10 +1826,28 @@ export const icons = [
     keywords: ["PIR", "occupancy", "detector", "smart home"],
   },
   {
+    slug: "office",
+    name: "Office",
+    category: "heat-buildings",
+    keywords: ["office", "workplace", "building"],
+  },
+  {
+    slug: "retrofit",
+    name: "Retrofit",
+    category: "heat-buildings",
+    keywords: ["retrofit", "renovation", "upgrade"],
+  },
+  {
     slug: "school",
     name: "School",
     category: "heat-buildings",
     keywords: ["education", "public building", "campus"],
+  },
+  {
+    slug: "skyscraper",
+    name: "Skyscraper",
+    category: "heat-buildings",
+    keywords: ["skyscraper", "tower", "high-rise"],
   },
   {
     slug: "smart-home",
@@ -1196,16 +1856,34 @@ export const icons = [
     keywords: ["home automation", "IoT", "connected home"],
   },
   {
+    slug: "stadium",
+    name: "Stadium",
+    category: "heat-buildings",
+    keywords: ["stadium", "arena", "building"],
+  },
+  {
     slug: "store",
     name: "Store",
     category: "heat-buildings",
     keywords: ["shop", "retail", "commercial"],
   },
   {
+    slug: "supermarket",
+    name: "Supermarket",
+    category: "heat-buildings",
+    keywords: ["supermarket", "retail", "shop"],
+  },
+  {
     slug: "tent",
     name: "Tent",
     category: "heat-buildings",
     keywords: ["camping", "off-grid", "outdoor"],
+  },
+  {
+    slug: "university",
+    name: "University",
+    category: "heat-buildings",
+    keywords: ["university", "campus", "education"],
   },
   {
     slug: "ventilation",
@@ -1226,6 +1904,12 @@ export const icons = [
     keywords: ["glazing", "daylight", "building"],
   },
   {
+    slug: "ammonia",
+    name: "Ammonia",
+    category: "fuels",
+    keywords: ["ammonia", "NH3", "fuel"],
+  },
+  {
     slug: "barrel",
     name: "Barrel",
     category: "fuels",
@@ -1236,6 +1920,12 @@ export const icons = [
     name: "Biofuel",
     category: "fuels",
     keywords: ["biodiesel", "bioethanol", "renewable fuel"],
+  },
+  {
+    slug: "biogas-digester",
+    name: "Biogas digester",
+    category: "fuels",
+    keywords: ["biogas", "digester", "anaerobic"],
   },
   {
     slug: "biomass",
@@ -1256,6 +1946,12 @@ export const icons = [
     keywords: ["fossil fuel", "lumps", "mining"],
   },
   {
+    slug: "e-fuel",
+    name: "E-fuel",
+    category: "fuels",
+    keywords: ["e-fuel", "synthetic fuel", "PtL"],
+  },
+  {
     slug: "electrolyser",
     name: "Electrolyser",
     category: "fuels",
@@ -1274,10 +1970,22 @@ export const icons = [
     keywords: ["petrol station", "diesel", "forecourt"],
   },
   {
+    slug: "gas-bottle",
+    name: "Gas bottle",
+    category: "fuels",
+    keywords: ["gas bottle", "cylinder", "LPG"],
+  },
+  {
     slug: "gas-flare",
     name: "Gas flare",
     category: "fuels",
     keywords: ["flaring", "oil and gas", "methane"],
+  },
+  {
+    slug: "gas-meter",
+    name: "Gas meter",
+    category: "fuels",
+    keywords: ["gas meter", "metering", "fuel"],
   },
   {
     slug: "gas-valve",
@@ -1304,10 +2012,22 @@ export const icons = [
     keywords: ["H2", "fuel", "gas"],
   },
   {
+    slug: "hydrogen-pipeline",
+    name: "Hydrogen pipeline",
+    category: "fuels",
+    keywords: ["hydrogen", "pipeline", "H2"],
+  },
+  {
     slug: "hydrogen-station",
     name: "Hydrogen station",
     category: "fuels",
     keywords: ["H2 refuelling", "fuel cell vehicle", "HRS"],
+  },
+  {
+    slug: "jerrycan",
+    name: "Jerrycan",
+    category: "fuels",
+    keywords: ["jerrycan", "fuel can", "petrol"],
   },
   {
     slug: "leak",
@@ -1334,10 +2054,22 @@ export const icons = [
     keywords: ["crude", "petroleum", "drop", "fossil fuel"],
   },
   {
+    slug: "oil-rig",
+    name: "Oil rig",
+    category: "fuels",
+    keywords: ["oil rig", "drilling", "petroleum"],
+  },
+  {
     slug: "pipeline",
     name: "Pipeline",
     category: "fuels",
     keywords: ["pipes", "gas", "transport"],
+  },
+  {
+    slug: "saf",
+    name: "SAF",
+    category: "fuels",
+    keywords: ["SAF", "sustainable aviation fuel", "biofuel"],
   },
   {
     slug: "salt-cavern",
@@ -1352,10 +2084,22 @@ export const icons = [
     keywords: ["tanker", "fuel delivery", "truck", "HGV"],
   },
   {
+    slug: "woodchip",
+    name: "Woodchip",
+    category: "fuels",
+    keywords: ["woodchip", "biomass", "fuel"],
+  },
+  {
     slug: "carbon-capture",
     name: "Carbon capture",
     category: "climate",
     keywords: ["CCS", "CCUS", "decarbonisation"],
+  },
+  {
+    slug: "cement-plant",
+    name: "Cement plant",
+    category: "climate",
+    keywords: ["cement", "concrete", "plant"],
   },
   {
     slug: "chimney",
@@ -1368,6 +2112,18 @@ export const icons = [
     name: "CO2 storage",
     category: "climate",
     keywords: ["carbon storage", "sequestration", "CCS"],
+  },
+  {
+    slug: "cogs",
+    name: "Cogs",
+    category: "climate",
+    keywords: ["gears", "machinery", "industry"],
+  },
+  {
+    slug: "conveyor",
+    name: "Conveyor",
+    category: "climate",
+    keywords: ["conveyor", "factory", "production"],
   },
   {
     slug: "direct-air-capture",
@@ -1388,16 +2144,82 @@ export const icons = [
     keywords: ["factory emissions", "pollution", "CO2", "carbon", "smokestack", "climate"],
   },
   {
+    slug: "furnace",
+    name: "Furnace",
+    category: "climate",
+    keywords: ["furnace", "heat", "industry"],
+  },
+  {
+    slug: "gear",
+    name: "Gear",
+    category: "climate",
+    keywords: ["gear", "machinery", "cog"],
+  },
+  {
     slug: "i-beam",
     name: "I-beam",
     category: "climate",
     keywords: ["steel", "construction", "girder"],
   },
   {
+    slug: "kiln",
+    name: "Kiln",
+    category: "climate",
+    keywords: ["kiln", "heat", "industry"],
+  },
+  {
     slug: "recycling-bin",
     name: "Recycling bin",
     category: "climate",
     keywords: ["waste", "recycle", "bin"],
+  },
+  {
+    slug: "refinery",
+    name: "Refinery",
+    category: "climate",
+    keywords: ["refinery", "processing", "fuel"],
+  },
+  {
+    slug: "robot-arm",
+    name: "Robot arm",
+    category: "climate",
+    keywords: ["robot", "automation", "manufacturing"],
+  },
+  {
+    slug: "silo",
+    name: "Silo",
+    category: "climate",
+    keywords: ["silo", "storage", "bulk"],
+  },
+  {
+    slug: "steel-mill",
+    name: "Steel mill",
+    category: "climate",
+    keywords: ["steel", "mill", "metal"],
+  },
+  {
+    slug: "bee",
+    name: "Bee",
+    category: "climate",
+    keywords: ["bee", "pollinator", "nature"],
+  },
+  {
+    slug: "biodiversity",
+    name: "Biodiversity",
+    category: "climate",
+    keywords: ["biodiversity", "nature", "wildlife"],
+  },
+  {
+    slug: "bird",
+    name: "Bird",
+    category: "climate",
+    keywords: ["bird", "wildlife", "nature"],
+  },
+  {
+    slug: "butterfly",
+    name: "Butterfly",
+    category: "climate",
+    keywords: ["butterfly", "pollinator", "nature"],
   },
   {
     slug: "cactus",
@@ -1410,6 +2232,12 @@ export const icons = [
     name: "Carbon footprint",
     category: "climate",
     keywords: ["emissions", "CO2", "footprint"],
+  },
+  {
+    slug: "carbon-sink",
+    name: "Carbon sink",
+    category: "climate",
+    keywords: ["carbon sink", "sequestration", "CO2"],
   },
   {
     slug: "clover",
@@ -1428,6 +2256,18 @@ export const icons = [
     name: "CO2 molecule",
     category: "climate",
     keywords: ["carbon dioxide", "chemistry", "greenhouse gas"],
+  },
+  {
+    slug: "coral",
+    name: "Coral",
+    category: "climate",
+    keywords: ["coral", "reef", "ocean"],
+  },
+  {
+    slug: "deforestation",
+    name: "Deforestation",
+    category: "climate",
+    keywords: ["deforestation", "forest loss", "land"],
   },
   {
     slug: "droplet",
@@ -1484,6 +2324,12 @@ export const icons = [
     keywords: ["trees", "woodland", "carbon sink"],
   },
   {
+    slug: "global-warming",
+    name: "Global warming",
+    category: "climate",
+    keywords: ["global warming", "climate", "temperature"],
+  },
+  {
     slug: "globe",
     name: "Globe",
     category: "climate",
@@ -1500,6 +2346,12 @@ export const icons = [
     name: "Heatwave",
     category: "climate",
     keywords: ["extreme heat", "hot", "climate impact"],
+  },
+  {
+    slug: "ice-melt",
+    name: "Ice melt",
+    category: "climate",
+    keywords: ["ice melt", "glacier", "sea ice"],
   },
   {
     slug: "iceberg",
@@ -1568,6 +2420,12 @@ export const icons = [
     keywords: ["carbon offset", "offsetting", "balance", "compensation"],
   },
   {
+    slug: "ozone",
+    name: "Ozone",
+    category: "climate",
+    keywords: ["ozone", "atmosphere", "O3"],
+  },
+  {
     slug: "palm-tree",
     name: "Palm tree",
     category: "climate",
@@ -1578,6 +2436,12 @@ export const icons = [
     name: "Paw",
     category: "climate",
     keywords: ["animal", "wildlife", "pet"],
+  },
+  {
+    slug: "peatland",
+    name: "Peatland",
+    category: "climate",
+    keywords: ["peatland", "peat", "carbon"],
   },
   {
     slug: "pine-tree",
@@ -1598,10 +2462,22 @@ export const icons = [
     keywords: ["recycling", "circular economy", "reuse"],
   },
   {
+    slug: "rewilding",
+    name: "Rewilding",
+    category: "climate",
+    keywords: ["rewilding", "restoration", "nature"],
+  },
+  {
     slug: "sea-level-rise",
     name: "Sea level rise",
     category: "climate",
     keywords: ["coastal flooding", "climate risk", "ocean"],
+  },
+  {
+    slug: "soil",
+    name: "Soil",
+    category: "climate",
+    keywords: ["soil", "land", "earth"],
   },
   {
     slug: "sprout",
@@ -1616,10 +2492,22 @@ export const icons = [
     keywords: ["nature", "forest", "carbon sink"],
   },
   {
+    slug: "whale",
+    name: "Whale",
+    category: "climate",
+    keywords: ["whale", "ocean", "marine"],
+  },
+  {
     slug: "wildfire",
     name: "Wildfire",
     category: "climate",
     keywords: ["forest fire", "bushfire", "climate impact"],
+  },
+  {
+    slug: "barometer",
+    name: "Barometer",
+    category: "climate",
+    keywords: ["barometer", "pressure", "weather"],
   },
   {
     slug: "cloud",
@@ -1718,6 +2606,18 @@ export const icons = [
     keywords: ["mist", "haze", "weather"],
   },
   {
+    slug: "frost",
+    name: "Frost",
+    category: "climate",
+    keywords: ["frost", "cold", "weather"],
+  },
+  {
+    slug: "humidity",
+    name: "Humidity",
+    category: "climate",
+    keywords: ["humidity", "moisture", "weather"],
+  },
+  {
     slug: "moon",
     name: "Moon",
     category: "climate",
@@ -1736,6 +2636,12 @@ export const icons = [
     keywords: ["weather", "colour", "after rain"],
   },
   {
+    slug: "sleet",
+    name: "Sleet",
+    category: "climate",
+    keywords: ["sleet", "ice", "weather"],
+  },
+  {
     slug: "storm",
     name: "Storm",
     category: "climate",
@@ -1748,6 +2654,18 @@ export const icons = [
     keywords: ["low sun", "dim", "brightness", "weather"],
   },
   {
+    slug: "sun-rain",
+    name: "Sun rain",
+    category: "climate",
+    keywords: ["sun shower", "rain", "weather"],
+  },
+  {
+    slug: "sunny-intervals",
+    name: "Sunny intervals",
+    category: "climate",
+    keywords: ["sunny intervals", "broken cloud", "weather"],
+  },
+  {
     slug: "sunrise",
     name: "Sunrise",
     category: "climate",
@@ -1758,6 +2676,12 @@ export const icons = [
     name: "Sunset",
     category: "climate",
     keywords: ["dusk", "evening", "sun"],
+  },
+  {
+    slug: "temperature",
+    name: "Temperature",
+    category: "climate",
+    keywords: ["temperature", "thermometer", "weather"],
   },
   {
     slug: "thermometer-snowflake",
@@ -1778,6 +2702,12 @@ export const icons = [
     keywords: ["rain", "protection", "weather"],
   },
   {
+    slug: "uv-index",
+    name: "UV index",
+    category: "climate",
+    keywords: ["UV index", "ultraviolet", "sun"],
+  },
+  {
     slug: "bicycle",
     name: "Bicycle",
     category: "transport",
@@ -1790,16 +2720,40 @@ export const icons = [
     keywords: ["public transport", "coach", "transit"],
   },
   {
+    slug: "bus-stop",
+    name: "Bus stop",
+    category: "transport",
+    keywords: ["bus stop", "transit", "public transport"],
+  },
+  {
     slug: "car",
     name: "Car",
     category: "transport",
     keywords: ["vehicle", "automobile", "driving"],
   },
   {
+    slug: "car-share",
+    name: "Car share",
+    category: "transport",
+    keywords: ["car share", "car club", "mobility"],
+  },
+  {
+    slug: "cargo-bike",
+    name: "Cargo bike",
+    category: "transport",
+    keywords: ["cargo bike", "freight", "cycle"],
+  },
+  {
     slug: "e-bike",
     name: "E-bike",
     category: "transport",
     keywords: ["electric bike", "cycling", "micromobility"],
+  },
+  {
+    slug: "e-motorcycle",
+    name: "E-motorcycle",
+    category: "transport",
+    keywords: ["e-motorcycle", "electric motorbike", "EV"],
   },
   {
     slug: "e-scooter",
@@ -1814,6 +2768,18 @@ export const icons = [
     keywords: ["e-bus", "zero emission", "public transport"],
   },
   {
+    slug: "electric-ferry",
+    name: "Electric ferry",
+    category: "transport",
+    keywords: ["electric ferry", "ship", "marine"],
+  },
+  {
+    slug: "electric-plane",
+    name: "Electric plane",
+    category: "transport",
+    keywords: ["electric plane", "aircraft", "aviation"],
+  },
+  {
     slug: "electric-train",
     name: "Electric train",
     category: "transport",
@@ -1824,6 +2790,30 @@ export const icons = [
     name: "Electric truck",
     category: "transport",
     keywords: ["e-HGV", "lorry", "freight"],
+  },
+  {
+    slug: "electric-van",
+    name: "Electric van",
+    category: "transport",
+    keywords: ["electric van", "delivery", "EV"],
+  },
+  {
+    slug: "ev-range",
+    name: "EV range",
+    category: "transport",
+    keywords: ["EV range", "distance", "battery"],
+  },
+  {
+    slug: "helicopter",
+    name: "Helicopter",
+    category: "transport",
+    keywords: ["helicopter", "aircraft", "rotorcraft"],
+  },
+  {
+    slug: "hydrogen-car",
+    name: "Hydrogen car",
+    category: "transport",
+    keywords: ["hydrogen car", "FCEV", "H2"],
   },
   {
     slug: "motorcycle",
@@ -1904,16 +2894,52 @@ export const icons = [
     keywords: ["delivery", "fleet", "LCV"],
   },
   {
+    slug: "cobalt",
+    name: "Cobalt",
+    category: "industry",
+    keywords: ["cobalt", "mineral", "battery"],
+  },
+  {
+    slug: "copper",
+    name: "Copper",
+    category: "industry",
+    keywords: ["copper", "conductor", "mineral"],
+  },
+  {
     slug: "crystal",
     name: "Crystal",
     category: "industry",
     keywords: ["mineral", "gem", "quartz"],
   },
   {
+    slug: "excavator",
+    name: "Excavator",
+    category: "industry",
+    keywords: ["excavator", "mining", "digger"],
+  },
+  {
+    slug: "lithium",
+    name: "Lithium",
+    category: "industry",
+    keywords: ["lithium", "mineral", "battery"],
+  },
+  {
     slug: "mine-cart",
     name: "Mine cart",
     category: "industry",
     keywords: ["mining", "ore", "extraction"],
+  },
+  {
+    slug: "mine-shaft",
+    name: "Mine shaft",
+    category: "industry",
+    keywords: ["mine", "shaft", "mining"],
+  },
+  {
+    slug: "nickel",
+    name: "Nickel",
+    category: "industry",
+    keywords: ["nickel", "mineral", "battery"],
   },
   {
     slug: "ore",
@@ -1928,10 +2954,40 @@ export const icons = [
     keywords: ["mining", "dig", "tool"],
   },
   {
+    slug: "quarry",
+    name: "Quarry",
+    category: "industry",
+    keywords: ["quarry", "mining", "aggregate"],
+  },
+  {
+    slug: "rare-earth",
+    name: "Rare earth",
+    category: "industry",
+    keywords: ["rare earth", "REE", "mineral"],
+  },
+  {
     slug: "activity",
     name: "Activity",
     category: "data",
     keywords: ["pulse", "heartbeat", "monitoring"],
+  },
+  {
+    slug: "ai-sparkle",
+    name: "AI sparkle",
+    category: "data",
+    keywords: ["AI", "sparkle", "generate"],
+  },
+  {
+    slug: "analytics",
+    name: "Analytics",
+    category: "data",
+    keywords: ["analytics", "metrics", "insights"],
+  },
+  {
+    slug: "api",
+    name: "API",
+    category: "data",
+    keywords: ["API", "developer", "integration"],
   },
   {
     slug: "chart-area",
@@ -1964,6 +3020,12 @@ export const icons = [
     keywords: ["candlestick chart", "OHLC", "price chart", "trading"],
   },
   {
+    slug: "chart-combo",
+    name: "Chart combo",
+    category: "data",
+    keywords: ["combo chart", "mixed chart", "graph"],
+  },
+  {
     slug: "chart-donut",
     name: "Chart donut",
     category: "data",
@@ -1982,16 +3044,34 @@ export const icons = [
     keywords: ["line chart", "graph", "trend", "analytics"],
   },
   {
+    slug: "chart-pie-half",
+    name: "Chart pie half",
+    category: "data",
+    keywords: ["half pie", "chart", "graph"],
+  },
+  {
     slug: "chart-radar",
     name: "Chart radar",
     category: "data",
     keywords: ["radar chart", "spider chart", "web chart", "comparison"],
   },
   {
+    slug: "chart-sankey",
+    name: "Chart sankey",
+    category: "data",
+    keywords: ["sankey", "flow", "chart"],
+  },
+  {
     slug: "chart-scatter",
     name: "Chart scatter",
     category: "data",
     keywords: ["scatter plot", "scatter chart", "correlation", "data points"],
+  },
+  {
+    slug: "chart-waterfall",
+    name: "Chart waterfall",
+    category: "data",
+    keywords: ["waterfall chart", "bridge", "graph"],
   },
   {
     slug: "dashboard",
@@ -2006,6 +3086,12 @@ export const icons = [
     keywords: ["data", "storage", "records"],
   },
   {
+    slug: "energy-dashboard",
+    name: "Energy dashboard",
+    category: "data",
+    keywords: ["dashboard", "monitoring", "energy"],
+  },
+  {
     slug: "forecast",
     name: "Forecast",
     category: "data",
@@ -2016,6 +3102,12 @@ export const icons = [
     name: "Gauge",
     category: "data",
     keywords: ["meter", "speed", "performance"],
+  },
+  {
+    slug: "heatmap",
+    name: "Heatmap",
+    category: "data",
+    keywords: ["heatmap", "matrix", "data"],
   },
   {
     slug: "infinity",
@@ -2030,10 +3122,22 @@ export const icons = [
     keywords: ["board", "columns", "workflow", "tasks"],
   },
   {
+    slug: "kpi",
+    name: "KPI",
+    category: "data",
+    keywords: ["KPI", "metric", "indicator"],
+  },
+  {
     slug: "load-curve",
     name: "Load curve",
     category: "data",
     keywords: ["demand profile", "peak", "consumption"],
+  },
+  {
+    slug: "map-data",
+    name: "Map data",
+    category: "data",
+    keywords: ["map", "geodata", "data"],
   },
   {
     slug: "pie-chart",
@@ -2046,6 +3150,12 @@ export const icons = [
     name: "Radar",
     category: "data",
     keywords: ["scan", "detection", "monitoring"],
+  },
+  {
+    slug: "report",
+    name: "Report",
+    category: "data",
+    keywords: ["report", "document", "summary"],
   },
   {
     slug: "satellite",
@@ -2162,10 +3272,46 @@ export const icons = [
     keywords: ["tariff", "cost", "pence per kWh"],
   },
   {
+    slug: "esg",
+    name: "ESG",
+    category: "business",
+    keywords: ["ESG", "sustainability", "reporting"],
+  },
+  {
     slug: "euro",
     name: "Euro",
     category: "business",
     keywords: ["EUR", "currency", "money", "€"],
+  },
+  {
+    slug: "grant",
+    name: "Grant",
+    category: "business",
+    keywords: ["grant", "funding", "subsidy"],
+  },
+  {
+    slug: "handshake",
+    name: "Handshake",
+    category: "business",
+    keywords: ["handshake", "deal", "partnership"],
+  },
+  {
+    slug: "investment",
+    name: "Investment",
+    category: "business",
+    keywords: ["investment", "finance", "capital"],
+  },
+  {
+    slug: "invoice",
+    name: "Invoice",
+    category: "business",
+    keywords: ["invoice", "bill", "payment"],
+  },
+  {
+    slug: "meeting",
+    name: "Meeting",
+    category: "business",
+    keywords: ["meeting", "calendar", "schedule"],
   },
   {
     slug: "megaphone",
@@ -2192,10 +3338,34 @@ export const icons = [
     keywords: ["pound sterling", "GBP", "currency", "money", "£"],
   },
   {
+    slug: "ppa",
+    name: "PPA",
+    category: "business",
+    keywords: ["PPA", "power purchase agreement", "contract"],
+  },
+  {
     slug: "presentation",
     name: "Presentation",
     category: "business",
     keywords: ["slides", "pitch", "whiteboard", "screen"],
+  },
+  {
+    slug: "price-down",
+    name: "Price down",
+    category: "business",
+    keywords: ["price down", "cheaper", "tariff"],
+  },
+  {
+    slug: "price-up",
+    name: "Price up",
+    category: "business",
+    keywords: ["price up", "cost", "tariff"],
+  },
+  {
+    slug: "procurement",
+    name: "Procurement",
+    category: "business",
+    keywords: ["procurement", "purchasing", "supply"],
   },
   {
     slug: "receipt",
@@ -2222,10 +3392,22 @@ export const icons = [
     keywords: ["basket", "buy", "ecommerce"],
   },
   {
+    slug: "signature",
+    name: "Signature",
+    category: "business",
+    keywords: ["signature", "sign", "contract"],
+  },
+  {
     slug: "stamp",
     name: "Stamp",
     category: "business",
     keywords: ["approval", "seal", "official"],
+  },
+  {
+    slug: "supply-chain",
+    name: "Supply chain",
+    category: "business",
+    keywords: ["supply chain", "logistics", "procurement"],
   },
   {
     slug: "tag",
@@ -2252,6 +3434,18 @@ export const icons = [
     keywords: ["JPY", "currency", "money", "¥"],
   },
   {
+    slug: "cable-tester",
+    name: "Cable tester",
+    category: "tools",
+    keywords: ["cable tester", "continuity", "tool"],
+  },
+  {
+    slug: "drill",
+    name: "Drill",
+    category: "tools",
+    keywords: ["drill", "tool", "boring"],
+  },
+  {
     slug: "drone",
     name: "Drone",
     category: "tools",
@@ -2262,6 +3456,12 @@ export const icons = [
     name: "Engineer",
     category: "tools",
     keywords: ["installer", "technician", "person"],
+  },
+  {
+    slug: "gloves",
+    name: "Gloves",
+    category: "tools",
+    keywords: ["gloves", "PPE", "safety"],
   },
   {
     slug: "hammer",
@@ -2276,6 +3476,12 @@ export const icons = [
     keywords: ["safety", "helmet", "construction"],
   },
   {
+    slug: "inspection",
+    name: "Inspection",
+    category: "tools",
+    keywords: ["inspection", "check", "audit"],
+  },
+  {
     slug: "ladder",
     name: "Ladder",
     category: "tools",
@@ -2288,16 +3494,64 @@ export const icons = [
     keywords: ["voltage", "test meter", "electrician"],
   },
   {
+    slug: "paint-roller",
+    name: "Paint roller",
+    category: "tools",
+    keywords: ["paint roller", "decorating", "tool"],
+  },
+  {
+    slug: "pliers",
+    name: "Pliers",
+    category: "tools",
+    keywords: ["pliers", "tool", "grips"],
+  },
+  {
+    slug: "safety-vest",
+    name: "Safety vest",
+    category: "tools",
+    keywords: ["hi-vis", "PPE", "safety"],
+  },
+  {
+    slug: "saw",
+    name: "Saw",
+    category: "tools",
+    keywords: ["saw", "tool", "cutting"],
+  },
+  {
     slug: "screwdriver",
     name: "Screwdriver",
     category: "tools",
     keywords: ["tool", "fix", "install"],
   },
   {
+    slug: "spirit-level",
+    name: "Spirit level",
+    category: "tools",
+    keywords: ["spirit level", "level", "tool"],
+  },
+  {
+    slug: "tape-measure",
+    name: "Tape measure",
+    category: "tools",
+    keywords: ["tape measure", "measure", "tool"],
+  },
+  {
+    slug: "thermal-camera",
+    name: "Thermal camera",
+    category: "tools",
+    keywords: ["thermal camera", "infrared", "inspection"],
+  },
+  {
     slug: "toolbox",
     name: "Toolbox",
     category: "tools",
     keywords: ["tools", "maintenance", "repair"],
+  },
+  {
+    slug: "torch",
+    name: "Torch",
+    category: "tools",
+    keywords: ["torch", "flashlight", "light"],
   },
   {
     slug: "wrench",
@@ -2348,10 +3602,40 @@ export const icons = [
     keywords: ["eight sides", "stop sign", "shape"],
   },
   {
+    slug: "parallelogram",
+    name: "Parallelogram",
+    category: "interface",
+    keywords: ["parallelogram", "shape", "geometry"],
+  },
+  {
     slug: "pentagon",
     name: "Pentagon",
     category: "interface",
     keywords: ["five sides", "shape", "geometry"],
+  },
+  {
+    slug: "prism",
+    name: "Prism",
+    category: "interface",
+    keywords: ["prism", "shape", "geometry"],
+  },
+  {
+    slug: "pyramid",
+    name: "Pyramid",
+    category: "interface",
+    keywords: ["pyramid", "shape", "geometry"],
+  },
+  {
+    slug: "ring",
+    name: "Ring",
+    category: "interface",
+    keywords: ["ring", "circle", "shape"],
+  },
+  {
+    slug: "semicircle",
+    name: "Semicircle",
+    category: "interface",
+    keywords: ["semicircle", "shape", "geometry"],
   },
   {
     slug: "shapes",
@@ -2370,6 +3654,12 @@ export const icons = [
     name: "Square dashed",
     category: "interface",
     keywords: ["dashed square", "selection", "marquee", "placeholder"],
+  },
+  {
+    slug: "trapezoid",
+    name: "Trapezoid",
+    category: "interface",
+    keywords: ["trapezoid", "shape", "geometry"],
   },
   {
     slug: "triangle",
@@ -2396,6 +3686,12 @@ export const icons = [
     keywords: ["alert", "warning", "error", "exclamation"],
   },
   {
+    slug: "alert-octagon",
+    name: "Alert octagon",
+    category: "interface",
+    keywords: ["warning", "stop", "octagon"],
+  },
+  {
     slug: "align-center",
     name: "Align center",
     category: "interface",
@@ -2420,16 +3716,58 @@ export const icons = [
     keywords: ["text alignment", "right", "paragraph", "format"],
   },
   {
+    slug: "align-vertical",
+    name: "Align vertical",
+    category: "interface",
+    keywords: ["align", "centre", "layout"],
+  },
+  {
     slug: "anchor",
     name: "Anchor",
     category: "interface",
     keywords: ["harbour", "marine", "link"],
   },
   {
+    slug: "api-key",
+    name: "API key",
+    category: "interface",
+    keywords: ["API key", "token", "credentials"],
+  },
+  {
+    slug: "app-window",
+    name: "App window",
+    category: "interface",
+    keywords: ["window", "application", "screen"],
+  },
+  {
     slug: "archive",
     name: "Archive",
     category: "interface",
     keywords: ["box", "store", "files"],
+  },
+  {
+    slug: "arrow-big-down",
+    name: "Arrow big down",
+    category: "interface",
+    keywords: ["arrow", "down", "direction"],
+  },
+  {
+    slug: "arrow-big-left",
+    name: "Arrow big left",
+    category: "interface",
+    keywords: ["arrow", "left", "direction"],
+  },
+  {
+    slug: "arrow-big-right",
+    name: "Arrow big right",
+    category: "interface",
+    keywords: ["arrow", "right", "direction"],
+  },
+  {
+    slug: "arrow-big-up",
+    name: "Arrow big up",
+    category: "interface",
+    keywords: ["arrow", "up", "direction"],
   },
   {
     slug: "arrow-down",
@@ -2588,6 +3926,30 @@ export const icons = [
     keywords: ["badge", "prize", "achievement"],
   },
   {
+    slug: "badge",
+    name: "Badge",
+    category: "interface",
+    keywords: ["badge", "label", "award"],
+  },
+  {
+    slug: "bag",
+    name: "Bag",
+    category: "interface",
+    keywords: ["bag", "shopping", "tote"],
+  },
+  {
+    slug: "ban",
+    name: "Ban",
+    category: "interface",
+    keywords: ["ban", "block", "prohibit"],
+  },
+  {
+    slug: "barcode",
+    name: "Barcode",
+    category: "interface",
+    keywords: ["barcode", "scan", "SKU"],
+  },
+  {
     slug: "bell",
     name: "Bell",
     category: "interface",
@@ -2606,10 +3968,28 @@ export const icons = [
     keywords: ["ringing", "notification", "alarm", "bell"],
   },
   {
+    slug: "bluetooth",
+    name: "Bluetooth",
+    category: "interface",
+    keywords: ["bluetooth", "wireless", "pairing"],
+  },
+  {
     slug: "bold",
     name: "Bold",
     category: "interface",
     keywords: ["text", "format", "typography"],
+  },
+  {
+    slug: "book",
+    name: "Book",
+    category: "interface",
+    keywords: ["book", "reading", "docs"],
+  },
+  {
+    slug: "book-open",
+    name: "Book open",
+    category: "interface",
+    keywords: ["book", "open", "reading"],
   },
   {
     slug: "bookmark",
@@ -2624,6 +4004,42 @@ export const icons = [
     keywords: ["bookmarked", "saved", "bookmark", "done"],
   },
   {
+    slug: "bookmark-plus",
+    name: "Bookmark plus",
+    category: "interface",
+    keywords: ["bookmark", "save", "add"],
+  },
+  {
+    slug: "bot",
+    name: "Bot",
+    category: "interface",
+    keywords: ["bot", "robot", "automation"],
+  },
+  {
+    slug: "box",
+    name: "Box",
+    category: "interface",
+    keywords: ["box", "package", "cube"],
+  },
+  {
+    slug: "brackets",
+    name: "Brackets",
+    category: "interface",
+    keywords: ["brackets", "code", "developer"],
+  },
+  {
+    slug: "brush",
+    name: "Brush",
+    category: "interface",
+    keywords: ["brush", "paint", "design"],
+  },
+  {
+    slug: "bug",
+    name: "Bug",
+    category: "interface",
+    keywords: ["bug", "issue", "defect"],
+  },
+  {
     slug: "calendar",
     name: "Calendar",
     category: "interface",
@@ -2634,6 +4050,18 @@ export const icons = [
     name: "Calendar check",
     category: "interface",
     keywords: ["calendar", "date", "schedule", "done", "complete"],
+  },
+  {
+    slug: "calendar-clock",
+    name: "Calendar clock",
+    category: "interface",
+    keywords: ["calendar", "time", "schedule"],
+  },
+  {
+    slug: "calendar-days",
+    name: "Calendar days",
+    category: "interface",
+    keywords: ["calendar", "date", "month"],
   },
   {
     slug: "calendar-plus",
@@ -2684,6 +4112,12 @@ export const icons = [
     keywords: ["caret", "up", "direction"],
   },
   {
+    slug: "cast",
+    name: "Cast",
+    category: "interface",
+    keywords: ["cast", "screen", "airplay"],
+  },
+  {
     slug: "check",
     name: "Check",
     category: "interface",
@@ -2694,6 +4128,12 @@ export const icons = [
     name: "Check circle",
     category: "interface",
     keywords: ["check", "success", "done", "verified"],
+  },
+  {
+    slug: "checkbox",
+    name: "Checkbox",
+    category: "interface",
+    keywords: ["checkbox", "tick", "form"],
   },
   {
     slug: "chevron-down",
@@ -2822,6 +4262,78 @@ export const icons = [
     keywords: ["time", "hour", "schedule"],
   },
   {
+    slug: "clock-1",
+    name: "Clock 1",
+    category: "interface",
+    keywords: ["clock", "time", "1 o'clock"],
+  },
+  {
+    slug: "clock-10",
+    name: "Clock 10",
+    category: "interface",
+    keywords: ["clock", "time", "10 o'clock"],
+  },
+  {
+    slug: "clock-11",
+    name: "Clock 11",
+    category: "interface",
+    keywords: ["clock", "time", "11 o'clock"],
+  },
+  {
+    slug: "clock-12",
+    name: "Clock 12",
+    category: "interface",
+    keywords: ["clock", "time", "12 o'clock"],
+  },
+  {
+    slug: "clock-2",
+    name: "Clock 2",
+    category: "interface",
+    keywords: ["clock", "time", "2 o'clock"],
+  },
+  {
+    slug: "clock-3",
+    name: "Clock 3",
+    category: "interface",
+    keywords: ["clock", "time", "3 o'clock"],
+  },
+  {
+    slug: "clock-4",
+    name: "Clock 4",
+    category: "interface",
+    keywords: ["clock", "time", "4 o'clock"],
+  },
+  {
+    slug: "clock-5",
+    name: "Clock 5",
+    category: "interface",
+    keywords: ["clock", "time", "5 o'clock"],
+  },
+  {
+    slug: "clock-6",
+    name: "Clock 6",
+    category: "interface",
+    keywords: ["clock", "time", "6 o'clock"],
+  },
+  {
+    slug: "clock-7",
+    name: "Clock 7",
+    category: "interface",
+    keywords: ["clock", "time", "7 o'clock"],
+  },
+  {
+    slug: "clock-8",
+    name: "Clock 8",
+    category: "interface",
+    keywords: ["clock", "time", "8 o'clock"],
+  },
+  {
+    slug: "clock-9",
+    name: "Clock 9",
+    category: "interface",
+    keywords: ["clock", "time", "9 o'clock"],
+  },
+  {
     slug: "close",
     name: "Close",
     category: "interface",
@@ -2834,10 +4346,28 @@ export const icons = [
     keywords: ["offline", "disconnected", "no sync"],
   },
   {
+    slug: "cloud-sync",
+    name: "Cloud sync",
+    category: "interface",
+    keywords: ["sync", "cloud", "refresh"],
+  },
+  {
     slug: "code",
     name: "Code",
     category: "interface",
     keywords: ["developer", "brackets", "html"],
+  },
+  {
+    slug: "code-2",
+    name: "Code 2",
+    category: "interface",
+    keywords: ["code", "developer", "syntax"],
+  },
+  {
+    slug: "coffee",
+    name: "Coffee",
+    category: "interface",
+    keywords: ["coffee", "cafe", "cup"],
   },
   {
     slug: "columns",
@@ -2846,10 +4376,34 @@ export const icons = [
     keywords: ["layout", "split", "table"],
   },
   {
+    slug: "command",
+    name: "Command",
+    category: "interface",
+    keywords: ["command", "keyboard", "shortcut"],
+  },
+  {
     slug: "compass",
     name: "Compass",
     category: "interface",
     keywords: ["navigation", "direction", "explore"],
+  },
+  {
+    slug: "component",
+    name: "Component",
+    category: "interface",
+    keywords: ["component", "ui", "block"],
+  },
+  {
+    slug: "contact",
+    name: "Contact",
+    category: "interface",
+    keywords: ["contact", "person", "address book"],
+  },
+  {
+    slug: "contrast",
+    name: "Contrast",
+    category: "interface",
+    keywords: ["contrast", "display", "accessibility"],
   },
   {
     slug: "copy",
@@ -2912,10 +4466,64 @@ export const icons = [
     keywords: ["processor", "chip", "computing"],
   },
   {
+    slug: "crop",
+    name: "Crop",
+    category: "interface",
+    keywords: ["crop", "farming", "agriculture"],
+  },
+  {
     slug: "crosshair",
     name: "Crosshair",
     category: "interface",
     keywords: ["target", "aim", "locate"],
+  },
+  {
+    slug: "crown",
+    name: "Crown",
+    category: "interface",
+    keywords: ["crown", "premium", "royal"],
+  },
+  {
+    slug: "delete",
+    name: "Delete",
+    category: "interface",
+    keywords: ["delete", "backspace", "remove"],
+  },
+  {
+    slug: "dice-1",
+    name: "Dice 1",
+    category: "interface",
+    keywords: ["dice", "one", "random"],
+  },
+  {
+    slug: "dice-2",
+    name: "Dice 2",
+    category: "interface",
+    keywords: ["dice", "two", "random"],
+  },
+  {
+    slug: "dice-3",
+    name: "Dice 3",
+    category: "interface",
+    keywords: ["dice", "three", "random"],
+  },
+  {
+    slug: "dice-4",
+    name: "Dice 4",
+    category: "interface",
+    keywords: ["dice", "four", "random"],
+  },
+  {
+    slug: "dice-5",
+    name: "Dice 5",
+    category: "interface",
+    keywords: ["dice", "five", "random"],
+  },
+  {
+    slug: "dice-6",
+    name: "Dice 6",
+    category: "interface",
+    keywords: ["dice", "six", "random"],
   },
   {
     slug: "download",
@@ -2936,6 +4544,18 @@ export const icons = [
     keywords: ["pencil", "write", "modify"],
   },
   {
+    slug: "eraser",
+    name: "Eraser",
+    category: "interface",
+    keywords: ["eraser", "remove", "edit"],
+  },
+  {
+    slug: "expand",
+    name: "Expand",
+    category: "interface",
+    keywords: ["expand", "fullscreen", "maximise"],
+  },
+  {
     slug: "external-link",
     name: "External link",
     category: "interface",
@@ -2946,6 +4566,12 @@ export const icons = [
     name: "Eye",
     category: "interface",
     keywords: ["view", "show", "visible", "preview"],
+  },
+  {
+    slug: "eye-dropper",
+    name: "Eye dropper",
+    category: "interface",
+    keywords: ["eyedropper", "colour", "picker"],
   },
   {
     slug: "eye-off",
@@ -3044,10 +4670,22 @@ export const icons = [
     keywords: ["funnel", "refine", "sort"],
   },
   {
+    slug: "fingerprint",
+    name: "Fingerprint",
+    category: "interface",
+    keywords: ["fingerprint", "identity", "biometric"],
+  },
+  {
     slug: "flag",
     name: "Flag",
     category: "interface",
     keywords: ["report", "milestone", "country"],
+  },
+  {
+    slug: "flag-triangle",
+    name: "Flag triangle",
+    category: "interface",
+    keywords: ["flag", "marker", "pennant"],
   },
   {
     slug: "folder",
@@ -3074,16 +4712,64 @@ export const icons = [
     keywords: ["folder", "directory", "files", "add", "new"],
   },
   {
+    slug: "forward",
+    name: "Forward",
+    category: "interface",
+    keywords: ["forward", "share", "send"],
+  },
+  {
+    slug: "frame",
+    name: "Frame",
+    category: "interface",
+    keywords: ["frame", "layout", "artboard"],
+  },
+  {
     slug: "frown",
     name: "Frown",
     category: "interface",
     keywords: ["sad", "unhappy", "negative", "feedback"],
   },
   {
+    slug: "gamepad",
+    name: "Gamepad",
+    category: "interface",
+    keywords: ["gamepad", "controller", "gaming"],
+  },
+  {
     slug: "gift",
     name: "Gift",
     category: "interface",
     keywords: ["present", "reward", "bonus"],
+  },
+  {
+    slug: "git-branch",
+    name: "Git branch",
+    category: "interface",
+    keywords: ["git", "branch", "version control"],
+  },
+  {
+    slug: "git-commit",
+    name: "Git commit",
+    category: "interface",
+    keywords: ["git", "commit", "version control"],
+  },
+  {
+    slug: "git-merge",
+    name: "Git merge",
+    category: "interface",
+    keywords: ["git", "merge", "version control"],
+  },
+  {
+    slug: "git-pull-request",
+    name: "Git pull request",
+    category: "interface",
+    keywords: ["git", "pull request", "version control"],
+  },
+  {
+    slug: "graduation-cap",
+    name: "Graduation cap",
+    category: "interface",
+    keywords: ["graduation", "education", "university"],
   },
   {
     slug: "grid-3x3",
@@ -3102,6 +4788,12 @@ export const icons = [
     name: "Grip vertical",
     category: "interface",
     keywords: ["drag handle", "grip", "reorder", "move"],
+  },
+  {
+    slug: "hard-drive",
+    name: "Hard drive",
+    category: "interface",
+    keywords: ["hard drive", "storage", "disk"],
   },
   {
     slug: "hash",
@@ -3128,10 +4820,28 @@ export const icons = [
     keywords: ["like", "favourite", "love"],
   },
   {
+    slug: "heart-off",
+    name: "Heart off",
+    category: "interface",
+    keywords: ["heart", "unlike", "favourite"],
+  },
+  {
     slug: "help-circle",
     name: "Help circle",
     category: "interface",
     keywords: ["help", "question", "support", "FAQ"],
+  },
+  {
+    slug: "highlighter",
+    name: "Highlighter",
+    category: "interface",
+    keywords: ["highlighter", "mark", "annotation"],
+  },
+  {
+    slug: "history",
+    name: "History",
+    category: "interface",
+    keywords: ["history", "recent", "undo"],
   },
   {
     slug: "home",
@@ -3188,10 +4898,22 @@ export const icons = [
     keywords: ["password", "access", "security"],
   },
   {
+    slug: "key-round",
+    name: "Key round",
+    category: "interface",
+    keywords: ["key", "password", "access"],
+  },
+  {
     slug: "keyboard",
     name: "Keyboard",
     category: "interface",
     keywords: ["typing", "input", "shortcuts"],
+  },
+  {
+    slug: "languages",
+    name: "Languages",
+    category: "interface",
+    keywords: ["languages", "translate", "i18n"],
   },
   {
     slug: "laptop",
@@ -3224,6 +4946,12 @@ export const icons = [
     keywords: ["URL", "chain", "hyperlink"],
   },
   {
+    slug: "link-off",
+    name: "Link off",
+    category: "interface",
+    keywords: ["unlink", "broken link", "url"],
+  },
+  {
     slug: "list",
     name: "List",
     category: "interface",
@@ -3236,16 +4964,34 @@ export const icons = [
     keywords: ["checklist", "to-do", "tasks", "done"],
   },
   {
+    slug: "list-ordered",
+    name: "List ordered",
+    category: "interface",
+    keywords: ["list", "numbered", "ordered"],
+  },
+  {
     slug: "loader",
     name: "Loader",
     category: "interface",
     keywords: ["loading", "spinner", "progress"],
   },
   {
+    slug: "loader-2",
+    name: "Loader 2",
+    category: "interface",
+    keywords: ["loader", "spinner", "loading"],
+  },
+  {
     slug: "lock",
     name: "Lock",
     category: "interface",
     keywords: ["secure", "private", "padlock"],
+  },
+  {
+    slug: "lock-keyhole",
+    name: "Lock keyhole",
+    category: "interface",
+    keywords: ["lock", "security", "password"],
   },
   {
     slug: "log-in",
@@ -3266,10 +5012,22 @@ export const icons = [
     keywords: ["email", "envelope", "message"],
   },
   {
+    slug: "mail-check",
+    name: "Mail check",
+    category: "interface",
+    keywords: ["email", "delivered", "read"],
+  },
+  {
     slug: "mail-open",
     name: "Mail open",
     category: "interface",
     keywords: ["read mail", "open envelope", "email", "message"],
+  },
+  {
+    slug: "mail-plus",
+    name: "Mail plus",
+    category: "interface",
+    keywords: ["email", "new", "compose"],
   },
   {
     slug: "map",
@@ -3284,6 +5042,18 @@ export const icons = [
     keywords: ["location", "marker", "place"],
   },
   {
+    slug: "map-pin-off",
+    name: "Map pin off",
+    category: "interface",
+    keywords: ["map", "pin", "location off"],
+  },
+  {
+    slug: "map-route",
+    name: "Map route",
+    category: "interface",
+    keywords: ["route", "directions", "map"],
+  },
+  {
     slug: "maximize",
     name: "Maximize",
     category: "interface",
@@ -3294,6 +5064,12 @@ export const icons = [
     name: "Meh",
     category: "interface",
     keywords: ["neutral", "indifferent", "face", "feedback"],
+  },
+  {
+    slug: "memory-card",
+    name: "Memory card",
+    category: "interface",
+    keywords: ["memory card", "SD", "storage"],
   },
   {
     slug: "menu",
@@ -3308,10 +5084,22 @@ export const icons = [
     keywords: ["chat", "comment", "speech bubble"],
   },
   {
+    slug: "message-check",
+    name: "Message check",
+    category: "interface",
+    keywords: ["message", "delivered", "chat"],
+  },
+  {
     slug: "message-circle",
     name: "Message circle",
     category: "interface",
     keywords: ["message", "chat", "comment", "bubble"],
+  },
+  {
+    slug: "message-plus",
+    name: "Message plus",
+    category: "interface",
+    keywords: ["message", "new", "chat"],
   },
   {
     slug: "messages",
@@ -3330,6 +5118,12 @@ export const icons = [
     name: "Mic off",
     category: "interface",
     keywords: ["mute", "microphone off", "silent", "voice"],
+  },
+  {
+    slug: "milestone",
+    name: "Milestone",
+    category: "interface",
+    keywords: ["milestone", "goal", "flag"],
   },
   {
     slug: "minimize",
@@ -3386,6 +5180,18 @@ export const icons = [
     keywords: ["drag", "reposition", "arrows"],
   },
   {
+    slug: "move-horizontal",
+    name: "Move horizontal",
+    category: "interface",
+    keywords: ["move", "horizontal", "drag"],
+  },
+  {
+    slug: "move-vertical",
+    name: "Move vertical",
+    category: "interface",
+    keywords: ["move", "vertical", "drag"],
+  },
+  {
     slug: "music",
     name: "Music",
     category: "interface",
@@ -3398,6 +5204,24 @@ export const icons = [
     keywords: ["direction", "GPS", "pointer"],
   },
   {
+    slug: "navigation-off",
+    name: "Navigation off",
+    category: "interface",
+    keywords: ["navigation", "off", "location"],
+  },
+  {
+    slug: "newspaper",
+    name: "Newspaper",
+    category: "interface",
+    keywords: ["newspaper", "news", "press"],
+  },
+  {
+    slug: "note",
+    name: "Note",
+    category: "interface",
+    keywords: ["note", "memo", "document"],
+  },
+  {
     slug: "outdent",
     name: "Outdent",
     category: "interface",
@@ -3408,6 +5232,36 @@ export const icons = [
     name: "Package",
     category: "interface",
     keywords: ["box", "parcel", "delivery"],
+  },
+  {
+    slug: "palette",
+    name: "Palette",
+    category: "interface",
+    keywords: ["palette", "colour", "design"],
+  },
+  {
+    slug: "panel-bottom",
+    name: "Panel bottom",
+    category: "interface",
+    keywords: ["panel", "bottom", "layout"],
+  },
+  {
+    slug: "panel-left",
+    name: "Panel left",
+    category: "interface",
+    keywords: ["panel", "sidebar", "layout"],
+  },
+  {
+    slug: "panel-right",
+    name: "Panel right",
+    category: "interface",
+    keywords: ["panel", "sidebar", "layout"],
+  },
+  {
+    slug: "panel-top",
+    name: "Panel top",
+    category: "interface",
+    keywords: ["panel", "top", "layout"],
   },
   {
     slug: "paperclip",
@@ -3428,10 +5282,34 @@ export const icons = [
     keywords: ["pause", "media", "hold", "circle"],
   },
   {
+    slug: "pen",
+    name: "Pen",
+    category: "interface",
+    keywords: ["pen", "write", "edit"],
+  },
+  {
+    slug: "pencil",
+    name: "Pencil",
+    category: "interface",
+    keywords: ["pencil", "edit", "draw"],
+  },
+  {
     slug: "phone",
     name: "Phone",
     category: "interface",
     keywords: ["call", "mobile", "contact"],
+  },
+  {
+    slug: "phone-call",
+    name: "Phone call",
+    category: "interface",
+    keywords: ["phone", "call", "ringing"],
+  },
+  {
+    slug: "phone-off",
+    name: "Phone off",
+    category: "interface",
+    keywords: ["phone", "mute", "hang up"],
   },
   {
     slug: "pin",
@@ -3470,6 +5348,12 @@ export const icons = [
     keywords: ["plus", "add", "new", "square"],
   },
   {
+    slug: "podcast",
+    name: "Podcast",
+    category: "interface",
+    keywords: ["podcast", "audio", "show"],
+  },
+  {
     slug: "power",
     name: "Power",
     category: "interface",
@@ -3482,10 +5366,28 @@ export const icons = [
     keywords: ["print", "paper", "document"],
   },
   {
+    slug: "puzzle",
+    name: "Puzzle",
+    category: "interface",
+    keywords: ["puzzle", "plugin", "extension"],
+  },
+  {
+    slug: "qr-code",
+    name: "QR code",
+    category: "interface",
+    keywords: ["QR code", "scan", "barcode"],
+  },
+  {
     slug: "quote",
     name: "Quote",
     category: "interface",
     keywords: ["quotation", "testimonial", "citation"],
+  },
+  {
+    slug: "radio",
+    name: "Radio",
+    category: "interface",
+    keywords: ["radio", "broadcast", "audio"],
   },
   {
     slug: "redo",
@@ -3518,6 +5420,12 @@ export const icons = [
     keywords: ["loop", "cycle", "replay"],
   },
   {
+    slug: "reply",
+    name: "Reply",
+    category: "interface",
+    keywords: ["reply", "message", "respond"],
+  },
+  {
     slug: "rewind",
     name: "Rewind",
     category: "interface",
@@ -3536,10 +5444,40 @@ export const icons = [
     keywords: ["rotate", "clockwise"],
   },
   {
+    slug: "router",
+    name: "Router",
+    category: "interface",
+    keywords: ["router", "network", "wifi"],
+  },
+  {
+    slug: "rss",
+    name: "Rss",
+    category: "interface",
+    keywords: ["RSS", "feed", "subscribe"],
+  },
+  {
+    slug: "ruler",
+    name: "Ruler",
+    category: "interface",
+    keywords: ["ruler", "measure", "scale"],
+  },
+  {
     slug: "save",
     name: "Save",
     category: "interface",
     keywords: ["floppy disk", "store", "keep"],
+  },
+  {
+    slug: "scan",
+    name: "Scan",
+    category: "interface",
+    keywords: ["scan", "QR", "barcode"],
+  },
+  {
+    slug: "scissors",
+    name: "Scissors",
+    category: "interface",
+    keywords: ["scissors", "cut", "clip"],
   },
   {
     slug: "search",
@@ -3552,6 +5490,12 @@ export const icons = [
     name: "Send",
     category: "interface",
     keywords: ["submit", "paper plane", "message"],
+  },
+  {
+    slug: "send-horizontal",
+    name: "Send horizontal",
+    category: "interface",
+    keywords: ["send", "message", "share"],
   },
   {
     slug: "settings",
@@ -3572,10 +5516,34 @@ export const icons = [
     keywords: ["security", "protection", "safety"],
   },
   {
+    slug: "shield-alert",
+    name: "Shield alert",
+    category: "interface",
+    keywords: ["shield", "warning", "security"],
+  },
+  {
     slug: "shield-check",
     name: "Shield check",
     category: "interface",
     keywords: ["secure", "verified", "protection", "safe"],
+  },
+  {
+    slug: "shield-off",
+    name: "Shield off",
+    category: "interface",
+    keywords: ["shield", "unprotected", "security"],
+  },
+  {
+    slug: "shield-x",
+    name: "Shield x",
+    category: "interface",
+    keywords: ["shield", "blocked", "security"],
+  },
+  {
+    slug: "shrink",
+    name: "Shrink",
+    category: "interface",
+    keywords: ["shrink", "minimise", "collapse"],
   },
   {
     slug: "shuffle",
@@ -3590,6 +5558,36 @@ export const icons = [
     keywords: ["panel", "layout", "navigation"],
   },
   {
+    slug: "signal-high",
+    name: "Signal high",
+    category: "interface",
+    keywords: ["signal", "reception", "strong"],
+  },
+  {
+    slug: "signal-low",
+    name: "Signal low",
+    category: "interface",
+    keywords: ["signal", "reception", "weak"],
+  },
+  {
+    slug: "signal-medium",
+    name: "Signal medium",
+    category: "interface",
+    keywords: ["signal", "reception", "network"],
+  },
+  {
+    slug: "signal-none",
+    name: "Signal none",
+    category: "interface",
+    keywords: ["signal", "no reception", "offline"],
+  },
+  {
+    slug: "sim-card",
+    name: "Sim card",
+    category: "interface",
+    keywords: ["SIM", "mobile", "card"],
+  },
+  {
     slug: "skip-back",
     name: "Skip back",
     category: "interface",
@@ -3602,16 +5600,34 @@ export const icons = [
     keywords: ["next", "media", "track"],
   },
   {
+    slug: "slider-horizontal",
+    name: "Slider horizontal",
+    category: "interface",
+    keywords: ["slider", "control", "adjust"],
+  },
+  {
     slug: "sliders",
     name: "Sliders",
     category: "interface",
     keywords: ["adjust", "controls", "filters"],
   },
   {
+    slug: "smartphone",
+    name: "Smartphone",
+    category: "interface",
+    keywords: ["smartphone", "mobile", "phone"],
+  },
+  {
     slug: "smile",
     name: "Smile",
     category: "interface",
     keywords: ["happy", "positive", "feedback"],
+  },
+  {
+    slug: "sort-alpha",
+    name: "Sort alpha",
+    category: "interface",
+    keywords: ["sort", "alphabetical", "order"],
   },
   {
     slug: "sort-asc",
@@ -3626,10 +5642,22 @@ export const icons = [
     keywords: ["sort", "descending", "Z-A"],
   },
   {
+    slug: "sparkles",
+    name: "Sparkles",
+    category: "interface",
+    keywords: ["sparkles", "AI", "magic"],
+  },
+  {
     slug: "speaker",
     name: "Speaker",
     category: "interface",
     keywords: ["audio", "sound", "loudspeaker"],
+  },
+  {
+    slug: "speaker-wifi",
+    name: "Speaker wifi",
+    category: "interface",
+    keywords: ["speaker", "wireless", "audio"],
   },
   {
     slug: "square",
@@ -3650,6 +5678,18 @@ export const icons = [
     keywords: ["favourite", "rating", "featured"],
   },
   {
+    slug: "star-half",
+    name: "Star half",
+    category: "interface",
+    keywords: ["star", "half", "rating"],
+  },
+  {
+    slug: "sticky-note",
+    name: "Sticky note",
+    category: "interface",
+    keywords: ["sticky note", "memo", "note"],
+  },
+  {
     slug: "stop",
     name: "Stop",
     category: "interface",
@@ -3668,6 +5708,18 @@ export const icons = [
     keywords: ["text", "format", "delete"],
   },
   {
+    slug: "sun-moon",
+    name: "Sun moon",
+    category: "interface",
+    keywords: ["theme", "dark mode", "day night"],
+  },
+  {
+    slug: "sync",
+    name: "Sync",
+    category: "interface",
+    keywords: ["sync", "refresh", "update"],
+  },
+  {
     slug: "tablet",
     name: "Tablet",
     category: "interface",
@@ -3678,6 +5730,36 @@ export const icons = [
     name: "Terminal",
     category: "interface",
     keywords: ["console", "command line", "CLI"],
+  },
+  {
+    slug: "terminal-square",
+    name: "Terminal square",
+    category: "interface",
+    keywords: ["terminal", "console", "command"],
+  },
+  {
+    slug: "text-cursor",
+    name: "Text cursor",
+    category: "interface",
+    keywords: ["cursor", "text", "caret"],
+  },
+  {
+    slug: "thumbs-down",
+    name: "Thumbs down",
+    category: "interface",
+    keywords: ["thumbs down", "dislike", "no"],
+  },
+  {
+    slug: "thumbs-up",
+    name: "Thumbs up",
+    category: "interface",
+    keywords: ["thumbs up", "like", "yes"],
+  },
+  {
+    slug: "ticket",
+    name: "Ticket",
+    category: "interface",
+    keywords: ["ticket", "pass", "admission"],
   },
   {
     slug: "timer",
@@ -3752,6 +5834,12 @@ export const icons = [
     keywords: ["cloud upload", "sync", "backup", "upload"],
   },
   {
+    slug: "usb",
+    name: "USB",
+    category: "interface",
+    keywords: ["USB", "port", "cable"],
+  },
+  {
     slug: "user",
     name: "User",
     category: "interface",
@@ -3762,6 +5850,24 @@ export const icons = [
     name: "User check",
     category: "interface",
     keywords: ["user", "person", "account", "done", "complete"],
+  },
+  {
+    slug: "user-circle",
+    name: "User circle",
+    category: "interface",
+    keywords: ["user", "account", "profile"],
+  },
+  {
+    slug: "user-cog",
+    name: "User cog",
+    category: "interface",
+    keywords: ["user", "settings", "account"],
+  },
+  {
+    slug: "user-lock",
+    name: "User lock",
+    category: "interface",
+    keywords: ["user", "locked", "account"],
   },
   {
     slug: "user-minus",
@@ -3776,6 +5882,12 @@ export const icons = [
     keywords: ["user", "person", "account", "add", "new"],
   },
   {
+    slug: "user-search",
+    name: "User search",
+    category: "interface",
+    keywords: ["user", "search", "find"],
+  },
+  {
     slug: "user-x",
     name: "User x",
     category: "interface",
@@ -3786,6 +5898,12 @@ export const icons = [
     name: "Users",
     category: "interface",
     keywords: ["people", "team", "group"],
+  },
+  {
+    slug: "vector-pen",
+    name: "Vector pen",
+    category: "interface",
+    keywords: ["pen tool", "vector", "bezier"],
   },
   {
     slug: "video",
@@ -3800,10 +5918,28 @@ export const icons = [
     keywords: ["camera off", "privacy", "disabled"],
   },
   {
+    slug: "voicemail",
+    name: "Voicemail",
+    category: "interface",
+    keywords: ["voicemail", "phone", "message"],
+  },
+  {
     slug: "volume",
     name: "Volume",
     category: "interface",
     keywords: ["sound", "audio", "speaker"],
+  },
+  {
+    slug: "volume-high",
+    name: "Volume high",
+    category: "interface",
+    keywords: ["volume", "loud", "audio"],
+  },
+  {
+    slug: "volume-low",
+    name: "Volume low",
+    category: "interface",
+    keywords: ["volume", "quiet", "audio"],
   },
   {
     slug: "volume-x",
@@ -3812,10 +5948,46 @@ export const icons = [
     keywords: ["mute", "sound off", "silent", "audio"],
   },
   {
+    slug: "wand",
+    name: "Wand",
+    category: "interface",
+    keywords: ["wand", "magic", "AI"],
+  },
+  {
+    slug: "watch",
+    name: "Watch",
+    category: "interface",
+    keywords: ["watch", "time", "wearable"],
+  },
+  {
+    slug: "webcam",
+    name: "Webcam",
+    category: "interface",
+    keywords: ["webcam", "camera", "video"],
+  },
+  {
+    slug: "webhook",
+    name: "Webhook",
+    category: "interface",
+    keywords: ["webhook", "API", "automation"],
+  },
+  {
     slug: "wifi",
     name: "Wifi",
     category: "interface",
     keywords: ["wireless", "internet", "connection"],
+  },
+  {
+    slug: "wifi-low",
+    name: "Wifi low",
+    category: "interface",
+    keywords: ["wifi", "weak", "wireless"],
+  },
+  {
+    slug: "wifi-medium",
+    name: "Wifi medium",
+    category: "interface",
+    keywords: ["wifi", "wireless", "network"],
   },
   {
     slug: "wifi-off",
