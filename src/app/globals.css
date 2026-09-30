@@ -434,7 +434,7 @@ dialog.icon-dialog[open]::backdrop {
   font-size: clamp(15px, 0.9vw + 6px, var(--button-size, 15px));
   font-weight: var(--button-weight, 500);
   line-height: 1.25;
-  letter-spacing: -0.05em;
+  letter-spacing: var(--button-tracking, -0.01em);
   box-shadow: 0 0 0 rgb(0 40 120 / 0);
   transition:
     transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1),

@@ -53,6 +53,7 @@ const LAYOUT_DIALS = {
   button: {
     size: range(15, 12, 28, 1),
     weight: range(500, 300, 800, 100),
+    letterSpacing: range(-0.01, -0.08, 0.05, 0.005),
     paddingX: range(16, 8, 40, 1),
     paddingY: range(8, 4, 24, 1),
     hoverLift: range(0, 0, 6, 0.5),
@@ -101,6 +102,7 @@ export function useHeroLayoutDials(): HeroLayout {
     "--subtitle-width": `${d.subtitle.maxWidth}px`,
     "--button-size": `${d.button.size}px`,
     "--button-weight": d.button.weight,
+    "--button-tracking": `${d.button.letterSpacing}em`,
     "--button-px": `${d.button.paddingX}px`,
     "--button-py": `${d.button.paddingY}px`,
     "--button-lift": `${d.button.hoverLift}px`,
