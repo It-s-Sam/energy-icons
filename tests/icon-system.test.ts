@@ -232,7 +232,7 @@ describe("framework snippets", () => {
   it("offers a snippet for each install path, including the slug and size", () => {
     assert.deepEqual(
       FRAMEWORKS.map((framework) => framework.label),
-      ["React", "One icon", "SVG"],
+      ["React", "One icon", "HTML", "CSS", "Inline SVG"],
     );
     for (const framework of FRAMEWORKS) {
       const snippet = getIconSnippet(framework.id, "wind-turbine", 24);
@@ -241,7 +241,11 @@ describe("framework snippets", () => {
     }
     assert.match(getIconSnippet("react", "pylon", 40), /energy-icons\/icon/);
     assert.match(getIconSnippet("one", "heat-pump-air", 16), /import \{ HeatPumpAir \} from "energy-icons\/icons\/heat-pump-air"/);
-    assert.match(getIconSnippet("web", "solar-panel", 32), /src="solar-panel-32\.svg"/);
+    // No-install snippets load the master that matches the size from the npm package on jsDelivr.
+    assert.match(getIconSnippet("html", "solar-panel", 16), /src="https:\/\/cdn\.jsdelivr\.net\/npm\/energy-icons@1\/svg\/solar-panel\/20\.svg"/);
+    assert.match(getIconSnippet("html", "solar-panel", 32), /\/solar-panel\/48\.svg"/);
+    assert.match(getIconSnippet("css", "pylon", 24), /background-color: currentColor;[\s\S]*mask: url\("[^"]+\/pylon\/20\.svg"\)/);
+    assert.match(getIconSnippet("inline", "pylon", 24, "regular", "<svg>…</svg>"), /<svg>…<\/svg>/);
   });
 
   it("adds the weight to every snippet when Bold is selected, and omits it for Regular", () => {
@@ -252,6 +256,6 @@ describe("framework snippets", () => {
     }
     assert.match(getIconSnippet("react", "pylon", 40, "bold"), /<Icon name="pylon" size=\{40\} weight="bold" \/>/);
     assert.match(getIconSnippet("one", "pylon", 40, "bold"), /<Pylon size=\{40\} weight="bold" \/>/);
-    assert.match(getIconSnippet("web", "solar-panel", 32, "bold"), /src="solar-panel-32-bold\.svg"/);
+    assert.match(getIconSnippet("html", "solar-panel", 32, "bold"), /\/solar-panel\/48-bold\.svg"/);
   });
 });

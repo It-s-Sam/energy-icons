@@ -62,7 +62,9 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
   const shownMaster = getMasterForSize(shown.size);
   const shownMagnified = MAGNIFIED[shownMaster];
   const pictureReady = peekMaster(shown.weight, shownMaster) !== undefined;
-  const snippet = getIconSnippet(framework, name, size, weight);
+  // The Inline SVG snippet needs the artwork, which is ready once this master has loaded.
+  const inlineSvg = peekMaster(weight, master) ? getBrowserSvg(name, size, weight) : undefined;
+  const snippet = getIconSnippet(framework, name, size, weight, inlineSvg);
   const fileName = getIconFileName(name, size, weight);
 
   useEffect(() => {
@@ -255,7 +257,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
                   id="framework-snippet"
                   role="tabpanel"
                   aria-labelledby={`framework-tab-${framework}`}
-                  className="min-h-20 min-w-0 flex-1 overflow-x-hidden py-1 font-mono text-[12px] leading-5 break-words whitespace-pre-wrap text-fg-muted"
+                  className="max-h-44 min-h-20 min-w-0 flex-1 overflow-x-hidden overflow-y-auto py-1 font-mono text-[12px] leading-5 break-words whitespace-pre-wrap text-fg-muted"
                 >
                   <code>{snippet}</code>
                 </pre>
