@@ -136,6 +136,14 @@ tests/                           node:test suites run with tsx
 - **Routes.** `/` shows all icons. `/category/<id>` is statically generated for each non-empty category. `/docs/adding-an-icon` and `/docs/design-principles` are plain pages. Search text and grid size live in a client context in the root layout, so they persist as you move between categories.
 - **Later.** Adding docs pages means adding routes under `src/app/docs` and a link in `src/components/layout/sidebar.tsx`. GitHub, Figma and sponsor links go in `siteConfig.links` (`src/config/site.ts`), and the sidebar shows a Resources group once any of them are set.
 
+## Releasing
+
+1. Bump `version` in `packages/energy-icons/package.json` (and `siteConfig.version` in `src/config/site.ts`), add a `CHANGELOG.md` entry, and push to `main`. Vercel deploys the site from `main`.
+2. Run the **Publish** workflow from the Actions tab. It builds the package and stages it on npm through trusted publishing, with no stored token.
+3. Approve the staged version with 2FA, on the package's page at npmjs.com or with `npm stage list` then `npm stage approve <stage-id>`. Until then nothing is installable, so a compromised workflow can't ship a release on its own.
+
+npm then runs its automated review, which can take a while for a large release; the version shows as "Validating" until it finishes.
+
 ## The website hero
 
 Every page opens on an animated hero, with the library window floating below it. The window locks in place when it reaches the top of the viewport, and internal links point at `#icons` so moving between pages keeps it in view.

@@ -3,6 +3,6 @@ export const DOCS_PAGES = [
   { href: "/docs/installation", label: "Installation" },
   { href: "/docs/usage", label: "Usage" },
   { href: "/docs/design-principles", label: "Design principles" },
-  { href: "/docs/adding-an-icon", label: "Adding an icon" },
+  { href: "/docs/adding-an-icon", label: "Contributing an icon" },
   { href: "/docs/license", label: "License & legal" },
 ] as const;

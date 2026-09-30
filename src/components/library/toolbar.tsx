@@ -61,7 +61,7 @@ export function Toolbar({ resultCount, totalCount }: { resultCount: number; tota
         <div className="flex min-w-0 flex-1 items-center gap-3 sm:flex-none">
           <input
             type="range"
-            className="size-slider w-full min-w-[72px] sm:w-[165px]"
+            className="size-slider w-0 min-w-[72px] flex-1 sm:w-[165px] sm:flex-none"
             min={0}
             max={SUPPORTED_SIZES.length - 1}
             step={1}

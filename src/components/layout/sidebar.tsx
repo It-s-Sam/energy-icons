@@ -47,12 +47,14 @@ export function Sidebar() {
   return (
     <>
       {/* Drawer backdrop (small screens) */}
+      {/* On small screens the drawer slides in inside the floating library window, which
+          clips it to the window's rounded corners. */}
       {drawerOpen && (
-        <div className="fixed inset-0 z-30 bg-[var(--backdrop)] md:hidden" onClick={() => setDrawerOpen(false)} aria-hidden="true" />
+        <div className="absolute inset-0 z-30 bg-[var(--backdrop)] md:hidden" onClick={() => setDrawerOpen(false)} aria-hidden="true" />
       )}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-[208px] shrink-0 flex-col border-r border-sidebar-line bg-sidebar transition-transform md:static md:z-auto md:translate-x-0 ${
-          drawerOpen ? "translate-x-0 shadow-xl" : "-translate-x-full"
+        className={`absolute inset-y-0 left-0 z-40 flex w-[208px] shrink-0 flex-col border-r border-sidebar-line bg-sidebar transition-[translate,visibility] md:static md:visible md:z-auto md:translate-x-0 ${
+          drawerOpen ? "visible translate-x-0 shadow-xl" : "invisible -translate-x-full"
         } ${sidebarCollapsed ? "md:hidden" : ""}`}
         aria-label="Sidebar"
       >

@@ -16,6 +16,8 @@ Open an [icon request](https://github.com/It-s-Sam/energy-icons/issues/new?templ
 
 Do not hand-edit path data, stroke widths, or add `non-scaling-stroke`. Fixes to a drawing happen in the source file, then the SVG is replaced.
 
+Open a pull request from a fork. The maintainer reviews every icon for drawing quality, consistency with the set, and a clear meaning, and nothing ships until it's merged. By contributing you confirm the icon is your own work and release it under the project's [MIT License](LICENSE). Please don't submit drawings traced from other icon sets, or logos you don't have the right to share.
+
 ## Work on the website or the package
 
 Node 20 or newer.

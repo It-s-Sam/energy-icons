@@ -1,5 +1,9 @@
 name: Publish
 
+# Stages a release on npm through trusted publishing (OIDC, no stored token).
+# A staged version isn't installable until a maintainer approves it with 2FA,
+# on npmjs.com or with `npm stage approve <stage-id>`. See README → Releasing.
+
 on:
   workflow_dispatch:
 
@@ -15,7 +19,9 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
+      # `npm stage` needs npm 11.15 or newer.
+      - run: npm install -g npm@^11.15.0
       - run: npm ci
       - run: npm run package
-      - run: npm publish
+      - run: npm stage publish .
         working-directory: packages/energy-icons
