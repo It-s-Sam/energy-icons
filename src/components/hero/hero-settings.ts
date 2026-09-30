@@ -190,7 +190,7 @@ export const heroExportLoopSeconds = exported.timeline.durationSeconds > 0 ? exp
 /** Builds renderer settings from Toolcraft-style values; the dials pass edited copies of the export. */
 export function readHeroSettings(values: Values, loopSeconds = heroExportLoopSeconds): HeroSettings {
   return {
-    background: readHex(values, "appearance.background", "#006FFF"),
+    background: readHex(values, "appearance.background", "#006AF5"),
     field: readFieldSettings(values),
     frames: readFrames(values, exported.attachments),
     frameStyle: readFrameStyle(values),

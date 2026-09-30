@@ -63,7 +63,7 @@ const LAYOUT_DIALS = {
     size: range(16, 12, 20, 1),
     gap: range(24, 8, 48, 1),
     inset: range(44, 16, 120, 1),
-    opacity: range(0.88, 0.4, 1, 0.01),
+    opacity: range(1, 0.4, 1, 0.01),
     _collapsed: true,
   },
 } satisfies DialConfig;
@@ -164,7 +164,7 @@ const frameFolders = Object.fromEntries(
 
 const FIELD_DIALS = {
   loopSeconds: range(heroExportLoopSeconds, 2, 30, 0.5),
-  background: { type: "color" as const, default: str("appearance.background", "#006FFF") },
+  background: { type: "color" as const, default: str("appearance.background", "#006AF5") },
   grid: {
     shape: { type: "select" as const, options: ["round", "square"], default: str("grid.shape", "square") },
     color: { type: "color" as const, default: str("grid.color", "#FFFFFF") },
@@ -286,7 +286,7 @@ type FieldDialValues = {
 function toToolcraftValues(d: FieldDialValues): Values {
   return {
     ...heroExportValues,
-    "appearance.background": toHex(d.background, "#006FFF"),
+    "appearance.background": toHex(d.background, "#006AF5"),
     "grid.shape": d.grid.shape,
     "grid.color": toHex(d.grid.color, "#FFFFFF"),
     "grid.spacing": d.grid.spacing,

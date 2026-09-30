@@ -141,7 +141,7 @@
   },
   "values": {
     "export.includeBackground": true,
-    "appearance.background": "#006FFF",
+    "appearance.background": "#006AF5",
     "canvas.workspaceBackground": "dots",
     "canvas.renderScale": 1.75,
     "grid.shape": "square",

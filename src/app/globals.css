@@ -220,7 +220,7 @@ dialog.icon-dialog[open] > div {
 }
 .hero-nav-link {
   font-size: var(--nav-size, 16px);
-  color: rgb(255 255 255 / var(--nav-opacity, 0.88));
+  color: rgb(255 255 255 / var(--nav-opacity, 1));
   transition: color 150ms ease;
 }
 .hero-nav-link:hover {
