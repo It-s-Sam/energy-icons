@@ -140,16 +140,7 @@ async function placementFor(slug: string): Promise<IconPlacement | null> {
   return { slug, name: icon.name, weight, size, master, body, color };
 }
 
-// Placements for the rendered tiles, resolved ahead of a drag (dragend can't await).
-const ready = new Map<string, IconPlacement>();
-function prepare(slug: string): void {
-  void placementFor(slug).then((placement) => {
-    if (placement) ready.set(slug, placement);
-  });
-}
-
 function savePreferences(): void {
-  ready.clear();
   post({ type: "save-preferences", preferences: state.preferences });
 }
 
@@ -214,30 +205,42 @@ colorHex.addEventListener("change", () => {
   else colorHex.value = state.preferences.color.toUpperCase();
 });
 
+const tileSlug = (event: Event) => (event.target as HTMLElement).closest<HTMLElement>(".tile")?.dataset.slug;
+
+/** Set while a tile is being dragged, so releasing the drag never counts as a click. */
+let dragging = false;
+
 grid.addEventListener("click", async (event) => {
-  const tile = (event.target as HTMLElement).closest<HTMLButtonElement>(".tile");
-  if (!tile?.dataset.slug) return;
-  const placement = await placementFor(tile.dataset.slug);
+  const slug = tileSlug(event);
+  if (!slug || dragging) return;
+  const placement = await placementFor(slug);
   if (placement) post({ type: "insert", placement });
 });
-grid.addEventListener("pointerover", (event) => {
-  const slug = (event.target as HTMLElement).closest<HTMLElement>(".tile")?.dataset.slug;
-  if (slug && !ready.has(slug)) prepare(slug);
-});
+
 grid.addEventListener("dragstart", (event) => {
-  const slug = (event.target as HTMLElement).closest<HTMLElement>(".tile")?.dataset.slug;
-  if (slug && !ready.has(slug)) prepare(slug);
+  const slug = tileSlug(event);
+  if (!slug || !event.dataTransfer) return;
+  dragging = true;
+  // Some Chromium builds (including Figma's desktop app) only start a drag that carries data.
+  event.dataTransfer.setData("text/plain", slug);
+  event.dataTransfer.effectAllowed = "copy";
+  // Warm the artwork so the drop can be sent the moment the drag ends.
+  void placementFor(slug);
 });
-grid.addEventListener("dragend", (event) => {
-  // Figma's convention: an empty `view` means the drop landed back inside the plugin.
-  if (!event.view || (event.view as unknown as { length: number }).length === 0) return;
-  const slug = (event.target as HTMLElement).closest<HTMLElement>(".tile")?.dataset.slug;
-  const placement = slug ? ready.get(slug) : undefined;
+
+grid.addEventListener("dragend", async (event) => {
+  const slug = tileSlug(event);
+  // Let the click that some browsers fire after a drag pass harmlessly first.
+  setTimeout(() => {
+    dragging = false;
+  }, 0);
+  if (!slug) return;
+  // Released back over the plugin window: not a drop onto the canvas.
+  const { clientX: x, clientY: y } = event;
+  if (x >= 0 && y >= 0 && x <= window.innerWidth && y <= window.innerHeight) return;
+  const placement = await placementFor(slug);
   if (!placement) return;
-  parent.postMessage(
-    { pluginDrop: { clientX: event.clientX, clientY: event.clientY, items: [], dropMetadata: placement } },
-    "*",
-  );
+  parent.postMessage({ pluginDrop: { clientX: x, clientY: y, items: [], dropMetadata: placement } }, "*");
 });
 
 window.addEventListener("message", (event: MessageEvent<{ pluginMessage?: MainToUi }>) => {
