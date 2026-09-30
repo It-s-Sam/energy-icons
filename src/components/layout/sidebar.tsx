@@ -7,15 +7,9 @@ import type { ReactNode } from "react";
 import { Logo } from "@/components/layout/logo";
 import { useLibrary } from "@/components/library/library-provider";
 import { siteConfig } from "@/config/site";
+import { DOCS_PAGES } from "@/data/docs";
 import { getNonEmptyCategories, TOTAL_ICONS } from "@/lib/icons/filter";
 import { categoryHref, inLibrary } from "@/lib/routes";
-
-const DOCS = [
-  { href: "/docs/installation", label: "Installation" },
-  { href: "/docs/usage", label: "Usage" },
-  { href: "/docs/design-principles", label: "Design principles" },
-  { href: "/docs/adding-an-icon", label: "Adding an icon" },
-];
 
 function NavLink({ href, active, children, count }: { href: string; active: boolean; children: ReactNode; count?: number }) {
   const { setDrawerOpen } = useLibrary();
@@ -89,7 +83,7 @@ export function Sidebar() {
           <div>
             <SectionLabel>Docs</SectionLabel>
             <div className="flex flex-col gap-px">
-              {DOCS.map((doc) => (
+              {DOCS_PAGES.map((doc) => (
                 <NavLink key={doc.href} href={doc.href} active={pathname === doc.href}>
                   {doc.label}
                 </NavLink>

@@ -17,6 +17,7 @@ import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: { default: `${siteConfig.name} — energy transition icons`, template: `%s · ${siteConfig.name}` },
   description: siteConfig.description,
   openGraph: {

@@ -1,6 +1,6 @@
 # Energy Icons
 
-Open-source icons for the energy transition: solar, wind, hydro, grid, storage, EV charging, heat pumps, and industry. Every icon is drawn by hand at two optical sizes and published as outlined SVGs. MIT licensed.
+Open-source icons for the energy transition: 1,000 icons covering solar, wind, hydro, grid, storage, EV charging, heat pumps, industry, climate, and the everyday interface glyphs around them. Every icon is drawn at two optical sizes in two weights and published as outlined SVGs. MIT licensed.
 
 ```bash
 npm install energy-icons
@@ -94,7 +94,7 @@ import { Icon } from "@/components/icon";
    {
      slug: "heat-network",
      name: "Heat network",
-     category: "heat-buildings", // generation | grid-storage | heat-buildings | fuels | climate
+     category: "heat-buildings", // any id from src/data/categories.ts
      keywords: ["district heating", "heat network", "pipes"],
    },
    ```
@@ -102,7 +102,7 @@ import { Icon } from "@/components/icon";
 
 If a metadata entry is missing a file, or a folder in `/icons` has no metadata, `npm run icons` exits with an error that names the problem. Because `dev`, `build`, `typecheck` and `test` all run it first, a broken icon can't slip through. The check also rejects the wrong viewBox, `non-scaling-stroke`, scripts and embedded styles or images. It warns about live strokes, hard-coded fills and `id`s.
 
-Categories with no icons are hidden. **Fuels** is defined but empty for now, and its filter will appear automatically once a Fuels icon exists.
+Categories with no icons are hidden, and a category's filter appears automatically once it has an icon.
 
 ## Architecture
 
@@ -123,7 +123,9 @@ src/
   components/library/            Toolbar, grid, detail dialog, state provider
   components/layout/             Sidebar, theme toggle, menu button
   components/docs/               Docs page primitives
+  components/hero/               Animated hero (WebGL field, frames) and the floating library stage
   app/                           Routes: /, /category/[category], /docs/*
+design/energy-hero-settings.json  Hero field settings exported from Toolcraft
 public/downloads/energy-icons.zip  GENERATED at build time for Download all (gitignored)
 tests/                           node:test suites run with tsx
 ```
@@ -131,3 +133,21 @@ tests/                           node:test suites run with tsx
 - **Registry.** The generator reads each SVG and stores the source file once, keyed by slug and master. viewBox and inner markup are derived from that string. `<Icon>` renders the inner markup inside an `<svg>` with the right viewBox and width/height, so rendering never rewrites paths. Copy and download take the full source string and change only the root `width` and `height`. The browser ships the Regular 48 chunk with the page (the default size). The other master of the current weight loads after paint, and Bold loads when that weight is used.
 - **Routes.** `/` shows all icons. `/category/<id>` is statically generated for each non-empty category. `/docs/adding-an-icon` and `/docs/design-principles` are plain pages. Search text and grid size live in a client context in the root layout, so they persist as you move between categories.
 - **Later.** Adding docs pages means adding routes under `src/app/docs` and a link in `src/components/layout/sidebar.tsx`. GitHub, Figma and sponsor links go in `siteConfig.links` (`src/config/site.ts`), and the sidebar shows a Resources group once any of them are set.
+
+## The website hero
+
+Every page opens on an animated hero, with the library window floating below it. The window locks in place when it reaches the top of the viewport, and internal links point at `#icons` so moving between pages keeps it in view.
+
+The hero's dot, energy and glow field is a WebGL shader adapted from Toolcraft. Its settings live in `design/energy-hero-settings.json`. In development, DialKit panels (bottom right) tune the hero layout, the field and the library stage live. Use a panel's Copy button, then paste the values into `src/components/hero/hero-dials.ts` or `library-stage.tsx`, or into the settings JSON. Production builds swap DialKit for a stub that returns each dial's default (`next.config.ts`), so the panels never ship.
+
+Set `NEXT_PUBLIC_SITE_URL` to the public origin once a custom domain is live. It is used for social previews, the sitemap and robots.txt. On Vercel it falls back to the project's production domain.
+
+## License
+
+MIT, see [LICENSE](LICENSE). Free for personal and commercial use, and no attribution is required. Keep the `LICENSE` file when you redistribute the icon files. The npm package and the Download all zip include it.
+
+Icons are drawn in Figma by Sam, and extended with Claude working from the same construction rules and grid. Every icon is reviewed and finalised by hand.
+
+A few icons depict symbols associated with trademarks, such as Bluetooth, USB, Wi-Fi, CCS and CHAdeMO. Those marks belong to their owners, and their inclusion implies no affiliation or endorsement.
+
+The website includes third-party work (the Toolcraft hero renderer, the GitHub mark, and the Montserrat and Geist Mono fonts), credited in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Security issues: see [SECURITY.md](SECURITY.md).

@@ -4,6 +4,7 @@
  *   src/index.ts             re-exports every component
  *   src/registry.ts          name → component map for energy-icons/icon
  *   svg/<slug>/              the source SVG files
+ *   LICENSE                  copied from the repo root, so the MIT notice ships with every install
  *
  * Run with `npm run package` (it also typechecks and emits dist/).
  */
@@ -110,5 +111,7 @@ ${registryLines.join("\n")}
 } as const;
 `,
 );
+
+cpSync(path.join(ROOT, "LICENSE"), path.join(PKG, "LICENSE"));
 
 console.log(`✓ energy-icons package source: ${icons.length} icons → packages/energy-icons`);

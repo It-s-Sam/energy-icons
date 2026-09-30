@@ -1,3 +1,4 @@
+// Adapted from Toolcraft's hero renderer (MIT, Copyright (c) 2026 Pixel Point). See THIRD_PARTY_NOTICES.md.
 /**
  * Reads the Toolcraft export in design/energy-hero-settings.json into the typed
  * settings the hero renderer consumes. Ported from Toolcraft's hero-values.ts:

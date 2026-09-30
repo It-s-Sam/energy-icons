@@ -4,7 +4,8 @@
  *
  * The GLSL and uniform packing are copied from Toolcraft's soft-ellipse mask
  * module (runtime/modules/built-ins/masks/rendering/webgl-mask.ts), MIT License,
- * Copyright (c) 2026 Pixel Point, so the site does not depend on Toolcraft.
+ * Copyright (c) 2026 Pixel Point, so the site does not depend on Toolcraft. See
+ * THIRD_PARTY_NOTICES.md.
  */
 
 export const MAX_MASKS = 16;

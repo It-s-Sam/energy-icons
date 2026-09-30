@@ -1,3 +1,5 @@
+// Adapted from Toolcraft's hero renderer (MIT, Copyright (c) 2026 Pixel Point). See THIRD_PARTY_NOTICES.md.
+
 import { HERO_FIELD_FRAGMENT_SHADER, HERO_FIELD_VERTEX_SHADER } from "./field-shader";
 import { bindMaskUniforms, type SoftEllipse } from "./hero-masks";
 import type { HeroFieldSettings } from "./hero-settings";

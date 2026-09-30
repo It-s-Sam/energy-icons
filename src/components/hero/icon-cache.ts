@@ -1,3 +1,4 @@
+// Adapted from Toolcraft's hero renderer (MIT, Copyright (c) 2026 Pixel Point). See THIRD_PARTY_NOTICES.md.
 /**
  * Decoded hero icons keyed by URL, plus single-color rasters cached per size and
  * color so the frames pass never re-tints on a steady frame. Ported from Toolcraft.

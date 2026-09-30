@@ -264,6 +264,8 @@ const manifest = {
   })),
 };
 zipEntries["energy-icons/icons.json"] = [strToU8(`${JSON.stringify(manifest, null, 2)}\n`), opts];
+// The MIT notice travels with the files.
+zipEntries["energy-icons/LICENSE"] = [readFileSync(path.join(ROOT, "LICENSE")), opts];
 
 mkdirSync(path.dirname(ZIP_FILE), { recursive: true });
 writeFileSync(ZIP_FILE, zipSync(zipEntries, { level: 9 }));

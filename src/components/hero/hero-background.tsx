@@ -1,5 +1,7 @@
 "use client";
 
+// Adapted from Toolcraft's hero renderer (MIT, Copyright (c) 2026 Pixel Point). See THIRD_PARTY_NOTICES.md.
+
 import { useEffect, useRef } from "react";
 
 import { HeroFieldRenderer, type HeroFieldSeam } from "./field-renderer";

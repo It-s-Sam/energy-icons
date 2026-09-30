@@ -1,3 +1,5 @@
+// Adapted from Toolcraft's hero renderer (MIT, Copyright (c) 2026 Pixel Point). See THIRD_PARTY_NOTICES.md.
+
 import { getTintedHeroIcon } from "./icon-cache";
 import type { HeroFrame, HeroFrameStyle } from "./hero-settings";
 

@@ -50,3 +50,6 @@ next-env.d.ts
 /packages/energy-icons/src/registry.ts
 /packages/energy-icons/dist/
 /packages/energy-icons/svg/
+
+# copied from the root LICENSE by scripts/build-package.ts
+/packages/energy-icons/LICENSE

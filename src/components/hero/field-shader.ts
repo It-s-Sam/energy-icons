@@ -1,3 +1,5 @@
+// Adapted from Toolcraft's hero renderer (MIT, Copyright (c) 2026 Pixel Point). See THIRD_PARTY_NOTICES.md.
+
 import { MASK_GLSL } from "./hero-masks";
 
 export const HERO_FIELD_VERTEX_SHADER = `

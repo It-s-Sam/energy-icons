@@ -1,11 +1,11 @@
 {
   "name": "energy-icons",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Open-source icons for the energy transition. React components and SVG files, MIT licensed.",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
-  "files": ["dist", "svg", "README.md"],
+  "files": ["dist", "svg", "README.md", "LICENSE"],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -27,6 +27,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "author": "ItsSam",
+  "homepage": "https://github.com/It-s-Sam/energy-icons#readme",
+  "bugs": {
+    "url": "https://github.com/It-s-Sam/energy-icons/issues"
+  },
+  "funding": "https://github.com/sponsors/It-s-Sam",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/It-s-Sam/energy-icons.git",
@@ -35,5 +41,5 @@
   "peerDependencies": {
     "react": ">=18"
   },
-  "keywords": ["icons", "svg", "react", "energy", "renewable"]
+  "keywords": ["icons", "svg", "react", "energy", "renewable", "climate", "solar", "wind", "ev-charging", "grid"]
 }

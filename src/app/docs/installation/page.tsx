@@ -38,6 +38,26 @@ energy-icons/svg/pylon/48.svg
 energy-icons/svg/pylon/20-bold.svg
 energy-icons/svg/pylon/48-bold.svg`}</CodeBlock>
       </DocSection>
+      <DocSection title="Without React">
+        <P>
+          Any framework, or plain HTML, can use the SVGs. Paste the markup inline to inherit the text colour, since
+          every fill is <Code>currentColor</Code>. Pick the 20 master below 32px and the 48 master from 32px up.
+        </P>
+        <CodeBlock>{`<button>
+  <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true">…</svg>
+  Charge
+</button>`}</CodeBlock>
+        <P>
+          An <Code>&lt;img&gt;</Code> can’t pick up colour from the page and renders black. To tint a file loaded by
+          URL, use it as a CSS mask. The files are also served from the npm package over a CDN.
+        </P>
+        <CodeBlock>{`.icon-pylon {
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+  mask: url("https://cdn.jsdelivr.net/npm/energy-icons@1/svg/pylon/20.svg") center / contain no-repeat;
+}`}</CodeBlock>
+      </DocSection>
     </DocsPage>
   );
 }
