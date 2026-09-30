@@ -61,16 +61,32 @@ function insert(placement: IconPlacement): void {
   figma.currentPage.selection = [icon];
 }
 
-// Dragging a tile out of the plugin window drops the icon where it lands.
-figma.on("drop", (event: DropEvent) => {
-  const placement = event.dropMetadata as IconPlacement | undefined;
-  if (!placement?.body) return true;
+async function drop(placement: IconPlacement, event: DropEvent): Promise<void> {
+  // With dynamic page loading, a PageNode handed over by the event must be loaded
+  // before it can take children. Drops land on the page in view, which always is.
+  let parent: Container;
+  if (event.node.type !== "PAGE") {
+    parent = event.node as Container;
+  } else if (event.node.id === figma.currentPage.id) {
+    parent = figma.currentPage;
+  } else {
+    await event.node.loadAsync();
+    parent = event.node;
+  }
   const icon = createIcon(placement);
-  const parent = event.node as Container;
   parent.appendChild(icon);
   icon.x = Math.round(event.x - icon.width / 2);
   icon.y = Math.round(event.y - icon.height / 2);
   figma.currentPage.selection = [icon];
+}
+
+// Dragging a tile out of the plugin window drops the icon where it lands.
+figma.on("drop", (event: DropEvent) => {
+  const placement = event.dropMetadata as IconPlacement | undefined;
+  if (!placement?.body) return true;
+  drop(placement, event).catch((error: unknown) => {
+    figma.notify(`Couldn’t drop the icon: ${error instanceof Error ? error.message : String(error)}`, { error: true });
+  });
   return false;
 });
 
