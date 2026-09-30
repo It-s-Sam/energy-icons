@@ -385,6 +385,10 @@ dialog.icon-dialog[open]::backdrop {
   -webkit-background-clip: text;
   background-clip: text;
   filter: blur(calc(var(--icons-soften, 1.5) * var(--hu)));
+  /* The gradient only paints inside this box, and the tight tracking lets the
+     last letter overhang it. Pad the sides (and shift back) so nothing clips. */
+  left: -0.15em;
+  padding-inline: 0.15em;
 }
 /* Handle geometry is in design pixels; the first anchor sits on (x, y). */
 .hero-handle {
