@@ -48,9 +48,18 @@ export type HeroFrame = Readonly<{
   /** Icon file name from the export, served from /public/hero. */
   fileName: string;
   index: number;
+  /** Placement below the mobile breakpoint, clear of the headline. */
+  mobilePosition: Readonly<{ x: number; y: number }>;
   position: Readonly<{ x: number; y: number }>;
   rotation: number;
   size: number;
+}>;
+
+/** Below `breakpoint` (hero width, CSS px) frames use their mobile positions, scaled and faded. */
+export type HeroMobileFrames = Readonly<{
+  breakpoint: number;
+  opacity: number;
+  scale: number;
 }>;
 
 export type HeroSettings = Readonly<{
@@ -60,6 +69,7 @@ export type HeroSettings = Readonly<{
   frameStyle: HeroFrameStyle;
   loopSeconds: number;
   masks: unknown;
+  mobileFrames: HeroMobileFrames;
   /** Loop time (seconds) of the frame the export was saved on; the reduced-motion still. */
   stillSeconds: number;
 }>;
@@ -148,7 +158,13 @@ function readFrameStyle(values: Values): HeroFrameStyle {
 }
 
 type Attachment = Readonly<{ asset?: { fileName?: unknown; id?: unknown; sourceTarget?: unknown } }>;
-type FrameRecord = Readonly<{ mediaId?: unknown; position?: unknown; rotation?: unknown; size?: unknown }>;
+type FrameRecord = Readonly<{
+  mediaId?: unknown;
+  mobilePosition?: unknown;
+  position?: unknown;
+  rotation?: unknown;
+  size?: unknown;
+}>;
 
 function readPosition(value: unknown): Readonly<{ x: number; y: number }> {
   if (typeof value === "object" && value !== null) {
@@ -172,10 +188,12 @@ function readFrames(values: Values, attachments: readonly Attachment[]): readonl
     )
     .map((asset, index) => {
       const record = byId.get(asset.id);
+      const position = readPosition(record?.position);
       return {
         fileName: asset.fileName,
         index,
-        position: readPosition(record?.position),
+        mobilePosition: record?.mobilePosition === undefined ? position : readPosition(record.mobilePosition),
+        position,
         rotation: typeof record?.rotation === "number" ? record.rotation : 0,
         size: typeof record?.size === "number" ? record.size : 96,
       };
@@ -196,6 +214,11 @@ export function readHeroSettings(values: Values, loopSeconds = heroExportLoopSec
     frameStyle: readFrameStyle(values),
     loopSeconds,
     masks: values["mask.items"],
+    mobileFrames: {
+      breakpoint: readNumber(values, "frames.mobileBreakpoint", 768),
+      opacity: Math.min(1, Math.max(0, readNumber(values, "frames.mobileOpacity", 60) / 100)),
+      scale: Math.max(0.1, readNumber(values, "frames.mobileScale", 58) / 100),
+    },
     stillSeconds: exported.timeline.currentTimeSeconds % loopSeconds,
   };
 }

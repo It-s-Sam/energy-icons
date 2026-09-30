@@ -179,7 +179,11 @@
           "y": -0.56
         },
         "size": 96,
-        "rotation": -8
+        "rotation": -8,
+        "mobilePosition": {
+          "x": -0.62,
+          "y": -0.58
+        }
       },
       {
         "mediaId": "hero-icon-sun",
@@ -188,7 +192,11 @@
           "y": -0.15
         },
         "size": 92,
-        "rotation": 6
+        "rotation": 6,
+        "mobilePosition": {
+          "x": 0.0,
+          "y": -0.72
+        }
       },
       {
         "mediaId": "hero-icon-turbine",
@@ -197,7 +205,11 @@
           "y": -0.02
         },
         "size": 96,
-        "rotation": -12
+        "rotation": -12,
+        "mobilePosition": {
+          "x": -0.6,
+          "y": 0.62
+        }
       },
       {
         "mediaId": "hero-icon-battery",
@@ -206,7 +218,11 @@
           "y": -0.43
         },
         "size": 104,
-        "rotation": 28
+        "rotation": 28,
+        "mobilePosition": {
+          "x": 0.62,
+          "y": -0.52
+        }
       },
       {
         "mediaId": "hero-icon-plug",
@@ -215,7 +231,11 @@
           "y": -0.03
         },
         "size": 92,
-        "rotation": 4
+        "rotation": 4,
+        "mobilePosition": {
+          "x": 0.02,
+          "y": 0.8
+        }
       },
       {
         "mediaId": "hero-icon-leaf",
@@ -224,7 +244,11 @@
           "y": 0.23
         },
         "size": 100,
-        "rotation": 38
+        "rotation": 38,
+        "mobilePosition": {
+          "x": 0.64,
+          "y": 0.6
+        }
       }
     ],
     "frames.borderStyle": "dotted",
@@ -249,7 +273,10 @@
     "glow.pulse": 30,
     "glow.pulseCount": 2,
     "export.image.format": "png",
-    "export.image.resolution": "4k"
+    "export.image.resolution": "4k",
+    "frames.mobileBreakpoint": 768,
+    "frames.mobileScale": 58,
+    "frames.mobileOpacity": 60
   },
   "version": 3
 }

@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 import { HeroFieldRenderer, type HeroFieldSeam } from "./field-renderer";
 import { drawHeroFrames, heroIconUrl } from "./frames-drawing";
 import { evaluateHeroMasks, type SoftEllipse } from "./hero-masks";
-import type { HeroSettings } from "./hero-settings";
+import type { HeroFrame, HeroFrameStyle, HeroSettings } from "./hero-settings";
 import { decodeHeroIcon } from "./icon-cache";
 
 /** Browsers cap canvas edges; beyond this the backing cannot track the displayed size. */
@@ -28,6 +28,27 @@ const MAX_BACKING_EDGE = 8192;
 function evaluateMasks(settings: HeroSettings, seam: HeroFieldSeam | null, width: number, height: number): readonly SoftEllipse[] {
   const masks = evaluateHeroMasks(settings.masks, width, height);
   return seam ? masks.map((mask) => ({ ...mask, center: { x: mask.center.x, y: mask.center.y - height } })) : masks;
+}
+
+/**
+ * Narrow heroes move the frames into the bands above and below the headline,
+ * and draw them smaller and fainter so they stay out of the text's way.
+ */
+function layoutFrames(
+  settings: HeroSettings,
+  cssWidth: number,
+): Readonly<{ alpha: number; frames: readonly HeroFrame[]; style: HeroFrameStyle }> {
+  const { breakpoint, opacity, scale } = settings.mobileFrames;
+  if (cssWidth >= breakpoint) return { alpha: 1, frames: settings.frames, style: settings.frameStyle };
+  return {
+    alpha: opacity,
+    frames: settings.frames.map((frame) => ({ ...frame, position: frame.mobilePosition, size: frame.size * scale })),
+    style: {
+      ...settings.frameStyle,
+      float: settings.frameStyle.float * scale,
+      radius: settings.frameStyle.radius * scale,
+    },
+  };
 }
 
 export function HeroBackground({ settings, seam = null }: { settings: HeroSettings; seam?: HeroFieldSeam | null }) {
@@ -75,7 +96,7 @@ export function HeroBackground({ settings, seam = null }: { settings: HeroSettin
 
     const draw = () => {
       if (cssWidth === 0 || cssHeight === 0) return;
-      const { field, frameStyle, frames, loopSeconds } = settingsRef.current;
+      const { field, loopSeconds } = settingsRef.current;
       const progress = (elapsed % loopSeconds) / loopSeconds;
       const backingWidth = Math.max(1, Math.round(cssWidth * pixelRatio));
       const backingHeight = Math.max(1, Math.round(cssHeight * pixelRatio));
@@ -98,7 +119,10 @@ export function HeroBackground({ settings, seam = null }: { settings: HeroSettin
       context.setTransform(1, 0, 0, 1, 0, 0);
       context.clearRect(0, 0, backingWidth, backingHeight);
       context.setTransform(backingWidth / cssWidth, 0, 0, backingHeight / cssHeight, 0, 0);
-      drawHeroFrames(context, { cssHeight, cssWidth, frames, pixelRatio, progress, style: frameStyle });
+      const layout = layoutFrames(settingsRef.current, cssWidth);
+      context.globalAlpha = layout.alpha;
+      drawHeroFrames(context, { cssHeight, cssWidth, frames: layout.frames, pixelRatio, progress, style: layout.style });
+      context.globalAlpha = 1;
     };
 
     const tick = (timestamp: number) => {

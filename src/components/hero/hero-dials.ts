@@ -126,7 +126,7 @@ function colorOpacity(target: string): { hex: string; opacity: number } {
 
 type Point = { x: number; y: number };
 type MaskRecord = { position: Point; radius: number; stretch: number; rotation: number; feather: number; strength: number };
-type FrameRecord = { mediaId: string; position: Point; size: number; rotation: number };
+type FrameRecord = { mediaId: string; position: Point; mobilePosition?: Point; size: number; rotation: number };
 
 const exportMask = ((heroExportValues["mask.items"] as MaskRecord[] | undefined) ?? [])[0] ?? {
   feather: 40,
@@ -155,6 +155,7 @@ const frameFolders = Object.fromEntries(
     frame.mediaId.replace(/^hero-icon-/, ""),
     {
       position: positionPad(frame.position),
+      mobilePosition: positionPad(frame.mobilePosition ?? frame.position),
       size: range(frame.size, 40, 240, 1),
       rotation: range(frame.rotation, -45, 45, 1),
       _collapsed: true,
@@ -216,6 +217,12 @@ const FIELD_DIALS = {
     iconSize: range(num("frames.iconScale", 44), 15, 90, 1),
     float: range(num("frames.float", 8), 0, 24, 1),
     icons: { ...frameFolders, _collapsed: true },
+    mobile: {
+      breakpoint: range(num("frames.mobileBreakpoint", 768), 320, 1280, 1),
+      scale: range(num("frames.mobileScale", 58), 20, 100, 1),
+      opacity: range(num("frames.mobileOpacity", 60), 0, 100, 1),
+      _collapsed: true,
+    },
     _collapsed: true,
   },
 } satisfies DialConfig;
@@ -278,7 +285,8 @@ type FieldDialValues = {
     cornerRadius: number;
     iconSize: number;
     float: number;
-    icons: Record<string, { position: Point; size: number; rotation: number }>;
+    icons: Record<string, { position: Point; mobilePosition: Point; size: number; rotation: number }>;
+    mobile: { breakpoint: number; scale: number; opacity: number };
   };
 };
 
@@ -326,12 +334,16 @@ function toToolcraftValues(d: FieldDialValues): Values {
     "frames.radius": d.frames.cornerRadius,
     "frames.iconScale": d.frames.iconSize,
     "frames.float": d.frames.float,
+    "frames.mobileBreakpoint": d.frames.mobile.breakpoint,
+    "frames.mobileScale": d.frames.mobile.scale,
+    "frames.mobileOpacity": d.frames.mobile.opacity,
     "frames.icons": exportFrames.map((frame) => {
       const dial = d.frames.icons[frame.mediaId.replace(/^hero-icon-/, "")];
       return dial
         ? {
             mediaId: frame.mediaId,
             position: { x: dial.position.x, y: -dial.position.y },
+            mobilePosition: { x: dial.mobilePosition.x, y: -dial.mobilePosition.y },
             rotation: dial.rotation,
             size: dial.size,
           }
