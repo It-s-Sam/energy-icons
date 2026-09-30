@@ -4,6 +4,8 @@ import { useDialKit } from "dialkit";
 import { useMemo, type CSSProperties, type ReactNode, type Ref } from "react";
 
 import type { HeroFieldSeam } from "./field-renderer";
+import { LIBRARY_ANCHOR } from "@/lib/routes";
+
 import { HeroBackground } from "./hero-background";
 import { useHeroFieldDials } from "./hero-dials";
 import type { HeroSettings } from "./hero-settings";
@@ -81,7 +83,7 @@ export function LibraryStage({
   } as CSSProperties;
 
   return (
-    <div ref={stageRef} id="icons" className="library-stage relative isolate h-dvh" style={style}>
+    <div ref={stageRef} id={LIBRARY_ANCHOR} className="library-stage relative isolate h-dvh" style={style}>
       <HeroBackground settings={backdrop} seam={seam} />
       <div className="library-glass relative h-full">
         <div className="app-frame library-window relative flex h-full overflow-hidden" data-scroll-held={held ? "" : undefined}>

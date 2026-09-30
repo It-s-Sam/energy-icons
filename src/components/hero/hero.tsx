@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import type React from "react";
 
 import { siteConfig } from "@/config/site";
-import { inLibrary } from "@/lib/routes";
+import { LibraryLink } from "@/components/layout/library-link";
 
 import { HeroBackground } from "./hero-background";
 import { useHeroFieldDials, useHeroLayoutDials } from "./hero-dials";
@@ -75,12 +75,12 @@ export function Hero() {
           <HeroMark />
         </Link>
         <nav aria-label="Primary" className="hero-nav flex items-center">
-          <Link href={inLibrary("/")} className={navLinkClass}>
+          <LibraryLink href="/" className={navLinkClass}>
             Icons
-          </Link>
-          <Link href={inLibrary("/docs/installation")} className={`${navLinkClass} max-sm:hidden`}>
+          </LibraryLink>
+          <LibraryLink href="/docs/installation" className={`${navLinkClass} max-sm:hidden`}>
             Docs
-          </Link>
+          </LibraryLink>
           {sponsor && (
             <a href={sponsor.href} target="_blank" rel="noreferrer" className={`${navLinkClass} max-sm:hidden`}>
               {sponsor.label}
@@ -117,12 +117,12 @@ export function Hero() {
             A free, open-source icon library for everyone, with deeper coverage for energy, climate and
             infrastructure.
           </p>
-          <Link
-            href={inLibrary("/")}
+          <LibraryLink
+            href="/"
             className="hero-button rounded-full bg-white text-[#111] focus-visible:outline-white"
           >
             View icons
-          </Link>
+          </LibraryLink>
         </div>
       </div>
     </section>

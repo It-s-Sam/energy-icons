@@ -9,13 +9,15 @@ import { useLibrary } from "@/components/library/library-provider";
 import { siteConfig } from "@/config/site";
 import { DOCS_PAGES } from "@/data/docs";
 import { getNonEmptyCategories, TOTAL_ICONS } from "@/lib/icons/filter";
-import { categoryHref, inLibrary } from "@/lib/routes";
+import { categoryHref } from "@/lib/routes";
+
+import { LibraryLink } from "./library-link";
 
 function NavLink({ href, active, children, count }: { href: string; active: boolean; children: ReactNode; count?: number }) {
   const { setDrawerOpen } = useLibrary();
   return (
-    <Link
-      href={inLibrary(href)}
+    <LibraryLink
+      href={href}
       onClick={() => setDrawerOpen(false)}
       aria-current={active ? "page" : undefined}
       className={`group flex h-7 items-center justify-between rounded-md px-2 text-[13px] transition-colors ${
@@ -26,7 +28,7 @@ function NavLink({ href, active, children, count }: { href: string; active: bool
       {count !== undefined && (
         <span className={`text-[11px] tabular-nums ${active ? "text-accent" : "text-fg-subtle"}`}>{count}</span>
       )}
-    </Link>
+    </LibraryLink>
   );
 }
 
