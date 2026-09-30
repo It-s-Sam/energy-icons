@@ -288,7 +288,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
                 type="button"
                 onClick={handleCopy}
                 data-testid="copy-svg"
-                className="inline-flex h-9 min-w-[116px] items-center justify-center gap-1.5 rounded-full bg-accent px-4 text-[12px] font-medium text-white shadow-[0_6px_16px_-6px_rgb(0_106_245/0.7)] transition-[background-color,translate] hover:-translate-y-px hover:bg-[#0060e0] active:translate-y-0"
+                className="inline-flex h-9 min-w-[116px] items-center justify-center gap-1.5 rounded-full bg-accent px-4 text-[12px] font-medium text-white transition-[background-color,translate] hover:-translate-y-px hover:bg-[#0060e0] active:translate-y-0"
               >
                 {copied ? <CheckGlyph size={14} className="pop" /> : <CopyGlyph size={14} />}
                 {copied ? "Copied" : "Copy SVG"}

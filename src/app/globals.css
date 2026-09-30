@@ -223,31 +223,40 @@ dialog.icon-dialog[open]::backdrop {
   pointer-events: none;
 }
 
-/* A pocket of the hero: square dots on blue, with the glow rising from below. */
+/*
+ * A quiet nod to the hero: faint blue square dots and a soft blue glow on the
+ * dialog's own surface, so the icon stays the focus in both themes.
+ */
 .dialog-stage {
-  --grid-line: rgb(255 255 255 / 0.16);
+  --grid-line: rgb(0 106 245 / 0.07);
   background:
-    radial-gradient(ellipse 70% 55% at 50% 118%, rgb(207 235 255 / 0.75), rgb(143 208 255 / 0.25) 45%, transparent 75%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Crect x='5.5' y='5.5' width='3' height='3' fill='white' fill-opacity='.2'/%3E%3C/svg%3E"),
-    #006af5;
-  color: #fff;
+    radial-gradient(ellipse 70% 55% at 50% 120%, rgb(0 106 245 / 0.12), transparent 72%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Crect x='5.5' y='5.5' width='3' height='3' fill='%23006AF5' fill-opacity='.1'/%3E%3C/svg%3E"),
+    var(--bg);
+  color: var(--fg);
+}
+.dark .dialog-stage {
+  --grid-line: rgb(255 255 255 / 0.06);
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 120%, rgb(0 106 245 / 0.22), transparent 72%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Crect x='5.5' y='5.5' width='3' height='3' fill='%238FD0FF' fill-opacity='.1'/%3E%3C/svg%3E"),
+    var(--bg);
 }
 .dialog-frame {
   padding: 18px;
   border-radius: 24px;
-  background: rgb(255 255 255 / 0.14);
-  outline: 1.5px dotted rgb(255 255 255 / 0.5);
+  background: rgb(255 255 255 / 0.7);
+  outline: 1.5px dotted rgb(0 106 245 / 0.28);
   outline-offset: -1.5px;
-  rotate: -3deg;
   animation: frame-float 6s ease-in-out infinite;
-  transition: rotate 400ms cubic-bezier(0.2, 1.4, 0.4, 1);
 }
-.dialog-stage:hover .dialog-frame {
-  rotate: 0deg;
+.dark .dialog-frame {
+  background: rgb(255 255 255 / 0.04);
+  outline-color: rgb(143 208 255 / 0.3);
 }
 @keyframes frame-float {
   50% {
-    translate: 0 -5px;
+    translate: 0 -4px;
   }
 }
 
