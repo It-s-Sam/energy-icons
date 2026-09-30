@@ -370,7 +370,21 @@ dialog.icon-dialog[open]::backdrop {
   top: calc(var(--icons-top, 97) * var(--hu));
   font-size: calc(456 * var(--hu));
   line-height: calc(548 * var(--hu));
-  color: rgb(255 255 255 / var(--icons-opacity, 0.5));
+  /*
+   * A vertical fade so "Icons" melts into the dot field: brightest at the top
+   * where it meets "Energy", almost gone at the baseline. The stops sit on the
+   * letters (cap top ≈ 22%, baseline ≈ 80% of the 548-unit line), and a slight
+   * blur, scaled with the headline, softens the edges.
+   */
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / var(--icons-opacity, 0.6)) 22%,
+    rgb(255 255 255 / var(--icons-fade, 0.04)) 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: blur(calc(var(--icons-soften, 1.5) * var(--hu)));
 }
 /* Handle geometry is in design pixels; the first anchor sits on (x, y). */
 .hero-handle {

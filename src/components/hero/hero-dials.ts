@@ -31,7 +31,11 @@ const LAYOUT_DIALS = {
     letterSpacing: range(-0.05, -0.12, 0.02, 0.001),
     energyTop: range(-70, -160, 40, 1),
     iconsTop: range(97, 0, 220, 1),
-    iconsOpacity: range(0.5, 0, 1, 0.01),
+    /** "Icons" fades from iconsOpacity at the top of the letters to iconsFade at the baseline. */
+    iconsOpacity: range(0.6, 0, 1, 0.01),
+    iconsFade: range(0.04, 0, 1, 0.01),
+    /** Blur in design units, so the softness scales with the headline. */
+    iconsSoften: range(1.5, 0, 8, 0.1),
   },
   handles: {
     visible: false,
@@ -86,6 +90,8 @@ export function useHeroLayoutDials(): HeroLayout {
     "--energy-top": d.headline.energyTop,
     "--icons-top": d.headline.iconsTop,
     "--icons-opacity": d.headline.iconsOpacity,
+    "--icons-fade": d.headline.iconsFade,
+    "--icons-soften": d.headline.iconsSoften,
     "--handle-dot": d.handles.dotSize,
     "--handle-line": d.handles.lineWidth,
     "--subtitle-size": `${d.subtitle.size}px`,
