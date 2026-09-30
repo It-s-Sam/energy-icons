@@ -129,6 +129,8 @@ src/
   app/                           Routes: /, /category/[category], /docs/*
 design/energy-hero-settings.json  Hero field settings exported from Toolcraft
 public/downloads/energy-icons.zip  GENERATED at build time for Download all (gitignored)
+public/figma/v1/*.json           GENERATED icon data the Figma plugin loads from energyicons.com (gitignored)
+packages/figma-plugin/           The Figma plugin (npm run figma), see its README
 tests/                           node:test suites run with tsx
 ```
 

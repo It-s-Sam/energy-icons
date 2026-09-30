@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "typeRoots": ["../../node_modules/@figma", "../../node_modules/@types"],
+    "types": ["plugin-typings"]
+  },
+  "include": ["src"]
+}

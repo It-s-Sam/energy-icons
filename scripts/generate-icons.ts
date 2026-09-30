@@ -5,6 +5,7 @@
  *   - src/generated/icon-registry-<weight>-<master>.ts  (one browser chunk per weight and master)
  *   - src/generated/icon-bold-slugs.ts          (which icons have Bold, without the artwork)
  *   - public/downloads/energy-icons.zip  (the "Download all" archive)
+ *   - public/figma/v1/*.json             (icon data for the Figma plugin, see packages/figma-plugin)
  *
  * Runs automatically before `dev`, `build`, `typecheck` and `test`.
  * Exits non-zero, listing every problem, if metadata and folders disagree or a
@@ -14,7 +15,14 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import path from "node:path";
 import { zipSync, strToU8 } from "fflate";
 
-import { getMasterFileName, ICON_MASTERS, ICON_WEIGHTS, type IconWeight } from "../src/config/icons";
+import {
+  getMasterFileName,
+  ICON_MASTERS,
+  ICON_WEIGHTS,
+  OPTICAL_MASTER_BREAKPOINT,
+  SUPPORTED_SIZES,
+  type IconWeight,
+} from "../src/config/icons";
 import { siteConfig } from "../src/config/site";
 import { CATEGORIES, CATEGORY_LABELS } from "../src/data/categories";
 import { icons, type IconMeta } from "../src/data/icons";
@@ -25,6 +33,7 @@ const ICONS_DIR = path.join(ROOT, "icons");
 const REGISTRY_FILE = path.join(ROOT, "src/generated/icon-registry.ts");
 const BOLD_REGISTRY_FILE = path.join(ROOT, "src/generated/icon-registry-bold.ts");
 const ZIP_FILE = path.join(ROOT, "public/downloads/energy-icons.zip");
+const FIGMA_DIR = path.join(ROOT, "public/figma/v1");
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 /** Fixed timestamp so the zip is reproducible between builds. */
 const ZIP_MTIME = new Date("2026-01-01T00:00:00Z");
@@ -269,6 +278,44 @@ zipEntries["energy-icons/LICENSE"] = [readFileSync(path.join(ROOT, "LICENSE")), 
 
 mkdirSync(path.dirname(ZIP_FILE), { recursive: true });
 writeFileSync(ZIP_FILE, zipSync(zipEntries, { level: 9 }));
+
+// ---------------------------------------------------------------------------
+// 6. Figma plugin data (served from energyicons.com/figma/v1/)
+// ---------------------------------------------------------------------------
+// icons.json lists the set; <weight>-<master>.json maps each slug to the markup
+// inside its master's <svg>, so the plugin loads only the master it needs.
+// The path format is versioned: change v1 only alongside a plugin release.
+mkdirSync(FIGMA_DIR, { recursive: true });
+writeIfChanged(
+  path.join(FIGMA_DIR, "icons.json"),
+  JSON.stringify({
+    version: siteConfig.version,
+    breakpoint: OPTICAL_MASTER_BREAKPOINT,
+    masters: ICON_MASTERS,
+    sizes: SUPPORTED_SIZES,
+    categories: CATEGORIES.filter((category) => icons.some((icon) => icon.category === category.id)),
+    icons: icons.map((icon) => ({
+      slug: icon.slug,
+      name: icon.name,
+      category: icon.category,
+      keywords: icon.keywords,
+      bold: boldSources.has(icon.slug),
+    })),
+  }),
+);
+for (const weight of ICON_WEIGHTS) {
+  for (const master of ICON_MASTERS) {
+    const bodies = Object.fromEntries(
+      icons
+        .filter((icon) => weight === "regular" || boldSources.has(icon.slug))
+        .map((icon) => {
+          const source = readFileSync(path.join(ICONS_DIR, icon.slug, getMasterFileName(master, weight)), "utf8");
+          return [icon.slug, parseSvg(source).body.trim()];
+        }),
+    );
+    writeIfChanged(path.join(FIGMA_DIR, `${weight}-${master}.json`), JSON.stringify(bodies));
+  }
+}
 
 console.log(
   `✓ ${icons.length} icons validated (${boldSources.size} with Bold) · registry → ${rel(REGISTRY_FILE)} + ${path.basename(BOLD_REGISTRY_FILE)} · zip → ${rel(ZIP_FILE)}`,

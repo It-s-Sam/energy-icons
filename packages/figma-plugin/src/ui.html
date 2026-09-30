@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* Figma injects its theme as --figma-color-* variables (showUI themeColors). */
+      :root {
+        --bg: var(--figma-color-bg, #ffffff);
+        --bg-hover: var(--figma-color-bg-hover, #f5f5f5);
+        --bg-secondary: var(--figma-color-bg-secondary, #f5f5f5);
+        --text: var(--figma-color-text, #1e1e1e);
+        --text-secondary: var(--figma-color-text-secondary, #757575);
+        --text-tertiary: var(--figma-color-text-tertiary, #b3b3b3);
+        --border: var(--figma-color-border, #e6e6e6);
+        --brand: var(--figma-color-bg-brand, #0d99ff);
+        --brand-text: var(--figma-color-text-onbrand, #ffffff);
+        --focus: var(--figma-color-border-selected, #0d99ff);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: var(--bg);
+        color: var(--text);
+        font: 11px/16px Inter, system-ui, -apple-system, sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 12px 10px;
+        border-bottom: 1px solid var(--border);
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      input,
+      select,
+      button {
+        font: inherit;
+        color: inherit;
+      }
+      .search {
+        width: 100%;
+        height: 32px;
+        padding: 0 10px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--bg);
+        outline: none;
+      }
+      .search:focus,
+      select:focus-visible,
+      .segmented button:focus-visible,
+      .tile:focus-visible,
+      .color:focus-within {
+        outline: 2px solid var(--focus);
+        outline-offset: -1px;
+      }
+      select {
+        height: 28px;
+        min-width: 0;
+        padding: 0 6px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--bg);
+      }
+      .category {
+        flex: 1;
+      }
+      .segmented {
+        display: inline-flex;
+        padding: 2px;
+        border-radius: 6px;
+        background: var(--bg-secondary);
+      }
+      .segmented button {
+        height: 24px;
+        padding: 0 8px;
+        border: 0;
+        border-radius: 4px;
+        background: transparent;
+        color: var(--text-secondary);
+        cursor: pointer;
+      }
+      .segmented button[aria-checked="true"] {
+        background: var(--bg);
+        color: var(--text);
+        box-shadow: 0 0 0 1px var(--border);
+      }
+      .color {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        height: 28px;
+        padding: 0 6px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+      }
+      .color input[type="color"] {
+        width: 16px;
+        height: 16px;
+        padding: 0;
+        border: 0;
+        background: none;
+        cursor: pointer;
+      }
+      .color input[type="color"]::-webkit-color-swatch-wrapper {
+        padding: 0;
+      }
+      .color input[type="color"]::-webkit-color-swatch {
+        border: 1px solid var(--border);
+        border-radius: 3px;
+      }
+      .color input[type="text"] {
+        width: 58px;
+        border: 0;
+        background: none;
+        outline: none;
+        font-variant-numeric: tabular-nums;
+        text-transform: uppercase;
+      }
+      .hint {
+        color: var(--text-secondary);
+      }
+      .hint b {
+        font-weight: 500;
+        color: var(--text);
+      }
+      .grid {
+        flex: 1;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+        align-content: start;
+        gap: 2px;
+        padding: 8px;
+      }
+      .tile {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1;
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        color: var(--text);
+        cursor: grab;
+      }
+      .tile:hover {
+        background: var(--bg-hover);
+      }
+      .tile svg {
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+      }
+      .message {
+        grid-column: 1 / -1;
+        padding: 32px 16px;
+        text-align: center;
+        color: var(--text-secondary);
+      }
+      .message button {
+        margin-top: 8px;
+        height: 28px;
+        padding: 0 12px;
+        border: 0;
+        border-radius: 6px;
+        background: var(--brand);
+        color: var(--brand-text);
+        cursor: pointer;
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 12px;
+        border-top: 1px solid var(--border);
+        color: var(--text-secondary);
+      }
+      footer a {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <input class="search" id="search" type="search" placeholder="Search 1,000 icons…" aria-label="Search icons" autofocus />
+      <div class="row">
+        <select class="category" id="category" aria-label="Category">
+          <option value="all">All categories</option>
+        </select>
+        <div class="segmented" role="radiogroup" aria-label="Weight" id="weight">
+          <button type="button" role="radio" data-weight="regular" aria-checked="true">Regular</button>
+          <button type="button" role="radio" data-weight="bold" aria-checked="false">Bold</button>
+        </div>
+      </div>
+      <div class="row">
+        <select id="size" aria-label="Size"></select>
+        <label class="color" title="Icon colour">
+          <input type="color" id="color-picker" value="#000000" aria-label="Icon colour" />
+          <input type="text" id="color-hex" value="#000000" maxlength="7" spellcheck="false" aria-label="Icon colour hex" />
+        </label>
+        <span class="hint" id="hint"></span>
+      </div>
+    </div>
+    <div class="grid" id="grid" role="list" aria-label="Icons"></div>
+    <footer>
+      <span id="count"></span>
+      <a href="https://energyicons.com" target="_blank" rel="noreferrer">energyicons.com · MIT</a>
+    </footer>
+    <!-- SCRIPT -->
+  </body>
+</html>

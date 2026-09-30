@@ -1,0 +1,14 @@
+{
+  "name": "Energy Icons",
+  "id": "energy-icons",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["https://energyicons.com"],
+    "devAllowedDomains": ["http://localhost:3000"],
+    "reasoning": "Loads the icon list and SVG artwork from energyicons.com, so new icons appear without a plugin update."
+  }
+}

@@ -20,7 +20,9 @@
     "pretest": "npm run icons",
     "test": "tsx --test tests/icon-system.test.ts tests/icon-component.test.tsx tests/package-icon.test.tsx",
     "package": "tsx scripts/build-package.ts && tsc -p packages/energy-icons",
-    "check": "npm run lint && npm run typecheck && npm test && npm run package && npm run build"
+    "check": "npm run lint && npm run typecheck && npm test && npm run package && npm run figma && npm run build",
+    "figma": "tsc -p packages/figma-plugin && tsx scripts/build-figma-plugin.ts",
+    "figma:dev": "tsx scripts/build-figma-plugin.ts --dev"
   },
   "dependencies": {
     "dialkit": "^2.0.2",
@@ -31,10 +33,12 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@figma/plugin-typings": "^1.139.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "esbuild": "^0.28.2",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
     "fflate": "^0.8.3",
