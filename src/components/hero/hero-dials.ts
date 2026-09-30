@@ -31,7 +31,7 @@ const LAYOUT_DIALS = {
     letterSpacing: range(-0.05, -0.12, 0.02, 0.001),
     energyTop: range(-70, -160, 40, 1),
     iconsTop: range(97, 0, 220, 1),
-    iconsOpacity: range(0.7, 0, 1, 0.01),
+    iconsOpacity: range(0.5, 0, 1, 0.01),
   },
   handles: {
     visible: false,

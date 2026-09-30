@@ -1,5 +1,7 @@
 # Energy Icons
 
+[energyicons.com](https://energyicons.com)
+
 Open-source icons for the energy transition: 1,000 icons covering solar, wind, hydro, grid, storage, EV charging, heat pumps, industry, climate, and the everyday interface glyphs around them. Every icon is drawn at two optical sizes in two weights and published as outlined SVGs. MIT licensed.
 
 ```bash
@@ -140,7 +142,7 @@ Every page opens on an animated hero, with the library window floating below it.
 
 The hero's dot, energy and glow field is a WebGL shader adapted from Toolcraft. Its settings live in `design/energy-hero-settings.json`. In development, DialKit panels (bottom right) tune the hero layout, the field and the library stage live. Use a panel's Copy button, then paste the values into `src/components/hero/hero-dials.ts` or `library-stage.tsx`, or into the settings JSON. Production builds swap DialKit for a stub that returns each dial's default (`next.config.ts`), so the panels never ship.
 
-Set `NEXT_PUBLIC_SITE_URL` to the public origin once a custom domain is live. It is used for social previews, the sitemap and robots.txt. On Vercel it falls back to the project's production domain.
+The site lives at [energyicons.com](https://energyicons.com), set in `src/config/site.ts` and used for social previews, the sitemap and robots.txt. `NEXT_PUBLIC_SITE_URL` overrides it, for example on a staging domain.
 
 ## License
 

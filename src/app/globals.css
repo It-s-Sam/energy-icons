@@ -266,7 +266,7 @@ dialog.icon-dialog[open] > div {
   top: calc(var(--icons-top, 97) * var(--hu));
   font-size: calc(456 * var(--hu));
   line-height: calc(548 * var(--hu));
-  color: rgb(255 255 255 / var(--icons-opacity, 0.7));
+  color: rgb(255 255 255 / var(--icons-opacity, 0.5));
 }
 /* Handle geometry is in design pixels; the first anchor sits on (x, y). */
 .hero-handle {

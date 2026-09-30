@@ -1,6 +1,6 @@
 # energy-icons
 
-Open-source icons for the energy transition. MIT licensed.
+Open-source icons for the energy transition. MIT licensed. Browse them all at [energyicons.com](https://energyicons.com).
 
 ```bash
 npm install energy-icons
