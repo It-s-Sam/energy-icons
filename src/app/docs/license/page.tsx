@@ -66,7 +66,7 @@ export default function LicensePage() {
           standard server logs, such as IP addresses, to operate and secure the service.
         </P>
         <P>
-          Sponsorship goes through GitHub Sponsors, under GitHub’s own terms and privacy policy.
+          Support goes through Ko-fi, under Ko-fi’s own terms and privacy policy.
         </P>
       </DocSection>
 

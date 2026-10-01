@@ -26,7 +26,7 @@ Sizes below 32 use the 20px master. Sizes from 32 up use the 48px master. `weigh
 
 SVG files ship in the package at `energy-icons/svg/<slug>/`.
 
-Sponsor the work at [github.com/sponsors/Sam-r-passmore](https://github.com/sponsors/Sam-r-passmore).
+Support the work at [ko-fi.com/energyicons](https://ko-fi.com/energyicons).
 
 ## License
 
