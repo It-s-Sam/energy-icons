@@ -134,8 +134,8 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
     >
       <div className="dialog-glass w-[520px] max-w-full">
         <div className="flex max-h-[calc(100dvh-36px)] flex-col overflow-y-auto rounded-[28px] bg-surface">
-          <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3 px-5 pt-4 pb-3">
-            <div className="min-w-0 flex-1 basis-40">
+          <div className="relative flex flex-wrap items-start justify-between gap-x-4 gap-y-3 px-5 pt-4 pb-3">
+            <div className="min-w-0 flex-1 basis-40 max-sm:pr-12">
               <h2 id="icon-dialog-title" className="text-[15px] font-semibold tracking-[-0.01em] text-fg">
                 {meta.name}
               </h2>
@@ -186,7 +186,9 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
                 type="button"
                 onClick={() => dialogRef.current?.close()}
                 aria-label="Close"
-                className="grid size-8 place-items-center rounded-full border border-transparent text-fg-muted transition-transform hover:rotate-90 hover:border-line hover:bg-hover hover:text-fg"
+                // On phones the controls wrap below the title, so the close button moves to the
+                // top-right corner and is always filled to read as the way out.
+                className="grid size-8 place-items-center rounded-full border border-transparent text-fg-muted transition-transform hover:rotate-90 hover:border-line hover:bg-hover hover:text-fg max-sm:absolute max-sm:top-3.5 max-sm:right-4 max-sm:size-9 max-sm:border-line max-sm:bg-hover max-sm:text-fg"
               >
                 <CloseGlyph />
               </button>
