@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
+import Script from "next/script";
+
+const GA_MEASUREMENT_ID = "G-7HJ826517V";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,6 +34,9 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
   },
+  verification: {
+    google: "tk3fBdgARJ1TxkhL4Gg07AtMDggLDSx4uDliGvhzgH4",
+  },
 };
 
 export const viewport: Viewport = {
@@ -45,6 +51,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${montserrat.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="beforeInteractive" />
+        <Script id="google-analytics" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+        </Script>
       </head>
       <body className="text-[13px]">
         <LibraryProvider>
