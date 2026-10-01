@@ -16,7 +16,7 @@ import { Icon } from "energy-icons/icon";
 
 Import one icon when the bundle should stay small: `import { Pylon } from "energy-icons/icons/pylon"`. Sizes below 32 use the 20px master. Sizes from 32 up use the 48px master. See [Installation](src/app/docs/installation/page.tsx) and [Usage](src/app/docs/usage/page.tsx) in the site, and `packages/energy-icons/README.md`.
 
-The icons are free. [Sponsor the library](https://github.com/sponsors/It-s-Sam) if you want to support the drawing. A Buy Me a Coffee link can be added in `src/config/site.ts` (`links.coffee`) when that page exists.
+The icons are free. [Sponsor the library](https://github.com/sponsors/Sam-r-passmore) if you want to support the drawing. A Buy Me a Coffee link can be added in `src/config/site.ts` (`links.coffee`) when that page exists.
 
 ## Contributing
 

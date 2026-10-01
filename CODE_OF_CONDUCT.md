@@ -12,7 +12,7 @@ Examples of unacceptable behaviour include harassment, trolling, insulting comme
 
 ## Enforcement
 
-Report conduct issues through a GitHub issue or by contacting the maintainers of the [It-s-Sam](https://github.com/It-s-Sam) organisation. Reports are reviewed and result in whatever action is considered appropriate, including a temporary or permanent ban.
+Report conduct issues through a GitHub issue or by contacting the maintainers of the [Sam-r-passmore](https://github.com/Sam-r-passmore) organisation. Reports are reviewed and result in whatever action is considered appropriate, including a temporary or permanent ban.
 
 ## Attribution
 

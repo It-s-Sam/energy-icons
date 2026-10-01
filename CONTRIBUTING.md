@@ -4,7 +4,7 @@ Energy Icons is drawn by hand. Code scales the masters. It does not redraw them.
 
 ## Ask for an icon
 
-Open an [icon request](https://github.com/It-s-Sam/energy-icons/issues/new?template=icon_request.yml). Include what the symbol needs to depict. A sponsor does not jump the queue. The icons stay free either way.
+Open an [icon request](https://github.com/Sam-r-passmore/energy-icons/issues/new?template=icon_request.yml). Include what the symbol needs to depict. A sponsor does not jump the queue. The icons stay free either way.
 
 ## Draw an icon
 

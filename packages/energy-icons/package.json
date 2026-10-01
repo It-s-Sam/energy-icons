@@ -30,12 +30,12 @@
   "author": "Sam Passmore (ItsSam)",
   "homepage": "https://energyicons.com",
   "bugs": {
-    "url": "https://github.com/It-s-Sam/energy-icons/issues"
+    "url": "https://github.com/Sam-r-passmore/energy-icons/issues"
   },
-  "funding": "https://github.com/sponsors/It-s-Sam",
+  "funding": "https://github.com/sponsors/Sam-r-passmore",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/It-s-Sam/energy-icons.git",
+    "url": "git+https://github.com/Sam-r-passmore/energy-icons.git",
     "directory": "packages/energy-icons"
   },
   "peerDependencies": {

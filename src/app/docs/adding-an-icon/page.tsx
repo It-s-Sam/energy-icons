@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = { title: "Contributing an icon" };
 
-const repo = siteConfig.links.github?.href ?? "https://github.com/It-s-Sam/energy-icons";
+const repo = siteConfig.links.github?.href ?? "https://github.com/Sam-r-passmore/energy-icons";
 
 function A({ href, children }: { href: string; children: string }) {
   return (
