@@ -497,6 +497,264 @@ dialog.icon-dialog[open]::backdrop {
   box-shadow: 0 0 0 1px rgb(255 255 255 / calc(var(--glass-stroke, 0.55) * 0.5));
 }
 
+/* ---------- Roadmap ---------- */
+/*
+ * The roadmap is a power line: shipped pylons are lit, energy pulses along the
+ * cable into the milestone in progress, and planned ones wait dim and dashed.
+ * Desktop runs left to right (scrolls sideways); phones run top to bottom.
+ */
+.roadmap-banner {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 125%, rgb(207 235 255 / 0.7), rgb(143 208 255 / 0.2) 45%, transparent 75%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Crect x='5.5' y='5.5' width='3' height='3' fill='white' fill-opacity='.18'/%3E%3C/svg%3E"),
+    #006af5;
+}
+.roadmap-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border: 1px solid rgb(255 255 255 / 0.3);
+  border-radius: 999px;
+  color: rgb(255 255 255 / 0.9);
+}
+.roadmap-legend::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+.roadmap-legend[data-state="lit"]::before {
+  background: #fff;
+  box-shadow: 0 0 8px rgb(255 255 255 / 0.9);
+}
+.roadmap-legend[data-state="charging"]::before {
+  background: #cfebff;
+  animation: roadmap-pulse 1.6s ease-in-out infinite;
+}
+.roadmap-legend[data-state="dark"]::before {
+  border: 1.5px dashed rgb(255 255 255 / 0.7);
+}
+
+.roadmap-cable {
+  display: none;
+}
+.roadmap-cable path {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.roadmap-cable [data-state="dark"] .roadmap-cable-base {
+  stroke: var(--line-strong);
+  stroke-dasharray: 2 7;
+}
+.roadmap-cable [data-state="lit"] .roadmap-cable-base {
+  stroke: var(--accent);
+  filter: drop-shadow(0 0 4px rgb(0 106 245 / 0.45));
+}
+.roadmap-cable [data-state="charging"] .roadmap-cable-base {
+  stroke: rgb(0 106 245 / 0.35);
+}
+/* Packets of energy travelling along powered spans. */
+.roadmap-cable-flow {
+  stroke: #8fd0ff;
+  stroke-width: 3 !important;
+  stroke-dasharray: 3 29;
+  animation: roadmap-flow 2.4s linear infinite;
+}
+.roadmap-cable [data-state="charging"] .roadmap-cable-flow {
+  stroke: var(--accent);
+  stroke-dasharray: 10 22;
+  animation-duration: 1.4s;
+  filter: drop-shadow(0 0 4px rgb(0 106 245 / 0.6));
+}
+@keyframes roadmap-flow {
+  from {
+    stroke-dashoffset: 32;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes roadmap-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.roadmap-milestones {
+  display: flex;
+  flex-direction: column;
+}
+.roadmap-milestone {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  padding-bottom: 20px;
+}
+/* Phones: a vertical cable from this pylon down to the next. */
+.roadmap-milestone::before {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 46px;
+  bottom: 2px;
+  width: 2px;
+  border-radius: 2px;
+}
+.roadmap-milestone[data-cable="lit"]::before {
+  background: var(--accent);
+  box-shadow: 0 0 6px rgb(0 106 245 / 0.45);
+}
+.roadmap-milestone[data-cable="charging"]::before {
+  background: repeating-linear-gradient(to bottom, var(--accent) 0 10px, rgb(0 106 245 / 0.3) 10px 32px);
+  background-size: 2px 32px;
+  animation: roadmap-flow-down 1.4s linear infinite;
+}
+.roadmap-milestone[data-cable="dark"]::before {
+  background: repeating-linear-gradient(to bottom, var(--line-strong) 0 3px, transparent 3px 10px);
+}
+@keyframes roadmap-flow-down {
+  to {
+    background-position: 0 32px;
+  }
+}
+
+.roadmap-pylon {
+  display: grid;
+  place-items: start center;
+  padding-top: 2px;
+  color: var(--fg-subtle);
+}
+.roadmap-milestone:is([data-status="shipped"], [data-status="now"]) .roadmap-pylon {
+  color: var(--accent);
+  filter: drop-shadow(0 0 6px rgb(0 106 245 / 0.35));
+}
+.roadmap-milestone[data-status="now"] .roadmap-pylon {
+  animation: roadmap-pulse 1.6s ease-in-out infinite;
+}
+
+.roadmap-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+}
+.roadmap-milestone:is([data-status="next"], [data-status="later"], [data-status="exploring"]) .roadmap-card {
+  border-style: dashed;
+  background: transparent;
+}
+.roadmap-milestone[data-status="now"] .roadmap-card {
+  border-color: rgb(0 106 245 / 0.45);
+  box-shadow: 0 0 0 4px var(--accent-softer);
+}
+.roadmap-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fg-muted);
+  background: var(--hover);
+}
+.roadmap-milestone[data-status="shipped"] .roadmap-status {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.roadmap-milestone[data-status="now"] .roadmap-status {
+  color: #fff;
+  background: var(--accent);
+}
+.roadmap-milestone[data-status="now"] .roadmap-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #fff;
+  animation: roadmap-pulse 1.6s ease-in-out infinite;
+}
+/* The milestone's icon, framed like the hero's floating icons. */
+.roadmap-frame {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 14px 0 12px;
+  border-radius: 16px;
+  color: var(--fg-muted);
+  outline: 1.5px dashed var(--line-strong);
+  outline-offset: -1.5px;
+}
+.roadmap-milestone:is([data-status="shipped"], [data-status="now"]) .roadmap-frame {
+  color: #fff;
+  background: var(--accent);
+  outline: 0;
+  box-shadow: 0 6px 18px -6px rgb(0 106 245 / 0.6);
+}
+.roadmap-item {
+  position: relative;
+  padding-left: 14px;
+}
+.roadmap-item::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--line-strong);
+}
+.roadmap-milestone:is([data-status="shipped"], [data-status="now"]) .roadmap-item::before {
+  background: var(--accent);
+}
+
+@media (min-width: 768px) {
+  .roadmap-scroll {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 12px;
+    outline: none;
+    /* Fade the right edge so it's clear the line continues sideways. */
+    mask-image: linear-gradient(to right, #000 calc(100% - 96px), transparent);
+  }
+  .roadmap-track {
+    position: relative;
+    width: max-content;
+  }
+  .roadmap-cable {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  .roadmap-milestones {
+    flex-direction: row;
+  }
+  .roadmap-milestone {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: var(--column);
+    padding: 0 10px;
+    scroll-snap-align: start;
+  }
+  .roadmap-milestone::before {
+    display: none;
+  }
+  .roadmap-pylon {
+    position: relative;
+    height: 78px;
+    padding-top: 12px;
+  }
+}
+
 /* Until the library reaches the top, its panels do not scroll, so the wheel moves the page. */
 .app-frame[data-scroll-held] :is(main, aside nav) {
   overflow-y: hidden;

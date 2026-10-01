@@ -6,6 +6,6 @@ import { getNonEmptyCategories } from "@/lib/icons/filter";
 import { categoryHref } from "@/lib/routes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["/", ...getNonEmptyCategories().map((category) => categoryHref(category.id)), ...DOCS_PAGES.map((doc) => doc.href)];
+  const paths = ["/", ...getNonEmptyCategories().map((category) => categoryHref(category.id)), ...DOCS_PAGES.map((doc) => doc.href), "/roadmap"];
   return paths.map((path) => ({ url: `${siteConfig.url}${path}` }));
 }

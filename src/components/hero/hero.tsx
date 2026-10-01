@@ -81,6 +81,9 @@ export function Hero() {
           <LibraryLink href="/docs/installation" className={`${navLinkClass} max-sm:hidden`}>
             Docs
           </LibraryLink>
+          <LibraryLink href="/roadmap" className={`${navLinkClass} max-sm:hidden`}>
+            Roadmap
+          </LibraryLink>
           {sponsor && (
             <a href={sponsor.href} target="_blank" rel="noreferrer" className={`${navLinkClass} max-sm:hidden`}>
               {sponsor.label}

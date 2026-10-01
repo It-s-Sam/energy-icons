@@ -85,6 +85,15 @@ export function Sidebar() {
           </div>
 
           <div>
+            <SectionLabel>Project</SectionLabel>
+            <div className="flex flex-col gap-px">
+              <NavLink href="/roadmap" active={pathname === "/roadmap"}>
+                Roadmap
+              </NavLink>
+            </div>
+          </div>
+
+          <div>
             <SectionLabel>Docs</SectionLabel>
             <div className="flex flex-col gap-px">
               {DOCS_PAGES.map((doc) => (
