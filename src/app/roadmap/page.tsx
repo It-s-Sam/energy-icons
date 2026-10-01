@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { DocsPage } from "@/components/docs/docs-page";
 import { Icon } from "@/components/icon";
-import { siteConfig } from "@/config/site";
 import { ROADMAP, ROADMAP_STATUS_LABELS } from "@/data/roadmap";
 
 export const metadata: Metadata = {
@@ -11,13 +10,11 @@ export const metadata: Metadata = {
 };
 
 export default function RoadmapPage() {
-  const sponsor = siteConfig.links.sponsor;
-
   return (
     <DocsPage
       title="Roadmap"
       section="Project"
-      lead="What's shipped, what's in progress, and what comes next. Timings are rough, and sponsors help decide what gets done first."
+      lead="What's shipped, what's in progress, and what comes next. Timings are rough and may change."
     >
       <ol className="roadmap">
         {ROADMAP.map((milestone) => (
@@ -40,16 +37,6 @@ export default function RoadmapPage() {
                   </li>
                 ))}
               </ul>
-              {milestone.sponsorable && sponsor && (
-                <a
-                  href={sponsor.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-2 inline-block text-[12.5px] text-accent underline-offset-2 hover:underline"
-                >
-                  Sponsor this →
-                </a>
-              )}
             </div>
           </li>
         ))}

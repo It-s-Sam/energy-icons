@@ -1,5 +1,7 @@
 # Energy Icons for Figma
 
+**Live on Figma Community:** [Energy Icons](https://www.figma.com/community/plugin/1687188347733136771/energy-icons)
+
 Search the set, pick a size, weight and colour, then click an icon (or drag it onto the canvas) to insert it.
 
 - **Size follows the site's rule.** Sizes below 32 insert the 20 master, sizes from 32 up insert the 48 master, scaled to the exact size. Path data is never edited.

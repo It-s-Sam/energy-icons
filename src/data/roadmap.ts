@@ -16,8 +16,6 @@ export type RoadmapMilestone = {
   title: string;
   summary: string;
   items: readonly string[];
-  /** Show a "Power this next" sponsor link: things sponsorship can speed up. */
-  sponsorable?: boolean;
 };
 
 export const ROADMAP_STATUS_LABELS: Record<RoadmapStatus, string> = {
@@ -49,12 +47,12 @@ export const ROADMAP: readonly RoadmapMilestone[] = [
   },
   {
     id: "figma",
-    status: "now",
+    status: "shipped",
     when: "Oct 2026",
     icon: "puzzle",
     title: "Figma plugin",
     summary: "Search, pick a size and weight, then click or drag icons straight onto the canvas.",
-    items: ["In Figma's review", "Always in sync with the website"],
+    items: ["Live on Figma Community", "Always in sync with the website"],
   },
   {
     id: "hydrogen",
@@ -64,7 +62,6 @@ export const ROADMAP: readonly RoadmapMilestone[] = [
     title: "Hydrogen & e-fuels pack",
     summary: "Complete coverage for the hydrogen economy, from production to the pump.",
     items: ["Electrolysers and storage", "Pipelines and refuelling", "Ammonia and e-fuels"],
-    sponsorable: true,
   },
   {
     id: "grid",
@@ -74,7 +71,6 @@ export const ROADMAP: readonly RoadmapMilestone[] = [
     title: "Grid operations pack",
     summary: "The kit grid operators and network planners reach for every day.",
     items: ["Substations and switchgear", "Transformers and interconnectors", "Control rooms and protection"],
-    sponsorable: true,
   },
   {
     id: "frameworks",
@@ -93,7 +89,6 @@ export const ROADMAP: readonly RoadmapMilestone[] = [
     title: "Animated icons & live states",
     summary: "Subtle motion and status states for dashboards: generating, charging, offline, fault.",
     items: ["Spinning turbines, pulsing sun", "State badges for monitoring UIs", "Respects reduced motion"],
-    sponsorable: true,
   },
   {
     id: "carbon-markets",
@@ -103,7 +98,6 @@ export const ROADMAP: readonly RoadmapMilestone[] = [
     title: "Carbon & markets packs",
     summary: "Capture, storage and credits, plus the language of energy markets.",
     items: ["Carbon capture and removal", "PPAs, tariffs and flexibility", "Trading and settlement"],
-    sponsorable: true,
   },
   {
     id: "dataviz",
@@ -113,7 +107,6 @@ export const ROADMAP: readonly RoadmapMilestone[] = [
     title: "Data-visualisation kit",
     summary: "A shared visual standard for energy charts, maps and dashboards.",
     items: ["Accessible fuel-type colour palette", "Map markers for every plant type", "Energy-mix legends"],
-    sponsorable: true,
   },
   {
     id: "glossary",

@@ -27,6 +27,6 @@ export const siteConfig = {
     sponsor: { label: "Sponsor", href: "https://github.com/sponsors/It-s-Sam" } as SiteLink | undefined,
     /** One-off support. Set this when a Buy Me a Coffee page exists. */
     coffee: undefined as SiteLink | undefined,
-    figma: undefined as SiteLink | undefined,
+    figma: { label: "Figma plugin", href: "https://www.figma.com/community/plugin/1687188347733136771/energy-icons" } as SiteLink | undefined,
   },
 };

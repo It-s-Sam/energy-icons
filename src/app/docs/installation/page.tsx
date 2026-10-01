@@ -38,6 +38,16 @@ energy-icons/svg/pylon/48.svg
 energy-icons/svg/pylon/20-bold.svg
 energy-icons/svg/pylon/48-bold.svg`}</CodeBlock>
       </DocSection>
+      <DocSection title="Figma">
+        <P>
+          Install the{" "}
+          <a href="https://www.figma.com/community/plugin/1687188347733136771/energy-icons" target="_blank" rel="noreferrer" className="text-accent underline-offset-2 hover:underline">
+            Energy Icons plugin
+          </a>{" "}
+          from Figma Community. Search the set, pick a size, weight and colour, then click an icon to insert it, or drag
+          it onto the canvas. The right master is chosen for the size, and new icons appear as soon as they ship.
+        </P>
+      </DocSection>
       <DocSection title="Without React">
         <P>
           Any framework, or plain HTML, can use the SVGs. Paste the markup inline to inherit the text colour, since

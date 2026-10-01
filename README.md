@@ -1,6 +1,6 @@
 # Energy Icons
 
-[energyicons.com](https://energyicons.com)
+[energyicons.com](https://energyicons.com) · [Figma plugin](https://www.figma.com/community/plugin/1687188347733136771/energy-icons)
 
 Open-source icons for the energy transition: 1,000 icons covering solar, wind, hydro, grid, storage, EV charging, heat pumps, industry, climate, and the everyday interface glyphs around them. Every icon is drawn at two optical sizes in two weights and published as outlined SVGs. MIT licensed.
 
