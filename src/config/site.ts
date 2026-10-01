@@ -15,7 +15,7 @@ const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://energyicons.com")
 
 export const siteConfig = {
   name: "Energy Icons",
-  version: "1.1",
+  version: "1.1.1",
   url: SITE_URL,
   description:
     "Open-source icon library for the renewable energy and energy-transition sector. Two optical masters, scaled — never redrawn.",

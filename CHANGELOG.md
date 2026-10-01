@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.1
+
+- Redrawn `fan` (all four masters): the hub is a closed circle and each blade's sides now end on it, fixing a break where the blades met the hub.
+- Package links point to the renamed GitHub organisation (Sam-r-passmore), and the funding link to Ko-fi.
+
 ## 1.1.0
 
 - 362 new icons, for 1,000 in total. Every icon from 1.0.0 keeps its name.

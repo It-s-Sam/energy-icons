@@ -19,6 +19,8 @@ const eslintConfig = defineConfig([
     "packages/energy-icons/src/registry.ts",
     "packages/energy-icons/dist/**",
     "packages/energy-icons/svg/**",
+    // Built by scripts/build-figma-plugin.ts
+    "packages/figma-plugin/dist/**",
   ]),
 ]);
 
