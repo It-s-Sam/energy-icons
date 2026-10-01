@@ -27,7 +27,7 @@ const range = (value: number, min: number, max: number, step: number): [number, 
 /** Handle geometry is in Paper design pixels, relative to the headline box. */
 const LAYOUT_DIALS = {
   headline: {
-    scale: range(0.82, 0.5, 1.2, 0.01),
+    scale: range(0.9, 0.5, 1.2, 0.01),
     letterSpacing: range(-0.05, -0.12, 0.02, 0.001),
     energyTop: range(-70, -160, 40, 1),
     iconsTop: range(97, 0, 220, 1),

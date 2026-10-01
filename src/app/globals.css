@@ -303,7 +303,7 @@ dialog.icon-dialog[open]::backdrop {
 .hero {
   min-height: max(560px, calc(100svh - var(--stage-peek, 72px)));
   --u: max(0.2px, min(100vw / 1954, (100svh - var(--stage-peek, 72px) - 340px) / 560));
-  --hu: calc(var(--u) * var(--headline-scale, 0.82));
+  --hu: calc(var(--u) * var(--headline-scale, 0.9));
 }
 @media (max-width: 767px) {
   .hero {
@@ -346,49 +346,27 @@ dialog.icon-dialog[open]::backdrop {
   gap: calc(var(--headline-gap, 14) * var(--u));
   padding-block: calc(var(--content-py, 66) * var(--u));
 }
+/*
+ * Plain stacked headline: both words white Montserrat at one size, set tight so
+ * the two lines read as one block. 300 units keeps the pair inside the
+ * 560-unit headline height the hero is sized around.
+ */
 .hero-headline {
   position: relative;
-  width: calc(1202 * var(--hu));
-  height: calc(560 * var(--hu));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
+  font-size: calc(300 * var(--hu));
   font-weight: 700;
-  white-space: nowrap;
-}
-/* Tracking is set on each word so its em resolves against the word's own size. */
-.hero-word {
-  position: absolute;
-  left: 0;
+  line-height: 0.92;
   letter-spacing: var(--headline-tracking, -0.05em);
+  white-space: nowrap;
+  color: #fff;
 }
-.hero-word-energy {
-  z-index: 1;
-  top: calc(var(--energy-top, -70) * var(--hu));
-  font-size: calc(344 * var(--hu));
-  line-height: calc(414 * var(--hu));
-}
-.hero-word-icons {
-  top: calc(var(--icons-top, 97) * var(--hu));
-  font-size: calc(456 * var(--hu));
-  line-height: calc(548 * var(--hu));
-  /*
-   * A vertical fade so "Icons" melts into the dot field: brightest at the top
-   * where it meets "Energy", almost gone at the baseline. The stops sit on the
-   * letters (cap top ≈ 22%, baseline ≈ 80% of the 548-unit line), and a slight
-   * blur, scaled with the headline, softens the edges.
-   */
-  color: transparent;
-  background: linear-gradient(
-    180deg,
-    rgb(255 255 255 / var(--icons-opacity, 0.55)) 22%,
-    rgb(255 255 255 / var(--icons-fade, 0.45)) 80%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  filter: blur(calc(var(--icons-soften, 0) * var(--hu)));
-  /* The gradient only paints inside this box, and the tight tracking lets the
-     last letter overhang it. Pad the sides (and shift back) so nothing clips. */
-  left: -0.15em;
-  padding-inline: 0.15em;
+/* The edit handles were placed on the old overlapping layout, so hide them here. */
+.hero-headline .hero-handle {
+  display: none;
 }
 /* Handle geometry is in design pixels; the first anchor sits on (x, y). */
 .hero-handle {
