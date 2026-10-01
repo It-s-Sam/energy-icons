@@ -4,13 +4,24 @@ import { GithubButton } from "@/components/layout/github-button";
 import { MenuButton } from "@/components/layout/menu-button";
 import { ThemeToggle } from "@/components/layout/theme";
 
-export function DocsPage({ title, lead, children }: { title: string; lead: string; children: ReactNode }) {
+export function DocsPage({
+  title,
+  lead,
+  section = "Docs",
+  children,
+}: {
+  title: string;
+  lead: string;
+  /** Breadcrumb before the title. */
+  section?: string;
+  children: ReactNode;
+}) {
   return (
     <>
       <header className="flex h-[52px] shrink-0 items-center justify-between gap-3 border-b border-line px-3">
         <div className="flex items-center gap-1 text-[13px]">
           <MenuButton />
-          <span className="pl-1 text-fg-subtle">Docs</span>
+          <span className="pl-1 text-fg-subtle">{section}</span>
           <span className="text-fg-subtle">/</span>
           <span className="text-fg">{title}</span>
         </div>
