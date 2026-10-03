@@ -90,6 +90,14 @@ export function Sidebar() {
               <NavLink href="/roadmap" active={pathname === "/roadmap"}>
                 Roadmap
               </NavLink>
+              <a
+                href={siteConfig.links.requestIcon.href}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-7 items-center rounded-md px-2 text-[13px] text-fg-muted hover:bg-sidebar-hover hover:text-fg"
+              >
+                {siteConfig.links.requestIcon.label}
+              </a>
             </div>
           </div>
 
@@ -125,7 +133,20 @@ export function Sidebar() {
         </nav>
 
         <div className="px-4 py-3 text-[11px] text-fg-subtle">
-          v{siteConfig.version} · {TOTAL_ICONS} icons
+          <div>
+            v{siteConfig.version} · {TOTAL_ICONS} icons
+          </div>
+          <div className="mt-0.5">
+            By{" "}
+            <a
+              href={siteConfig.links.author.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-fg-muted underline-offset-2 hover:text-fg hover:underline"
+            >
+              {siteConfig.links.author.label}
+            </a>
+          </div>
         </div>
       </aside>
     </>

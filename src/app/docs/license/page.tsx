@@ -24,7 +24,7 @@ export default function LicensePage() {
       <DocSection title="License">
         <P>
           The icons, the <Code>energy-icons</Code> package and this website are released under the{" "}
-          <A href={`${repo}/blob/main/LICENSE`}>MIT License</A>, copyright Sam Passmore (ItsSam). Use them in apps, websites, print, products and
+          <A href={`${repo}/blob/main/LICENSE`}>MIT License</A>, copyright <A href={siteConfig.links.author.href}>Sam Passmore (ItsSam)</A>. Use them in apps, websites, print, products and
           client work, commercial or not. Modify them freely.
         </P>
         <P>

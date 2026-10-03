@@ -7,6 +7,7 @@ import { IconGrid } from "@/components/library/icon-grid";
 import { useLibrary } from "@/components/library/library-provider";
 import { Toolbar } from "@/components/library/toolbar";
 import { SearchGlyph } from "@/components/ui/ui-icons";
+import { requestIconHref } from "@/config/site";
 import { CATEGORY_LABELS } from "@/data/categories";
 import type { IconName } from "@/data/icons";
 import { loadMaster } from "@/lib/icons/browser-masters";
@@ -68,6 +69,14 @@ export function IconBrowser({ category }: { category: CategoryFilter }) {
                 >
                   Clear search
                 </button>
+                <a
+                  href={requestIconHref(query.trim())}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="h-7 rounded-md px-2.5 text-[12px] leading-7 text-accent hover:bg-accent-softer"
+                >
+                  Request it
+                </a>
                 {category !== "all" && (
                   <LibraryLink href="/" className="h-7 rounded-md px-2.5 text-[12px] leading-7 text-accent hover:bg-accent-softer">
                     Search all icons

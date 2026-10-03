@@ -28,6 +28,16 @@ export const siteConfig = {
     sponsor: { label: "Sponsor", href: "https://ko-fi.com/energyicons" } as SiteLink | undefined,
     /** One-off support. Set this when a Buy Me a Coffee page exists. */
     coffee: undefined as SiteLink | undefined,
+    /** Opens the GitHub icon-request issue form. */
+    requestIcon: { label: "Request an icon", href: "https://github.com/Sam-r-passmore/energy-icons/issues/new?template=icon_request.yml" },
+    /** Credited in the sidebar footer and page metadata. */
+    author: { label: "Sam Passmore", href: "https://itssam.io" },
     figma: { label: "Figma plugin", href: "https://www.figma.com/community/plugin/1687188347733136771/energy-icons" } as SiteLink | undefined,
   },
 };
+
+/** The icon-request form, with the title pre-filled when we know what was searched for. */
+export function requestIconHref(name?: string): string {
+  const href = siteConfig.links.requestIcon.href;
+  return name ? `${href}&title=${encodeURIComponent(`Icon request: ${name}`)}` : href;
+}

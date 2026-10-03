@@ -15,6 +15,7 @@ import {
 } from "@/config/icons";
 import { CATEGORY_LABELS } from "@/data/categories";
 import { getIconMeta, type IconName } from "@/data/icons";
+import { track } from "@/lib/analytics";
 import { copyText, downloadText } from "@/lib/browser";
 import { getBrowserSvg, loadMaster, peekMaster } from "@/lib/icons/browser-masters";
 import { FRAMEWORKS, getIconSnippet, type FrameworkId } from "@/lib/icons/snippets";
@@ -86,6 +87,7 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
     try {
       await loadMaster(weight, master);
       await copyText(getBrowserSvg(name, size, weight));
+      track("icon_copy", { icon: name, size, weight });
       setCopyError(false);
       flagCopied();
     } catch {
@@ -96,11 +98,13 @@ export function IconDetailDialog({ name, initialSize, initialWeight, onClose }: 
   const handleDownload = async () => {
     await loadMaster(weight, master);
     downloadText(getBrowserSvg(name, size, weight), fileName);
+    track("icon_download", { icon: name, size, weight });
   };
 
   const handleSnippet = async () => {
     try {
       await copyText(snippet);
+      track("snippet_copy", { icon: name, framework });
       setCopiedSnippet(snippet);
       flagSnippetCopied();
     } catch {

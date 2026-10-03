@@ -13,6 +13,7 @@ const montserrat = Montserrat({
 
 import { Hero } from "@/components/hero/hero";
 import { AppFrame } from "@/components/layout/app-frame";
+import { LinkTracker } from "@/components/layout/link-tracker";
 import { Sidebar } from "@/components/layout/sidebar";
 import { themeInitScript } from "@/components/layout/theme";
 import { LibraryProvider } from "@/components/library/library-provider";
@@ -23,6 +24,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: { default: `${siteConfig.name} — energy transition icons`, template: `%s · ${siteConfig.name}` },
   description: siteConfig.description,
+  authors: [{ name: siteConfig.links.author.label, url: siteConfig.links.author.href }],
+  creator: siteConfig.links.author.label,
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -60,6 +63,7 @@ gtag('config', '${GA_MEASUREMENT_ID}');`}
         </Script>
       </head>
       <body className="text-[13px]">
+        <LinkTracker />
         <LibraryProvider>
           <AppFrame hero={<Hero />}>
             <Sidebar />
